@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Player Details</title>
+    </head>
+    <body>
+        <header>
+            <h1><a href="index.html">Player Details</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="players.html">Players</a></li>
+                    <li><a href="report.html">Report</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="playerDetails">
+
+            </section>
+        </main>
+        <footer>
+            <p>&COPY; 2024 Company Name. All Rigts Reserved.</p>
+        </footer>
+        <script>
+ let playersDetailes = [
+          {id:"1",playerName:"Player 1", country:"India",role:"Batman"},
+          {id:"2",playerName:"Player 2", country:"Australia",role:"Bowler"}
+        ];
+
+        function getParameterById(id){
+            const url = new URL(window.location.href);
+            return url.searchParams.get(id)
+        }
+        const playerId = getParameterById('id');
+
+        console.log(playerId)
+
+        let player;
+
+        for(let i=0; i<playersDetailes.length; i++){
+            if(playerId===playersDetailes[i].id){
+                player = playersDetailes[i]
+            }
+        }
+
+        console.log(player);
+
+        const displayPlayer = document.getElementById('playerDetails');
+
+        if(player){
+            displayPlayer.innerHTML = `
+            <h2>${player.playerName}</h2>
+            <ul>
+                <li><strong>Name: </strong>${player.playerName}</li>
+                <li><strong>Country: </strong>${player.country}</li>
+                <li><strong>Role: </strong>${player.role}</li>
+                </ul>
+            `
+        }
+        </script>
+    </body>
+</html>
