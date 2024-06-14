@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie Details</title>
+    </head>
+    <body>
+        
+        <header>
+            <h1><a href="index.html">Movie Logo</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="report.html">Report</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="movieDetails">
+
+            </section>
+        </main>
+
+        <footer>
+            <p>2024  Company Name. Developed by Gurnav. All rights reserved.</p>
+        </footer>
+        <script>
+ const  movieDatabase = [
+          {
+            id: "1",
+            name: "Movie 1",
+            genre: "Action",
+            details: "This is an action-packed movie.",
+            releaseDate: "2023-01-05",
+            director: "John Deo",
+          },
+          {
+            id: "2",
+            name: "Movie 2",
+            genre: "Drama",
+            details: "A dramatic story unfolds in this movie.",
+            releaseDate: "2023-02-20",
+            director: "John Smith",
+          },
+          {
+            id: "3",
+            name: "Movie 3",
+            genre: "Comedy",
+            details: "Get ready to laugh with this comedy.",
+            releaseDate: "2023-09-20",
+            director: "Jane Walk",
+          },
+        ];
+
+        function getParameterById(id){
+            const url = new URL(window.location.href);
+            return url.searchParams.get(id)
+        }
+        const movieId = getParameterById('id');
+
+        console.log(movieId);
+
+        let movie;
+
+        for(let i=0; i<movieDatabase.length; i++){
+            if(movieId === movieDatabase[i].id){
+                movie = movieDatabase[i]
+            }
+        }
+
+        console.log(movie);
+
+        const displayMovie = document.getElementById("movieDetails");
+
+        console.log(displayMovie)
+
+        if(movie){
+            displayMovie.innerHTML = `
+            <h2>${movie.name}</h2>
+            <ul>
+                <li><strong>Name: </strong>${movie.name}</li>
+                <li><strong>Genre: </strong>${movie.genre}</li>
+                <li><strong>Release Date: </strong>${movie.releaseDate}</li>
+                <li><strong>Director: </strong>${movie.director}</li>
+                <li><strong>Details: </strong>${movie.details}</li>
+                </ul>
+            `
+        }
+        else{
+            displayMovie.innerHTML = 'no movie found'
+        }
+        </script>
+    </body>
+</html>
