@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calorie Details</title>
+    </head>
+    <body>
+        <header>
+            <h1><a href="index.html">My Health LOGO</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="calorie.html">Calorie</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="calorieDetails">
+
+        </section>
+
+        <script>
+            // define one totalMeals variable to store the total number of meals.
+      let totalMeals = [
+        {id: "1", mealName:"BreakFast", calories:"200 Cal",mealItem:"Dosa"},
+        {id: "2", mealName:"Lunch",calories:"500 Cal",mealItem:"North Meal"},
+        {id: "3", mealName:"Dinner",calories:"700 Cal",mealItem:"Chicken Meal"},
+      ];
+
+
+
+      function getParameterById(id){
+        const url = new URL(window.location.href);
+        return url.searchParams.get(id)
+      }
+
+      const mealId = getParameterById('id');
+
+      console.log(mealId)
+
+      let meal ;
+
+      for(let i=0; i<totalMeals.length; i++){
+        if(mealId===totalMeals[i].id){
+            meal = totalMeals[i]
+        }
+      }
+
+      const calorieDetails = document.getElementById('calorieDetails');
+
+      console.log(meal)
+
+      if(meal){
+        calorieDetails.innerHTML = `
+          <h2>${meal.mealName}</h2>
+          <ul>
+            <li><strong>name:</strong>${meal.mealName}</li>
+            <li><strong>Item:</strong>${meal.mealItem}</li>
+            <li><strong>Calories:</strong>${meal.calories}</li>
+            </ul>
+        `
+
+      }
+      else{
+        calorieDetails.innerHTML = 'no meal found'
+      }
+
+        </script>
+    </body>
+</html>
