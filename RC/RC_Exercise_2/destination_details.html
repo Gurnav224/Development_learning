@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Details</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">Travel Database</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="travel_report.html">Travel Report</a></li>
+                <li><a href="travel_tips.html">Travel Tips</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="destinationDetails">
+
+        </section>
+    </main>
+
+    <script>
+        let destinationsDatabase = [
+        {
+          id: "1",
+          destinationName: "Paris",
+          duration: "7 days",
+          highlights: "Eiffel Tower, Louvre Museum",
+          details: "A wonderful trip to the romantic city of Paris."
+        },
+        {
+          id: "2",
+          destinationName: "Tokyo",
+          duration: "10 days",
+          highlights: "Tokyo Tower, Shibuya Crossing",
+          details: "Explore the bustling metropolis of Tokyo with its unique blend of tradition and modernity."
+        },
+        {
+          id: "3",
+          destinationName: "Rome",
+          duration: "8 days",
+          highlights: "Colosseum, Vatican City",
+          details: "Immerse yourself in the rich history and culture of Rome, the eternal city."
+        },
+        {
+          id: "4",
+          destinationName: "New York City",
+          duration: "7 days",
+          highlights: "Times Square, Central Park",
+          details: "Experience the vibrant energy of New York City, the city that never sleeps."
+        },
+        {
+          id: "5",
+          destinationName: "Cape Town",
+          duration: "6 days",
+          highlights: "Table Mountain, Robben Island",
+          details: "Discover the breathtaking landscapes and cultural diversity of Cape Town."
+        },
+        {
+          id: "6",
+          destinationName: "Sydney",
+          duration: "9 days",
+          highlights: "Sydney Opera House, Bondi Beach",
+          details: "Enjoy the iconic landmarks and natural beauty of Sydney, Australia."
+        }
+      ];
+
+      function getParameterById(id){
+        const url = new URL(window.location.href);
+        return url.searchParams.get(id)
+      }
+
+      const destinationId = getParameterById('id');
+
+      console.log(destinationId);
+
+      let destination;
+
+      for(let i=0; i<destinationsDatabase.length; i++){
+        if(destinationId === destinationsDatabase[i].id){
+          destination = destinationsDatabase[i]
+        }
+      }
+
+      console.log(destination);
+
+
+      const destinationDetails = document.querySelector('#destinationDetails');
+
+
+      destinationDetails.innerHTML = `
+      <div>
+        <h1>${destination.destinationName}</h1>
+        <p><strong>Destination: </strong>${destination.destinationName}</p>
+        <p><strong>Durations: </strong>${destination.duration}</p>
+        <p><strong>Highlights: </strong>${destination.highlights}</p>
+        <p><strong>Details: </strong>${destination.details}</p>
+        </div>
+      `
+
+    </script>
+</body>
+</html>
