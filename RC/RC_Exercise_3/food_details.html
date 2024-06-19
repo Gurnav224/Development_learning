@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">Food Database</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dishes.html">Dishes</a></li>
+                <li><a href="food_report.html">Food Report</a></li>
+                <li><a href="cooking_tips.html">Cooking Tips</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="food_details">
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;  Food Company, All rights reserved</p>
+    </footer>
+    <script>
+                let foodDatabase = [
+        {
+          id: "1",
+          name: "Pizza",
+          cuisine: "Italian",
+          ingredients: "Dough, Tomato Sauce, Cheese, Toppings",
+          details: "A delicious Italian dish with a variety of toppings."
+        },
+        {
+          id: "2",
+          name: "Sushi",
+          cuisine: "Japanese",
+          ingredients: "Rice, Fish, Seaweed, Vegetables",
+          details: "A traditional Japanese dish consisting of vinegared rice, raw fish, and other ingredients."
+        },
+        {
+          id: "3",
+          name: "Tacos",
+          cuisine: "Mexican",
+          ingredients: "Tortillas, Meat, Salsa, Toppings",
+          details: "A Mexican street food favorite with various fillings and toppings wrapped in soft tortillas."
+        },
+        {
+          id: "4",
+          name: "Pasta Carbonara",
+          cuisine: "Italian",
+          ingredients: "Pasta, Eggs, Cheese, Bacon",
+          details: "An Italian pasta dish with a creamy sauce made from eggs, cheese, and pancetta or bacon."
+        },
+        {
+          id: "5",
+          name: "Chocolate Cake",
+          cuisine: "Dessert",
+          ingredients: "Flour, Sugar, Cocoa, Eggs, Chocolate",
+          details: "A classic chocolate cake with a rich and moist texture, perfect for dessert lovers."
+        },
+        {
+          id: "6",
+          name: "Biryani",
+          cuisine: "Indian",
+          ingredients: "Rice, Meat, Spices, Vegetables",
+          details: "A flavorful Indian dish made with basmati rice, meat, and aromatic spices."
+        }
+      ];
+
+      // get parameter by id
+
+      function getParameterById(id){
+        const url = new URL(window.location.href);
+        return url.searchParams.get(id)
+      }
+
+      const dishId = getParameterById('id');
+
+      console.log(dishId);
+
+      let dish;
+
+      for(let i=0; i<foodDatabase.length; i++){
+        if(dishId === foodDatabase[i].id){
+            dish = foodDatabase[i]
+        }
+      }
+
+      console.log(dish);
+
+      const food_details = document.querySelector('#food_details');
+
+    food_details.innerHTML = `
+    <div>
+        <h1>${dish.name}</h1>
+        <ul>
+            <li><strong>Cusine: </strong>${dish.cuisine}</li>
+            <li><strong>Ingredients: </strong>${dish.ingredients}</li>
+            <li><strong>Details: </strong>${dish.details}</li>
+            </ul>
+        </div>
+    `
+
+    </script>
+</body>
+</html>
