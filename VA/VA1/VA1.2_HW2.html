@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA1.2_HW2</title>
+</head>
+<body>
+    <section>
+        <h1>Exercise 1: Display your Country</h1>
+        <label for="countryInput">Enter your Country Input</label>
+        <input type="text" id="countryInput">
+        <button id="countryBtn">Display Country</button>
+        <p id="countryResult"></p>
+    </section>
+
+    <section>
+        <h1>Exercise 2: Display website name in a h1 heading</h1>
+        <label for="websiteInput">Enter a website Name</label>
+        <input type="text" id="websiteInput">
+        <button id="websiteBtn">Display Heading</button>
+        <h1 id="websiteResult"></h1>
+    </section>
+
+
+    <section>
+        <h1>Exercise 3: Check for the student</h1>
+        <label for="studentInput">are you a student ? </label>
+        <input type="text" id="studentInput">
+        <button id="studentBtn">Display Response</button>
+        <p id="studentResult"></p>
+    </section>
+
+    <section>
+        <h1>Exercise 4: check for the minor or adult </h1>
+        <label for="ageInput">Enter a age input</label>
+        <input type="text" id="ageInput">
+        <button id="ageBtn">Check Age</button>
+        <p id="ageResult"></p>
+    </section>
+
+    <script>
+        // exercise 1
+        const countryInput = document.getElementById('countryInput');
+        const countBtn = document.getElementById('countryBtn');
+        const countryResult = document.getElementById('countryResult');
+
+        countBtn.addEventListener('click',function(){
+            const countryName = countryInput.value;
+            countryResult.textContent = `country is ${countryName}`
+        })
+
+        // exercise 2
+        const websiteInput = document.getElementById('websiteInput');
+        const websiteBtn = document.getElementById('websiteBtn');
+        const websiteResult = document.getElementById('websiteResult');
+
+        websiteBtn.addEventListener('click',function(){
+            const website = websiteInput.value;
+            websiteResult.textContent = website
+        })
+
+        // exercise 3
+        const studentInput = document.getElementById('studentInput');
+        const studentBtn = document.getElementById('studentBtn');
+        const studentResult = document.getElementById('studentResult');
+        studentBtn.addEventListener('click',function(){
+            const value = studentInput.value;
+
+            if(value.toLowerCase()==="yes"){
+                studentResult.textContent = 'Yes I am student'
+            }
+            else if(value.toLowerCase()==="no"){
+                studentResult.textContent = 'no I am not student'
+            }
+            else{
+                studentResult.textContent = 'anything else '
+            }
+        })
+
+        // exercise 4
+        const ageInput = document.getElementById('ageInput');
+        const ageBtn = document.getElementById('ageBtn');
+        const ageResult = document.getElementById('ageResult');
+
+        ageBtn.addEventListener('click',function(){
+            const age = ageInput.value;
+
+            if(age >= 18){
+                ageResult.textContent = 'you are adult'
+            }
+            else{
+                ageResult.textContent = 'you are minor'
+            }
+        })
+    </script>
+</body>
+</html>
