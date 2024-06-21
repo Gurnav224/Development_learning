@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1> Exercise 1: Greet User</h1>
+        <label for="userInput">Enter your name ?</label>
+        <input type="text" id="userInput">
+        <button id="greetButton">Greet</button>
+        <p id="greetResult"></p>
+    </section>
+
+    <section>
+        <h1>Exercise 2: Check for email is valid or not</h1>
+        <label for="emailInput">Enter your Email ? </label>
+        <input type="email" id="emailInput" >
+        <button id="emailButton">check</button>
+        <p id="emailResult"></p>
+    </section>
+
+    <section>
+        <h1>Exercise 3: Calculate Square of any Input Number</h1>
+        <label for="numberInput">Enter a Number input</label>
+        <input type="number" id="numberInput">
+        <button id="squareBtn">Calculate</button>
+        <p id="squareResult"></p>
+    </section>
+
+
+    <section>
+        <h1>Exercise 4: Enter a url and get the link</h1>
+        <label for="linkInput">Enter a Url</label>
+        <input type="text" id="linkInput">
+        <button id="linkButton">Get Link</button>
+        <p id="linkResult"></p>
+    </section>
+
+    <section>
+        <h1>Exercise 5: Count the word of the sentence:</h1>
+        <label for="sentenceInput">Enter a sentence</label>
+        <input type="text" id="sentenceInput">
+        <button id="count">Count</button>
+        <p id="wordResult"></p>
+    </section>
+
+    <script>
+        // exercise 1
+        const userInput = document.getElementById('userInput');
+        const greetButton = document.getElementById('greetButton');
+        const greetResult = document.getElementById('greetResult');
+
+            greetButton.addEventListener('click',function(){
+                const userName = userInput.value;
+                greetResult.textContent = `Good Evening, ${userName}`
+            })
+
+        // exercise 2
+
+        const emailInput = document.getElementById('emailInput');
+        const emailButton = document.getElementById('emailButton');
+        const emailResult = document.getElementById('emailResult');
+
+        emailButton.addEventListener('click',function(){
+
+            const emailValue = emailInput.value;
+
+            const atIndex = emailValue.indexOf("@");
+            const dotIndex = emailValue.indexOf('.');
+
+            if(atIndex > 0 && dotIndex > atIndex){
+                emailResult.textContent = `Email is valid , ${emailValue}`
+            }
+            else{
+                emailResult.textContent = 'Email is not valid'
+            }
+
+        })
+
+        // exercise 3
+
+        const numberInput = document.getElementById('numberInput');
+        const squareButton = document.getElementById('squareBtn');
+        const squareResult = document.getElementById('squareResult');
+
+
+        squareButton.addEventListener('click',function(){
+            const number = numberInput.value;
+
+            squareResult.textContent = `square of ${number} is equal to ${number*number}`
+        })
+
+
+        // exercise 4
+
+        const linkInput = document.getElementById('linkInput');
+        const linkButton = document.getElementById('linkButton');
+        const linkResult = document.getElementById('linkResult');
+
+        linkButton.addEventListener('click',function(){
+            const linkValue= linkInput.value;
+            linkResult.innerHTML     = `<a href="${linkValue}" target="_blank"> ${linkValue} </a>`
+        })
+
+        // exercise 5
+
+        const sentenceInput = document.getElementById('sentenceInput');
+        const countBtn = document.getElementById('count');
+        const wordResult = document.getElementById('wordResult');
+
+        countBtn.addEventListener('click',function(){
+            const sentence = sentenceInput.value;
+            const words = sentence.split(" ").length;
+
+            wordResult.textContent = `Number of words in Sentence ${words}`
+        })
+
+    </script>
+</body>
+</html>
