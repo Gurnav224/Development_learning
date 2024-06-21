@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <header class="bg-black text-white py-2">
+    <nav class="navbar  navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Food Database</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="dishes.html">Dishes</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="food_report.html">Food Report</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="cooking_tips.html">Cooking Tips</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+</header>
+    <main class="container my-4">
+        <section id="food_details">
+            
+        </section>
+    </main>
+
+   
+    <script>
+                let foodDatabase = [
+        {
+          id: "1",
+          name: "Pizza",
+          cuisine: "Italian",
+          ingredients: "Dough, Tomato Sauce, Cheese, Toppings",
+          details: "A delicious Italian dish with a variety of toppings."
+        },
+        {
+          id: "2",
+          name: "Sushi",
+          cuisine: "Japanese",
+          ingredients: "Rice, Fish, Seaweed, Vegetables",
+          details: "A traditional Japanese dish consisting of vinegared rice, raw fish, and other ingredients."
+        },
+        {
+          id: "3",
+          name: "Tacos",
+          cuisine: "Mexican",
+          ingredients: "Tortillas, Meat, Salsa, Toppings",
+          details: "A Mexican street food favorite with various fillings and toppings wrapped in soft tortillas."
+        },
+        {
+          id: "4",
+          name: "Pasta Carbonara",
+          cuisine: "Italian",
+          ingredients: "Pasta, Eggs, Cheese, Bacon",
+          details: "An Italian pasta dish with a creamy sauce made from eggs, cheese, and pancetta or bacon."
+        },
+        {
+          id: "5",
+          name: "Chocolate Cake",
+          cuisine: "Dessert",
+          ingredients: "Flour, Sugar, Cocoa, Eggs, Chocolate",
+          details: "A classic chocolate cake with a rich and moist texture, perfect for dessert lovers."
+        },
+        {
+          id: "6",
+          name: "Biryani",
+          cuisine: "Indian",
+          ingredients: "Rice, Meat, Spices, Vegetables",
+          details: "A flavorful Indian dish made with basmati rice, meat, and aromatic spices."
+        }
+      ];
+
+      // get parameter by id
+
+      function getParameterById(id){
+        const url = new URL(window.location.href);
+        return url.searchParams.get(id)
+      }
+
+      const dishId = getParameterById('id');
+
+      console.log(dishId);
+
+      let dish;
+
+      for(let i=0; i<foodDatabase.length; i++){
+        if(dishId === foodDatabase[i].id){
+            dish = foodDatabase[i]
+        }
+      }
+
+      console.log(dish);
+
+      const food_details = document.querySelector('#food_details');
+
+    food_details.innerHTML = `
+    <div class="card">
+      <div class="card-header bg-black  text-white">
+        <h1>${dish.name}</h1>
+        </div>
+           <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Cusine: </strong>${dish.cuisine}</li>
+            <li class="list-group-item"><strong>Ingredients: </strong>${dish.ingredients}</li>
+            <li class="list-group-item"><strong>Details: </strong>${dish.details}</li>
+            </ul>
+       
+        </div>
+    `
+
+    </script>
+</body>
+</html>
