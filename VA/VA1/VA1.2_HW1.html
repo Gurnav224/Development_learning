@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA1.2_HW1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
+</head>
+<body>
+    <main class="container text-left my-4">
+
+    <section class="py-3">
+        <h1>Exercise 1: Check your Age is valid or not (18-100)</h1>
+        <label for="ageInput">Enter your Age ? </label>
+        <input  type="text" id="ageInput">
+        <button  id="ageButton">Check</button>
+        <p id="ageResult"></p>
+    </section>
+
+    <section class="py-3">
+        <h1>Exercise 2: Enter Favourite Animal ? </h1>
+        <label for="animalInput">Animal Name</label>
+        <input id="animalInput" type="text">
+        <button id="animalButton">Display Animal</button>
+        <p id="animalResult"></p>
+    </section>
+
+    <section class="py-3">
+        <h1>Exercise 3: your favourite color </h1>
+        <label for="colorInput">Enter your favourite Color ? </label>
+        <input type="text" id="colorInput">
+        <button id="colorBtn">Display Color</button>
+        <p id="colorResult"></p>
+    </section>
+
+
+    <section class="py-3">
+        <h1>Exercise 4: check for yes or no ? </h1>
+        <label for="yesOrNoInput">Yes/No Question</label>
+        <input type="text" id="yesOrNoInput">
+        <button id="yesOrNoButton">Display message</button>
+        <p id="yesOrNoResult"></p>
+        </section>
+
+        <section class="py-3">
+            <h1>Exercise 5: check for even number</h1>
+            <label for="numberInput">Enter a number  </label>
+            <input type="text" id="numberInput">
+            <button id="numberBtn">Check Number</button>
+            <p id="numberResult"></p>
+        </section>
+    </main>
+    <script>
+        // exercise 1
+        const ageInput = document.getElementById('ageInput');
+        const ageButton = document.getElementById('ageButton');
+        const ageResult = document.getElementById('ageResult');
+
+        ageButton.addEventListener('click',function(){
+            const ageValue = ageInput.value;
+
+            if(ageValue >= 18 && ageValue <=100){
+                ageResult.textContent = `your age is valid, ${ageValue}`
+            }
+            else{
+                ageResult.textContent = `your age is not valid`
+            }
+        })
+
+        // exercise 2
+        const animalInput = document.getElementById('animalInput');
+        const animalButton = document.getElementById('animalButton');
+        const animalResult = document.getElementById('animalResult');
+
+        animalButton.addEventListener('click',function(){
+            const animal = animalInput.value;
+            animalResult.textContent = `Your favourite Animal , ${animal}`
+        })
+
+        // exercise 3
+        const colorInput = document.getElementById('colorInput');
+        const colorBtn = document.getElementById('colorBtn');
+        const colorResult = document.getElementById('colorResult');
+
+        colorBtn.addEventListener('click',function(){
+            const color = colorInput.value;
+            colorResult.textContent = `your favourite color , ${color}`
+        })
+
+        // exercise 4
+        const yesOrNoInput = document.getElementById('yesOrNoInput');
+        const yesOrNoButton = document.getElementById('yesOrNoButton');
+        const yesOrNoResult = document.getElementById('yesOrNoResult');
+
+        yesOrNoButton.addEventListener('click',function(){
+            const value = yesOrNoInput.value;
+
+            if(value.toLowerCase()===value.toLowerCase()){
+                yesOrNoResult.textContent = `your input is ${value}`
+            }
+            else{
+                yesOrNoResult.textContent = `your input is ${value}`
+            }
+        })
+
+        // exercise 5
+        const numberInput = document.getElementById('numberInput');
+        const numberBtn = document.getElementById('numberBtn');
+        const numberResult = document.getElementById('numberResult');
+
+        numberBtn.addEventListener('click',function(){
+            const number = numberInput.value;
+
+            if(number%2===0){
+                numberResult.textContent = `number is ${number} even`
+            }
+            else{
+                numberResult.textContent = `number is ${number} odd`
+            }
+
+        })
+    </script>
+</body>
+</html>
