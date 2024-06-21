@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+</head>
+<body>
+  <header class="bg-dark  py-4">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <div class="container d-flex justify-content-between">
+
+            <a class="navbar-brand text-white" href="index.html">Travel Database</a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white-50" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="destinations.html">Destinations</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="travel_report.html">Travel
+                            Report</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="travel_tips.html">Travel Tips</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <main class="container my-4">
+      <h1 class="display-3 py-4">Destination Details</h1>
+        <section id="destinationDetails">
+
+        </section>
+    </main>
+
+    <script>
+        let destinationsDatabase = [
+        {
+          id: "1",
+          destinationName: "Paris",
+          duration: "7 days",
+          highlights: "Eiffel Tower, Louvre Museum",
+          details: "A wonderful trip to the romantic city of Paris."
+        },
+        {
+          id: "2",
+          destinationName: "Tokyo",
+          duration: "10 days",
+          highlights: "Tokyo Tower, Shibuya Crossing",
+          details: "Explore the bustling metropolis of Tokyo with its unique blend of tradition and modernity."
+        },
+        {
+          id: "3",
+          destinationName: "Rome",
+          duration: "8 days",
+          highlights: "Colosseum, Vatican City",
+          details: "Immerse yourself in the rich history and culture of Rome, the eternal city."
+        },
+        {
+          id: "4",
+          destinationName: "New York City",
+          duration: "7 days",
+          highlights: "Times Square, Central Park",
+          details: "Experience the vibrant energy of New York City, the city that never sleeps."
+        },
+        {
+          id: "5",
+          destinationName: "Cape Town",
+          duration: "6 days",
+          highlights: "Table Mountain, Robben Island",
+          details: "Discover the breathtaking landscapes and cultural diversity of Cape Town."
+        },
+        {
+          id: "6",
+          destinationName: "Sydney",
+          duration: "9 days",
+          highlights: "Sydney Opera House, Bondi Beach",
+          details: "Enjoy the iconic landmarks and natural beauty of Sydney, Australia."
+        }
+      ];
+
+      function getParameterById(id){
+        const url = new URL(window.location.href);
+        return url.searchParams.get(id)
+      }
+
+      const destinationId = getParameterById('id');
+
+      console.log(destinationId);
+
+      let destination;
+
+      for(let i=0; i<destinationsDatabase.length; i++){
+        if(destinationId === destinationsDatabase[i].id){
+          destination = destinationsDatabase[i]
+        }
+      }
+
+      console.log(destination);
+
+
+      const destinationDetails = document.querySelector('#destinationDetails');
+
+
+      destinationDetails.innerHTML = `
+      <div class="card">
+        <div class="card-body">
+        <h2 class="card-title">${destination.destinationName}</h2>
+        <p class="card-text"><strong>Destination: </strong> ${destination.destinationName}</p>
+        <p class="card-text"><strong>Durations: </strong>${destination.duration}</p>
+        <p class="card-text"><strong>Highlights: </strong>${destination.highlights}</p>
+        <p class="card-text"><strong>Details: </strong>${destination.details}</p>
+        </div>
+        
+        </div>
+      `
+
+    </script>
+</body>
+</html>
