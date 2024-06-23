@@ -1,0 +1,145 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>VA1.4_HW2</title>
+    </head>
+    <body>
+        <section>
+        <label for="textInput">What is Javascript</label>
+        <br />
+        <textarea name="" id="textInput" cols="30" rows="10"></textarea>
+        <br />
+        <button id="displayAnswer">Display Answer</button>
+        <button id="countWord">Count Words</button>
+        <p id="javascriptResult"></p>
+        <p id="wordsResult"></p>
+        </section>
+
+        <section>
+        <p>Please add your todo separated by space eg. buy milk, go for a walk</p>
+        <label for="todoInput">List todos</label>
+        <br />
+        <textarea name="" id="todoInput" cols="30" rows="10"></textarea>
+        <br />
+        <button id="todoBtn">Display Todo</button>
+        <button id="countTodo">Count Todo</button>
+        <ol id="showTodo"></ol>
+        </section>
+
+        <section>
+        <label for="passwordInput">Enter a password</label>
+        <input type="text" id="passwordInput" />
+        <button id="passBtn">Display password</button>
+        <button id="checkPassBtn">Check password</button>
+        <p id="showPass"></p>
+        </section>
+
+        <script>
+        const textInput = document.getElementById("textInput");
+        const displayAnswer = document.getElementById("displayAnswer");
+        const countWordBtn = document.getElementById("countWord");
+        const javascriptResult = document.getElementById("javascriptResult");
+        const wordsResult = document.getElementById("wordsResult");
+
+        displayAnswer.addEventListener("click", function () {
+            const text = textInput.value;
+            javascriptResult.textContent = `Your Answer: ${text}`;
+        });
+
+        countWordBtn.addEventListener("click", function () {
+            const wordlen = textInput.value.split(" ").length;
+            console.log(wordlen);
+            console.log(wordlen < 7);
+            if (wordlen < 7) {
+            wordsResult.textContent = "words length is less than 7, Good";
+            wordsResult.style.color = "green";
+            javascriptResult.style.color = "green";
+            } else {
+            wordsResult.textContent =
+                "make sure that words length is less than 7, Do Again";
+            wordsResult.style.color = "red";
+            javascriptResult.style.color = "red";
+            }
+        });
+
+        const todoInput = document.getElementById("todoInput");
+        const todoBtn = document.getElementById("todoBtn");
+        const countTodo = document.getElementById("countTodo");
+        const showTodo = document.getElementById("showTodo");
+
+        todoBtn.addEventListener("click", function () {
+            const todo = todoInput.value.trim();
+
+            if (todo === "") {
+            showTodo.innerHTML =
+                "<span style='color: red;'>Input cannot be empty. Please add a todo item.</span>";
+            return;
+            }
+
+            const todoArr = todo
+            .split(",")
+            .map((item) => item.trim())
+            .filter((item) => item);
+
+            if (todoArr.length < 2) {
+            showTodo.innerHTML =
+                "<span style='color: red;'>Please add at least 5 todo items, separated by commas.</span>";
+            return;
+            }
+
+            showTodo.innerHTML = ""; // Clear previous content
+
+            for (let i = 0; i < todoArr.length; i++) {
+            let li = document.createElement("li");
+            li.textContent = todoArr[i];
+            showTodo.appendChild(li);
+            }
+
+            showTodo.style.color = "green";
+
+        });
+
+        countTodo.addEventListener("click", function () {
+            const todo = todoInput.value.split(",").length;
+            showTodo.textContent = `total number of todos, ${todo}`;
+            showTodo.style.color = "green";
+        });
+
+        const passwordInput = document.querySelector("#passwordInput");
+        const passBtn = document.querySelector("#passBtn");
+        const checkPassBtn = document.querySelector("#checkPassBtn");
+        const showPass = document.querySelector("#showPass");
+
+        passBtn.addEventListener("click", function () {
+            showPass.textContent = passwordInput.value;
+            showPass.style.color = "black";
+        });
+
+        checkPassBtn.addEventListener("click", function () {
+            const password = passwordInput.value;
+
+            showPass.style.color = "black";
+
+            if (
+            password.length >= 5 &&
+            (password.includes("!") ||
+                password.includes("@") ||
+                password.includes("$"))
+            ) {
+            showPass.textContent = "password is valid";
+            showPass.style.color = "green";
+            } else if (password.length < 5) {
+            showPass.textContent =
+                "Invalid Password,Password length should be greater than 5 Password must contain '@' or '!' or'$'' ";
+            showPass.style.color = "red";
+            } else {
+            showPass.textContent =
+                "invalid Password, your password must contains @, !,$";
+            showPass.style.color = "red";
+            }
+        });
+        </script>
+    </body>
+    </html>
