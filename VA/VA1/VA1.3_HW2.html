@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA1.3_HW2</title>
+</head>
+<body>
+    <section>
+        <label for="reviewInput">Enter your book review</label>
+        <br>
+        <textarea rows="10"  cols="40" type="text" id="reviewInput"> </textarea>
+        <br>
+        <button id="reviewBtn">review</button>
+        <br>
+        <p id="reviewResult"></p>
+    </section>
+    <section>
+        <label for="bioInput">Enter your personal bio</label>
+        <br>
+        <textarea cols="40" rows="10" type="text" id="bioInput"></textarea>
+        <br>
+        <button id="bioBtn">Display bio </button>
+        <br>
+        <p id="bioResult"></p>
+    </section>
+    <section>
+        <label for="diaryInput">Enter your personal Diary:</label>
+        <br>
+        <textarea rows="10" cols="40" type="text" id="diaryInput"> </textarea>
+        <br>
+        <button id="diaryBtn">Display Diary entery </button>
+        <br>
+        <p id="diaryResult"></p>
+    </section>
+
+    <script>
+        const reviewInput = document.getElementById('reviewInput');
+        const reviewBtn = document.getElementById('reviewBtn');
+        const reviewResult = document.getElementById('reviewResult');
+
+        reviewBtn.addEventListener('click',function(){
+            const review = reviewInput.value;
+            reviewResult.textContent = review
+        })
+
+        const bioInput = document.getElementById('bioInput');
+        const bioBtn = document.getElementById('bioBtn');
+        const bioResult = document.getElementById('bioResult');
+
+        bioBtn.addEventListener('click',function(){
+            const bio = bioInput.value;
+            bioResult.innerHTML = `<em>Your Peronal Bio: </em> ${bio}`
+        })
+
+        const diaryInput = document.getElementById('diaryInput');
+        const diaryBtn = document.getElementById('diaryBtn');
+        const diaryResult = document.getElementById('diaryResult');
+
+        diaryBtn.addEventListener('click',function(){
+            const diary = diaryInput.value;
+            let diaryDate = new Date().toLocaleString()
+            diaryResult.innerHTML = `<p><b>${diaryDate}</b></p> 
+            <p>${diary}</p>`
+        })
+    </script>
+
+</body>
+</html>
