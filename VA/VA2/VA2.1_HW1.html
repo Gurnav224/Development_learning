@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>Program 1:</h1>
+        <label>select multiple sports:</label>
+        <input type="checkbox" name="sports" value="Soccer">Soccer
+        <input type="checkbox" name="sports" value="BasketBall">BasketBall
+        <input type="checkbox" name="sports" value="Tennis">Tennis
+        <button id="displayBtn">Display Selected Sports</button>
+        <p id="sportsResult"></p>
+    </section>
+
+
+    <section>
+        <h1>Program 2:</h1>
+        <label>choose multiple vacations destinations</label>
+        <input type="checkbox" name="destination" value="Beach" > Beach
+        <input type="checkbox" name="destination" value="Mountains"> Mountains
+        <input type="checkbox" name="destination" value="City">  City
+        <button id="destinationBtn">Display Selected destination</button>
+        <p id="destinationResult"></p>
+    </section>
+
+    <section>
+        <h1>Program 3: </h1>
+        <label>Select multiple movie genres: </label>
+        <input type="checkbox" name="genre" value="Action">Action
+        <input type="checkbox" name="genre" value="Comedy">Comedy
+        <input type="checkbox" name="genre" value="Drama">Drama
+        <button id="movieBtn">Display Selected Movie</button>
+        <p id="movieResult"></p>
+    </section>
+
+    <section>
+        <h1>Program 4: </h1>
+        <label>choose multiple items from a restaurant menu</label>
+        <input type="checkbox" name="menu" value="Burger">Burger
+        <input type="checkbox" name="menu" value="Pizza">Pizza
+        <input type="checkbox" name="menu" value="Salad">Salad
+        <button id="menuBtn">Display selected Items: </button>
+        <p id="menuResult"></p>
+    </section>
+
+    <section>
+        <h1>Program 5:</h1>
+        <label>Select multiple fruits:</label>
+        <input type="checkbox" name="fruit" value="Apple" >Apple
+        <input type="checkbox" name="fruit" value="Banana">Banana
+        <input type="checkbox" name="fruit" value="Orange">Orange
+        <button id="fruitBtn">Display Selected Fruit</button>
+        <p id="fruitResult"></p>
+    </section>
+
+    <script>
+        const sportsCheckBox = document.getElementsByName("sports");
+        const sportsResult = document.getElementById("sportsResult");
+        const displayBtn  = document.getElementById('displayBtn')
+
+        for(let i=0; i<sportsCheckBox.length; i++){
+            sportsCheckBox[i].addEventListener('change',function(){
+                const selectSports = [];
+
+                for(let j=0; j<sportsCheckBox.length; j++){
+                    if(sportsCheckBox[j].checked){
+                        selectSports.push(sportsCheckBox[j].value)
+                    }
+                }
+
+                displayBtn.addEventListener('click',function(){
+
+                    sportsResult.textContent = "selected sports, "+selectSports.join(',')
+                })
+            
+            })
+        }
+
+        const destinationCheckBox = document.getElementsByName('destination');
+        const destinationResult = document.getElementById('destinationResult');
+        const destinationBtn = document.getElementById('destinationBtn')
+        for(let i=0; i<destinationCheckBox.length; i++){
+            destinationCheckBox[i].addEventListener('change',function(){
+                let selectDestination = [];
+
+                for(let j=0; j<destinationCheckBox.length; j++){
+                    if(destinationCheckBox[j].checked){
+                        selectDestination.push(destinationCheckBox[j].value)
+                    }
+                }
+
+                console.log((selectDestination))
+
+                destinationBtn.addEventListener('click',function(){
+                    destinationResult.textContent = 'selected Destination '+ selectDestination.join(', ')
+                })
+
+
+            })
+        }
+
+        const movieCheckBoxes = document.getElementsByName('genre');
+        const movieBtn = document.getElementById('movieBtn');
+        const movieResult = document.getElementById('movieResult');
+
+
+        for(let i=0; i<movieCheckBoxes.length; i++){
+            movieCheckBoxes[i].addEventListener('change',function(){
+                let selectMovie = [];
+                for(let j=0; j<movieCheckBoxes.length; j++){
+                    if(movieCheckBoxes[j].checked){
+                        selectMovie.push(movieCheckBoxes[j].value)
+                    }
+                }
+                movieBtn.addEventListener('click',function(){
+                movieResult.textContent = `selected genre , ${selectMovie.join(", ")}`
+            })
+
+            })
+
+
+          
+        }
+
+
+        const menuCheckbox = document.getElementsByName('menu');
+        const menuBtn = document.getElementById('menuBtn');
+        const menuResult = document.getElementById('menuResult');
+
+
+        for(let i=0; i<menuCheckbox.length; i++){
+            menuCheckbox[i].addEventListener('change',function(){
+                let selectMenu = [];
+                for(let j=0; j<menuCheckbox.length; j++){
+                    if(menuCheckbox[j].checked){
+                        selectMenu.push(menuCheckbox[j].value)
+                    }
+                }
+                menuBtn.addEventListener('click',function(){
+                    menuResult.textContent = `selected menu , ${selectMenu.join(', ')}`
+                })
+            })
+        }
+
+        const fruitCheckbox = document.getElementsByName('fruit');
+        const fruitBtn  = document.getElementById('fruitBtn');
+        const fruitResult  = document.getElementById('fruitResult');
+
+
+        for(let i=0; i<fruitCheckbox.length; i++){
+            fruitCheckbox[i].addEventListener('click',function(){
+                let selectFruit = [];
+
+                for(let j=0; j<fruitCheckbox.length; j++){
+                    if(fruitCheckbox[j].checked){
+                        selectFruit.push(fruitCheckbox[j].value)
+                    }
+                }
+
+                fruitBtn.addEventListener('click',function(){
+                    fruitResult.textContent = 'selected fruite, '+ selectFruit.join(', ')
+                })
+            })
+        }
+
+    </script>
+</body>
+</html>
