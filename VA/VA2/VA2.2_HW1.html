@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA2.2_HW1</title>
+</head>
+<body>
+    <section>
+        <h1>Program 1:</h1>
+        <label>select a music genre: </label>
+        <input type="radio" name="genre" value="Pop">Pop
+        <input type="radio" name="genre" value="Rock">Rock
+        <input type="radio" name="genre" value="hip-hop">Hip-hop
+        <p id="genreResult"></p>
+    </section>
+
+    <section>
+        <h2>Program 2:</h2>
+        <label>choose a language preference</label>
+        <input type="radio" name="language" value="English">English
+        <input type="radio" name="language" value="Spanish">Spanish
+        <input type="radio" name="language" value="French">French
+        <p id="languageResult"></p>
+    </section>
+
+
+    <section>
+        <h1>Program 3:</h1>
+        <label>Select a job Role:</label>
+        <input type="radio" name="job" value="Developer">Developer
+        <input type="radio" name="job" value="Desginer">Desginer
+        <input type="radio" name="job" value="Manger">Manger
+        <button id="roleBtn">Display Selected Job Role</button>
+        <p id="jobResult"></p>
+    </section>
+
+    <section>
+        <h1>Program 4:</h1>
+        <label>choose a favourite hobby</label>
+        <input type="radio" name="hobby" value="Reading">Reading
+        <input type="radio" name="hobby" value="Gardening">Gardening
+        <input type="radio" name="hobby" value="Sports">Sports
+        <button id="hobbySelectedBtn">Display Selected hobby</button>
+        <p id="hobbyResult"></p>
+    </section>
+
+    <section>
+        <h1>Program 5:</h1>
+        <label>select clothing style:</label>
+        <input type="radio"  name="style" value="Casual"/>Casual
+        <input type="radio"  name="style" value="Formal"/>Formal
+        <input type="radio"  name="style" value="Sporty"/>Sporty
+        <button id="clothingBtn">Display Selected Style</button>
+        <p id="styleResult"></p>
+    </section>
+
+    <script>
+
+        const genreRadioButton = document.getElementsByName('genre');
+        const genreResult = document.getElementById('genreResult');
+
+        for(let i=0; i<genreRadioButton.length; i++){
+            genreRadioButton[i].addEventListener('change',function(){
+                const value = document.querySelector('input[type="radio"]:checked').value;
+                genreResult.textContent = `selected genre, ${value}`
+            })
+        }
+
+        const languageRadioButton = document.getElementsByName('language');
+        const languageResult = document.getElementById('languageResult');
+
+        for(let i=0; i<languageRadioButton.length; i++){
+            languageRadioButton[i].addEventListener('change',function(){
+                const value = document.querySelector('input[type="radio"]:checked').value;
+                languageResult.textContent = `Genre: ${value}`
+            })
+        }
+        const jobRadioBtn = document.getElementsByName('job');
+        const jobResult = document.getElementById('jobResult');
+        const roleBtn = document.getElementById('roleBtn')
+
+        for(let i=0; i<jobRadioBtn.length; i++){
+            jobRadioBtn[i].addEventListener('change',function(){
+                roleBtn.addEventListener('click',function(){
+                    const value = document.querySelector('input[type="radio"]:checked').value;
+
+                    jobResult.textContent = `Role: ${value}`
+                })
+            })
+        }
+
+        const hobbyRadioButton = document.getElementsByName('hobby');
+        const hobbySelectedBtn = document.getElementById('hobbySelectedBtn');
+        const hobbyResult = document.getElementById('hobbyResult');
+
+        for(let i=0; i<hobbyRadioButton.length; i++){
+            hobbyRadioButton[i].addEventListener('change',function(){
+                hobbySelectedBtn.addEventListener('click',function(){
+                    const value = document.querySelector('input[type="radio"]:checked').value;
+                    hobbyResult.textContent = `Hobby , ${value}`
+                })
+            })
+        }
+
+        const styleRadioButton = document.getElementsByName('style');
+        const clothingBtn = document.getElementById('clothingBtn');
+        const styleResult = document.getElementById('styleResult');
+
+
+        for(let i=0; i<styleRadioButton.length; i++){
+            styleRadioButton[i].addEventListener('change',function(){
+                clothingBtn.addEventListener('click',function(){
+                    const value = document.querySelector('input[type="radio"]:checked').value;
+                    styleResult.textContent = `Clothing Style, ${value}`
+                })
+            })
+        }
+
+    </script>
+</body>
+</html>

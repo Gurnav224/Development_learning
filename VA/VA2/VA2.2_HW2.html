@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA2.2_HW2</title>
+</head>
+<body>
+
+    <section>
+        <h1>Program 1:</h1>
+        <label>select a mood</label> 
+        <input type="radio" name="mood" value="Happy" />Happy
+        <input type="radio" name="mood" value="Sad" />Sad
+        <input type="radio" name="mood" value="Excited" />Excited
+        <p id="moodResult"></p>
+    </section>
+    
+    <section>
+        <h1>Program 2:</h1>
+        <label>choose a book genre:</label>
+        <input type="radio" name="book" value="Mystery">Mystery
+        <input type="radio" name="book" value="Romance">Romance
+        <input type="radio" name="book" value="Science Fiction">Science Fiction
+        <button id="bookDisplayBtn">Display book Recommendation</button>
+        <p id="bookResult"></p>
+    </section>
+
+    <section>
+        <h1>Program 3:</h1>
+        <label>select a clothing style:</label>
+        <input type="radio" name="clothing"  value="Casual">Casual
+        <input type="radio" name="clothing"  value="Formal">Formal
+        <input type="radio" name="clothing"  value="Sporty">Sporty
+        <button id="displayStyle">Display Selected Style</button>
+        <p id="styleResult"></p>
+    </section>
+
+    <section>
+        <h1>Program 4:</h1>
+        <label>choose a weather preference</label>
+        <input type="radio" name="weather" value="Sunny">Sunny
+        <input type="radio" name="weather" value="Rainy">Rainy
+        <input type="radio" name="weather" value="Snowy">Snowy
+        <button id="weatherBtn">Display Selected weather preference</button>
+        <p id="weatherResult"></p>
+    </section>
+
+    <section>
+        <h1>Program 5:</h1>
+        <label>Select a travel mode</label>
+        <input type="radio" name="travel-mode" value="Car">Car
+        <input type="radio" name="travel-mode" value="Train">Train
+        <input type="radio" name="travel-mode" value="Plane">Plane
+        <p id="travelResult"></p>
+    </section>
+
+    <script>
+        const moodRadioBtn = document.getElementsByName('mood');
+        const moodResult = document.getElementById('moodResult');
+
+        for(let i=0; i<moodRadioBtn.length; i++){
+            moodRadioBtn[i].addEventListener('change',function(){
+                const value = document.querySelector('input[type="radio"]:checked').value;
+                moodResult.textContent = `Mood , ${value}`
+            })
+        }
+
+
+        const bookRadioBtn = document.getElementsByName('book');
+        const bookDisplayBtn = document.getElementById('bookDisplayBtn');
+        const bookResult = document.getElementById('bookResult');
+
+
+        for(let i=0; i<bookRadioBtn.length; i++){
+            bookRadioBtn[i].addEventListener('change',function(){
+                bookDisplayBtn.addEventListener('click',function(){
+                    const value = document.querySelector('input[type="radio"]:checked').value;
+                    bookResult.textContent = `Book , ${value}`
+                })
+            })
+        }
+
+        const clothing = document.getElementsByName('clothing');
+        const displayStyle = document.getElementById('displayStyle');
+        const styleResult = document.getElementById('styleResult');
+
+
+        for(let i=0; i<clothing.length; i++){
+            clothing[i].addEventListener('change',function(){
+                displayStyle.addEventListener('click',function(){
+                    const value = document.querySelector('input[type="radio"]:checked').value;
+                    styleResult.textContent = `clohting style, ${value}`
+                })
+            })
+        }
+
+        const weatherRadioButton = document.getElementsByName('weather');
+        const weatherBtn = document.getElementById('weatherBtn');
+        const weatherResult = document.getElementById('weatherResult');
+
+        for(let i=0; i<weatherRadioButton.length; i++){
+            weatherRadioButton[i].addEventListener('change',function(){
+                weatherBtn.addEventListener('click',function(){
+                    const value = document.querySelector('input[type="radio"]:checked').value;
+                    weatherResult.textContent = `weather , ${value}`
+                })
+            })
+        }
+
+        const travelRadioButton = document.getElementsByName('travel-mode');
+        const travelResult = document.getElementById('travelResult');
+
+
+        for(let i=0; i<travelRadioButton.length; i++){
+            travelRadioButton[i].addEventListener('change',function(){
+                const value = document.querySelector('input[type="radio"]:checked').value;
+            travelResult.textContent = `travel mode, ${value}`
+            })
+        }
+
+    </script>
+</body>
+</html>
