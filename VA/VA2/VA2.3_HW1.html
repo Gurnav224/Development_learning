@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VA2.3_HW1</title>
+  </head>
+  <body>
+    <section>
+      <label>choose a movie genre:</label>
+      <select name="" id="movieSelect">
+        <option value="Action">Action</option>
+        <option value="Drama">Drama</option>
+        <option value="Comedy">Comedy</option>
+      </select>
+      <p id="output"></p>
+    </section>
+
+    <section>
+      <label>select a weather conditions</label>
+      <select name="" id="weather">
+        <option value="Sunny">Sunny</option>
+        <option value="Rainy">Rainy</option>
+        <option value="Cloudy">Cloudy</option>
+        <option value="Snowy">Snowy</option>
+        <option value="Windy">Windy</option>
+        <option value="Stormy">Stromy</option>
+        <option value="Foggy">Foggy</option>
+        <option value="Hot">Hot</option>
+        <option value="Cold">Cold</option>
+      </select>
+      <p id="weatherResult"></p>
+    </section>
+
+    <section>
+      <label>select a language</label>
+      <select name="" id="selectLanguage">
+        <option value="English">English</option>
+        <option value="Spanish">Spanish</option>
+        <option value="German">German</option>
+        <option value="Italian">Italian</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Russian">Russian</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Arabic">Arabic</option>
+      </select>
+      <button id="greetBtn">Display Greeting</button>
+      <p id="languageResult"></p>
+    </section>
+
+    <section>
+      <label>choose a musical instrument</label>
+      <select id="instrument">
+        <option value="Piano">Piano</option>
+        <option value="Guitar">Guitar</option>
+        <option value="Violin">Violin</option>
+        <option value="Flute">Flute</option>
+        <option value="Drums">Drums</option>
+        <option value="Saxophone">Saxophone</option>
+        <option value="Trumpet">Trumpet</option>
+        <option value="Harp">Harp</option>
+        <option value="Clarinet">Clarinet</option>
+        <option value="Cello">Cello</option>
+      </select>
+      <button id="instrumentBtn">Display Instrument INFO</button>
+      <p id="instrumentResult"></p>
+    </section>
+
+    <section>
+      <label>select a pet</label>
+      <select name="" id="petSelect">
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+        <option value="Fish">Fish</option>
+      </select>
+      <button id="petBtn">Display Pet Descripton</button>
+      <p id="petResult"></p>
+    </section>
+
+    <script>
+      const movieSelect = document.querySelector("#movieSelect");
+      const movieResult = document.getElementById("output");
+
+      movieSelect.addEventListener("change", function () {
+        const genre = movieSelect.value;
+        movieResult.textContent = `Recommended, ${genre}`;
+      });
+
+      const weatherSelect = document.querySelector("#weather");
+      const weatherResult = document.querySelector("#weatherResult");
+
+      weatherSelect.addEventListener("change", function () {
+        const weather = weatherSelect.value;
+        const weatherActivities = {
+          Sunny: "Go for a picnic",
+          Cloudy: "Read a book indoors",
+          Rainy: "Watch a movie",
+          Snowy: "Build a snowman",
+          Windy: "Fly a kite",
+          Stormy: "Stay indoors and stay safe",
+          Foggy: "Go for a walk with caution",
+          Hot: "Go swimming",
+          Cold: "Drink hot chocolate",
+        };
+        weatherResult.textContent = `Activity Suggestions, ${weatherActivities[weather]}`;
+      });
+
+      const selectLanguage = document.querySelector("#selectLanguage");
+      const languageResult = document.querySelector("#languageResult");
+      const greetBtn = document.querySelector("#greetBtn");
+
+      selectLanguage.addEventListener("change", function () {
+        const language = selectLanguage.value;
+        const languages = {
+          English: "Hello",
+          Spanish: "Hola",
+          French: "Bonjour",
+          German: "Hallo",
+          Italian: "Ciao",
+          Japanese: "こんにちは", // Konnichiwa
+          Chinese: "你好", // Nǐ hǎo
+          Russian: "Здравствуйте", // Zdravstvuyte
+          Hindi: "नमस्ते", // Namaste
+          Arabic: "مرحبا", // Marhaba
+        };
+
+        greetBtn.addEventListener("click", function () {
+          languageResult.textContent = `HI ${languages[language]} , Abhishek`;
+        });
+      });
+
+      const instrumentSelect = document.querySelector("#instrument");
+      const instrumentBtn = document.querySelector("#instrumentBtn");
+      const instrumentResult = document.querySelector("#instrumentResult");
+
+      instrumentSelect.addEventListener("change", function () {
+        const instrument = instrumentSelect.value;
+        const musicalInstruments = {
+          Piano:
+            "The piano has 88 keys and is often used in classical and jazz music.",
+          Guitar:
+            "The guitar typically has six strings and is a staple in rock, pop, and blues music.",
+          Violin:
+            "The violin is a string instrument and is known for its high-pitched sound, commonly used in classical music.",
+          Flute:
+            "The flute is a woodwind instrument that produces sound from the flow of air across an opening.",
+          Drums:
+            "Drums are a part of the percussion family and provide the rhythm in many types of music.",
+          Saxophone:
+            "The saxophone is a woodwind instrument often used in jazz and classical music.",
+          Trumpet:
+            "The trumpet is a brass instrument known for its bright and powerful sound.",
+          Harp: "The harp has many strings and is known for its ethereal and beautiful sound, often used in orchestras.",
+          Clarinet:
+            "The clarinet is a woodwind instrument with a single-reed mouthpiece, used in various musical genres.",
+          Cello:
+            "The cello is a string instrument that produces deep and rich tones, commonly used in classical music.",
+        };
+
+        instrumentBtn.addEventListener("click", function () {
+          instrumentResult.textContent = `Instrument ${musicalInstruments[instrument]}`;
+        });
+      });
+
+      const petSelect = document.querySelector("#petSelect");
+      const petBtn = document.querySelector("#petBtn");
+      const petResult = document.querySelector("#petResult");
+
+      petSelect.addEventListener("change", function () {
+        const pet = petSelect.value;
+        const pets = {
+          Dog: "Dogs are loyal and friendly companions. They require regular exercise and enjoy playing outdoors.",
+          Cat: "Cats are independent and affectionate pets. They enjoy lounging around the house and love to play with toys.",
+          Rabbit:
+            "Rabbits are gentle and quiet pets. They enjoy chewing on hay and vegetables and need a spacious cage.",
+          Fish: "Fish are low-maintenance pets. They require a clean tank with a filter and regular feeding.",
+          Bird: "Birds are colorful and social pets. They enjoy singing and need a cage with enough space to fly around.",
+          Hamster:
+            "Hamsters are small and active pets. They love running on wheels and burrowing in bedding.",
+          Turtle:
+            "Turtles are calm and long-lived pets. They need a habitat with both water and land areas.",
+          GuineaPig:
+            "Guinea pigs are social and vocal pets. They need a spacious cage and enjoy eating fresh vegetables.",
+          Lizard:
+            "Lizards are unique and fascinating pets. They require a terrarium with proper lighting and temperature control.",
+        };
+
+        petBtn.addEventListener("click", function () {
+          petResult.textContent = `Pet Description ${pets[pet]}`;
+        });
+      });
+    </script>
+  </body>
+</html>

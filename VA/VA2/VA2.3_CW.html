@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA2.3_CW</title>
+</head>
+<body>
+    <section>
+        <label for="colorSelect">choose a color</label>
+        <select  id="colorSelect">
+            <option value="Red">Red</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+        </select>
+        <p id="colorResult"></p>
+    </section>
+
+    <section>
+        <label for="selectDay">Select a Day</label>
+        <select  id="selectDay">
+            <option value="sunday">sunday</option>
+            <option value="monday">monday</option>
+            <option value="tuesday">tuesday</option>
+            <option value="wednesday">wednesday</option>
+            <option value="thursday">thursday</option>
+            <option value="friday">friday</option>
+            <option value="saturday">saturday</option>
+        </select>
+        <p id="dayResult"></p>
+    </section>
+
+    <section>
+        <label>Select a Country</label>
+        <select  id="selectCountry">
+            <option value="usa">usa</option>
+            <option value="canada">canada</option>
+            <option value="mexico">mexico</option>
+        </select>
+        <p id="countryResult"></p>
+    </section>
+
+    <script>
+        const colorSelect = document.getElementById('colorSelect');
+        const colorResult = document.getElementById('colorResult')
+        colorSelect.addEventListener('change',function(){
+            const value = colorSelect.value;
+            colorResult.textContent = `Selected Color, ${value}`
+        })
+
+
+        const selectDay =  document.querySelector('#selectDay');
+        const dayResult = document.querySelector('#dayResult');
+
+        selectDay.addEventListener('change',function(){
+            const day = selectDay.value;
+
+            if(day==='sunday' || day==='saturday'){
+                dayResult.textContent = `It is a weekend`
+            }
+            else{
+                dayResult.textContent = `It is a weekday`
+            }
+        })
+
+
+        const selectCountry = document.querySelector('#selectCountry');
+        const countryResult = document.querySelector('#countryResult');
+
+        selectCountry.addEventListener('change',function(){
+            const country = selectCountry.value;
+            const capitals = {
+                usa:'Washington , D.C',
+                canada:'Ottawa',
+                mexico:'Mexico City'
+            }
+
+            countryResult.textContent = `Capitals ${capitals[country]}`
+        })
+
+    </script>
+</body>
+</html>
