@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VA2.4 CW</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <form class="container my-5">
+      <div class="mb-3">
+        <label for="nameInput" class="form-label"> Enter Your Name </label>
+        <input type="text" class="form-control" id="nameInput" />
+      </div>
+
+      <div class="mb-3">
+        <label for="addressInput" class="form-label">Enter your address</label>
+
+        <textarea
+          class="form-control"
+          name=""
+          id="addressInput"
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+
+      <div class="form-check">
+        <label for="gender" class="form-label">Enter your gender</label>
+        <br />
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          value="Male"
+          id="Male"
+        />
+
+        <label for="Male" class="form-label-label"> Male</label>
+
+        <br />
+
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          value="Female"
+          id="Female"
+        />
+        <label for="Male" class="form-check-label"> Female </label>
+
+        <br />
+
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          value="Others"
+          id="Others"
+        />
+        <label for="Male" class="form-check-label"> Others </label>
+      </div>
+
+      <div class="form-check">
+        <label class="form-label">Select Multiple Interest</label>
+        <br />
+
+        <input
+          class="form-check-input"
+          type="checkbox"
+          name="Interest"
+          value="reading"
+          id="reading"
+        />
+        <label for="reading" class="form-check-label"> Reading</label>
+        <br />
+        <input
+          class="form-check-input"
+          type="checkbox"
+          name="Interest"
+          value="gardening"
+          id="gardening"
+        />
+        <label for="gardening" class="form-check-label"> Gardening </label>
+        <br />
+
+        <input
+          class="form-check-input"
+          type="checkbox"
+          name="Interest"
+          value="painting"
+          id="painting"
+        />
+        <label for="painting"> Painting</label>
+      </div>
+
+      <br />
+      <div class="mb-3">
+        <label for="selectColor" class="form-label">Select a Color</label>
+        <select name="" id="selectColor" class="form-select">
+          <option selected>Open this Select Color</option>
+          <option value="red">red</option>
+          <option value="green">green</option>
+          <option value="yellow">yellow</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">submit</button>
+
+      <div id="formResult" class="container row mt-3"></div>
+    </form>
+
+    <script>
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const userName = document.querySelector("#nameInput").value;
+        const userAddress = document.querySelector("#addressInput").value;
+        const gender = document.querySelector(
+          'input[type="radio"]:checked'
+        ).value;
+        const interest = document.querySelectorAll(
+          'input[type="checkbox"]:checked'
+        );
+        const colorSelect = document.querySelector("#selectColor");
+
+        let interests = [];
+
+        for (let i = 0; i < interest.length; i++) {
+          interests.push(interest[i].value);
+        }
+
+        const color = colorSelect.value;
+
+        const formResult = document.querySelector("#formResult");
+
+        const userInfo = `
+     <div class="col-md-8 mt-3">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title" ><strong>Name: </strong> ${userName} </h1>
+                </div>
+                <div class="card-body">
+                      <p class="card-text fs-3" ><strong>Address</strong>${userAddress}</p>
+        <p class="card-text fs-3" ><strong>Gender </strong> ${gender}</p>
+        <p class="card-text fs-3" ><strong>Interest: </strong> ${interests.join(
+          ", "
+        )}</p>
+        <p class="card-text fs-3" ><strong>Color </strong> ${color}</p>
+                    </div>
+      
+        </div>
+        </div>
+     `;
+
+        formResult.innerHTML = userInfo;
+      });
+    </script>
+  </body>
+</html>

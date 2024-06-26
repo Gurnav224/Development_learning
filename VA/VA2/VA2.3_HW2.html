@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA2.3_HW2</title>
+</head>
+<body>
+    <section>
+        <label>choose a season</label>
+        <select name="" id="seasonSelect">
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+            <option value="Autumn">Autumn</option>
+            <option value="Winter">Winter</option>
+        </select>
+        <button id="weatherBtn">Display Typical weather</button>
+        <p id="weatherResult"></p>
+    </section>
+
+
+    <section>
+        <label>choose a movie Genre:</label>
+        <select id="selectGenre">
+            <option value="Action">Action</option>
+            <option value="Drama">Drama</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Horror">Horror</option>
+            <option value="Romance">Romance</option>
+            <option value="SciFi">SciFi</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Documentary">Documentary</option>
+            <option value="Animation">Animation</option>
+        </select>
+        <button id="genreBtn">Display Genre</button>
+        <p id="genreResult"></p>
+    </section>
+
+    <section>
+        <label>choose a pet </label>
+        <select name="" id="petSelect"> 
+            <option value="Elephant">Elephant</option>
+            <option value="Dolphin">Dolphin</option>
+            <option value="Cheetah">Cheetah</option>
+            <option value="Penguin">Penguin</option>
+            <option value="Kangaroo">Kangaroo</option>
+            <option value="Owl">Owl</option>
+            <option value="Octopus">Octopus</option>
+            <option value="Giraffe">Giraffe</option>
+            <option value="Honeybee">Honeybee</option>
+            <option value="PolarBear">PolarBear</option>
+        </select>
+        <button id="animalBtn">Display Animal Button</button>
+        <p id="animalResult"></p>
+    </section>
+
+
+    <section>
+        <label>choose a musical instrument</label>
+      <select name="" id="musicSelect">
+        <option value="Piano">Piano</option>
+        <option value="Guitar">Guitar</option>
+        <option value="Violin">Violin</option>
+        <option value="Flute">Flute</option>
+        <option value="Drums">Drums</option>
+        <option value="Saxophone">Saxophone</option>
+        <option value="Trumpet">Trumpet</option>
+        <option value="Harp">Harp</option>
+        <option value="Clarinet">Clarinet</option>
+        <option value="Cello">Cello</option>
+      </select>
+      <p id="musicResult"></p>
+    </section>
+
+
+    <section>
+        <label>choose a planet</label>
+        <select id="planetSelect">
+            <option value="Mercury">Mercury</option>
+            <option value="Venus">Venus</option>
+            <option value="Earth">Earth</option>
+            <option value="Mars">Mars</option>
+            <option value="Jupiter">Jupiter</option>
+            <option value="Saturn">Saturn</option>
+            <option value="Uranus">Uranus</option>
+            <option value="Neptune">Neptune</option>
+            <option value="Pluto">Pluto</option>
+        </select>
+        <button id="planetBtn">Display Planet Fact</button>
+        <p id="planetResult"></p>
+    </section>
+
+    <script>
+        const seasonSelect = document.querySelector('#seasonSelect');
+        const weatherBtn = document.querySelector('#weatherBtn');
+        const weatherResult = document.querySelector('#weatherResult');
+
+        seasonSelect.addEventListener('change',function(){
+            const seasons = {
+    Spring: "Spring is a season of renewal and growth. Flowers bloom, trees grow new leaves, and the weather becomes warmer.",
+    Summer: "Summer is the warmest season of the year. People often go to the beach, have picnics, and enjoy outdoor activities.",
+    Autumn: "Autumn, also known as fall, is characterized by cooler temperatures and the shedding of leaves from deciduous trees. It's a time for harvest and preparing for winter.",
+    Winter: "Winter is the coldest season of the year. Snow often falls in many regions, and people engage in activities like skiing and building snowmen."
+};
+
+
+seasonSelect.addEventListener('click',function(){
+    const season = seasonSelect.value;
+    weatherBtn.addEventListener('click',function(){
+        weatherResult.textContent = `Weather Facts, ${seasons[season]}`
+
+    })
+})
+
+        })
+
+
+const selectGenre = document.querySelector('#selectGenre');
+const genreBtn = document.querySelector('#genreBtn');
+const genreResult = document.querySelector('#genreResult');
+
+
+selectGenre.addEventListener('change',function(){
+    const genre = selectGenre.value;
+    const genres = {
+    Action: "Mad Max: Fury Road",
+    Drama: "The Shawshank Redemption",
+    Comedy: "The Grand Budapest Hotel",
+    Thriller: "Inception",
+    Horror: "The Conjuring",
+    Romance: "Pride and Prejudice",
+    SciFi: "Blade Runner 2049",
+    Fantasy: "The Lord of the Rings: The Fellowship of the Ring",
+    Animation: "Toy Story",
+    Documentary: "The Last Dance"
+};
+
+genreBtn.addEventListener('click',function(){
+
+    genreResult.textContent = `Movie ${genres[genre]}`
+})
+
+})
+
+
+const animalSelect = document.querySelector('#petSelect');
+const animalbtn = document.querySelector('#animalBtn');
+const animalResult = document.querySelector('#animalResult')
+
+animalSelect.addEventListener('click',function(){
+    const animal = animalSelect.value;
+    
+    const animalFunFacts = {
+    Elephant: "Elephants are the largest land animals on Earth and can communicate using infrasound.",
+    Dolphin: "Dolphins are highly intelligent marine mammals known for their playful behavior and complex communication.",
+    Cheetah: "Cheetahs are the fastest land animals, capable of reaching speeds up to 70 mph.",
+    Penguin: "Penguins are flightless birds that spend half their lives in water and are excellent swimmers.",
+    Kangaroo: "Kangaroos can hop at speeds of up to 44 mph and use their tails for balance.",
+    Owl: "Owls can rotate their heads up to 270 degrees and have excellent night vision.",
+    Octopus: "Octopuses have three hearts and blue blood, and they can change color to camouflage themselves.",
+    Giraffe: "Giraffes have the longest necks of any animal, which can be up to 6 feet long.",
+    Honeybee: "Honeybees communicate with each other through a series of dance moves known as the 'waggle dance'.",
+    PolarBear: "Polar bears have black skin under their white fur to absorb and retain heat."
+};
+
+
+animalbtn.addEventListener('click',function(){
+    animalResult.textContent = `Fun Fact, ${animalFunFacts[animal]}`
+})
+
+
+})
+
+
+const musicSelect = document.querySelector('#musicSelect');
+const musicResult = document.querySelector('#musicResult');
+
+
+console.log(musicSelect)
+
+musicSelect.addEventListener('change',function(){
+    const music  =musicSelect.value;
+    const instrumentSounds = {
+    Piano: "The piano produces a wide range of tones from soft and mellow to bright and percussive, depending on how the keys are pressed.",
+    Guitar: "The guitar produces a rich, resonant sound that can vary from soft and melodic to sharp and rhythmic, depending on how it is played.",
+    Violin: "The violin produces a high-pitched, smooth, and expressive sound, often described as singing or lyrical.",
+    Flute: "The flute produces a light, airy, and clear sound, often associated with bird-like qualities.",
+    Drums: "Drums produce a deep, rhythmic, and powerful sound that provides the beat and foundation in many types of music.",
+    Saxophone: "The saxophone produces a smooth, rich, and jazzy sound, with a wide dynamic range and expressive capabilities.",
+    Trumpet: "The trumpet produces a bright, bold, and piercing sound, often used for fanfares and solos.",
+    Harp: "The harp produces a soft, ethereal, and angelic sound, often used to create a dreamy or tranquil atmosphere.",
+    Clarinet: "The clarinet produces a warm, smooth, and versatile sound, capable of both soft, mellow tones and bright, lively notes.",
+    Cello: "The cello produces a deep, rich, and resonant sound, often described as soulful and emotive."
+};
+
+musicResult.textContent = `Music Sounds ${instrumentSounds[music]}`
+})
+
+
+
+const planetSelect = document.querySelector('#planetSelect');
+const planetBtn = document.querySelector('#planetBtn');
+const planetResult = document.querySelector('#planetResult');
+
+
+
+planetSelect.addEventListener('change',function(){
+    const planet = planetSelect.value
+    const planets = {
+    Mercury: "Mercury is the smallest planet in our solar system and closest to the Sun. It has a very thin atmosphere and extreme temperature variations.",
+    Venus: "Venus is the second planet from the Sun and has a thick, toxic atmosphere that traps heat, making it the hottest planet in our solar system.",
+    Earth: "Earth is the third planet from the Sun and the only known planet to support life. It has a diverse climate and a protective atmosphere.",
+    Mars: "Mars, also known as the Red Planet, is the fourth planet from the Sun. It has the largest volcano and canyon in the solar system.",
+    Jupiter: "Jupiter is the largest planet in our solar system and is known for its Great Red Spot, a giant storm that has been raging for centuries.",
+    Saturn: "Saturn is the sixth planet from the Sun and is famous for its stunning ring system, made up of ice and rock particles.",
+    Uranus: "Uranus is the seventh planet from the Sun and has a unique rotation axis that is tilted sideways. It is known for its blue-green color due to methane in its atmosphere.",
+    Neptune: "Neptune is the eighth and farthest planet from the Sun in our solar system. It is known for its strong winds and deep blue color.",
+    Pluto: "Pluto is a dwarf planet located in the Kuiper Belt. It was once considered the ninth planet in our solar system before being reclassified."
+};
+
+planetBtn.addEventListener('click',function(){
+
+    planetResult.textContent = `Planet Fact , ${planets[planet]}`
+})
+
+})
+    </script>
+</body>
+</html>
