@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA3.1_HW1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    </head>
+<body> 
+    <header class="bg-dark text-whtie  text-center">
+        <h1 class="text-white display-3">Priority To-do List </h1>
+
+    </header>
+    
+
+    <main class="container">
+
+
+    <section class=" row mt-4 ">
+        <div class="col-md-5">
+
+            <input type="text" class="form-control" placeholder="add new task" id="task__input">
+        </div>
+        <div class="col-md-5">
+
+        <select name="" id="task__priority" class="form-select">
+            <option selected>select a priority</option>
+            <option value="Low Priority">Low Priority</option>
+            <option value="Medium Priority">Medium Priority
+            </option>
+            <option value="High Priority">High Priority</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+
+        <button class="btn btn-primary" id="task__btn">Add Task</button>
+    </div>
+    </section>
+    <section class="row  mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Low Priority</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group"  id="low__priority">
+
+                    </ul>
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Medium Priority</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group" id="medium__priority">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">High Priority</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group" id="high__priority">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+          
+           
+    </section>
+</main>
+    <script>
+        const taskInput = document.querySelector("#task__input");
+        const taskPriority = document.querySelector('#task__priority')
+        const taskBtn = document.querySelector('#task__btn');
+
+        const lowPriority =  document.querySelector('#low__priority');
+        const mediumPriority = document.querySelector('#medium__priority');
+        const highPriority = document.querySelector('#high__priority');
+
+        console.log(mediumPriority )
+
+        taskBtn.addEventListener('click',function(){
+            const task = taskInput.value;
+            const priority = taskPriority.value;
+            console.log(priority)
+            const listItems = document.createElement('li');
+
+            listItems.className = 'list-group-item d-flex justify-content-around align-items-center'
+
+            listItems.innerHTML = `${task} <button class="btn btn-danger mx-4" onClick="deleteTask(this)">Delete</button>`
+
+            console.log(listItems)
+            if(priority==="Low Priority"){
+                lowPriority.appendChild(listItems)
+            }
+            else if(priority==="Medium Priority"){
+                mediumPriority.appendChild(listItems)
+            }
+            else if(priority==="High Priority"){
+                highPriority.appendChild(listItems)
+            }
+            else{
+                alert("Please select a priority")
+            }
+        })
+
+
+        function deleteTask(task){
+            const listItems = task.parentElement;
+            listItems.remove()
+        }
+
+    </script>
+</body>
+</html>
