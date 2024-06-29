@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Of Players</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <header class="bg-light py-4">
+      <nav class="navbar navbar-expand-lg text-secondary">
+        <div class="container">
+          <a class="navbar-brand" href="">Players Database</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="players.html">Players</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="report.html">Report</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="my-4 container">
+      <h3 class="display-3">Add New Player</h3>
+
+      <section class="row">
+        <div class="col-md-6">
+            <label class="form-label" for="FilterByRole">Filter By Role</label>
+            <select name="" id="FilterByRole" class="form-select">
+              <option selected>Select by Role</option>
+              <option value="All">All</option>
+              <option value="All-rounder">All Rounder</option>
+              <option value="Bowler">Bowler</option>
+              <option value="Batsman">Batsman</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label" for="FilterByCountry">Filter By Country</label>
+            <select name="" id="FilterByCountry" class="form-select">
+                <option selected>Select by country</option>
+                <option value="All">All Country</option>
+                <option value="USA">USA</option>
+                <option value="England">England</option>
+                <option value="Spain">Spain</option>
+                <option value="India">India</option>
+                <option value="China">China</option>
+            </select>
+        </div>
+       
+      </section>
+
+      <section>
+        <div class="mb-3">
+          <label for="name">Name:</label>
+          <br />
+          <input type="text" id="name" />
+        </div>
+        <div class="mb-3">
+          <label for="country">Country:</label>
+          <br />
+          <input type="text" id="country" />
+        </div>
+        <div class="mb-3">
+          <label for="role">Role:</label>
+          <br />
+          <input type="text" id="role" />
+        </div>
+        <button class="btn btn-primary" id="addPlayerBtn">Add Player</button>
+      </section>
+
+      <section id="playerList" class="row"></section>
+    </main>
+
+    <script type="module">
+      // import playersDataBase from './player.js';
+
+      // console.log(playersDataBase)
+
+      let playersDataBase =
+        JSON.parse(localStorage.getItem("playersDatabase")) || [];
+
+      const playerList = document.querySelector("#playerList");
+      const addPlayerBtn = document.querySelector("#addPlayerBtn");
+
+
+      // filter by Country
+
+      const filterByCountry = document.querySelector('#FilterByCountry');
+
+        filterByCountry.addEventListener('change',function(){
+            const country = filterByCountry.value;
+            let filterCountries = [];
+            if(country==="All"){
+                filterCountries = playersDataBase;
+            }
+            else {
+                for(let i=0; i<playersDataBase.length; i++){
+                    if(country===playersDataBase[i].country){
+                        filterCountries.push(playersDataBase[i])
+                    }
+                }
+            }
+
+
+            updatePlayerList(filterCountries)
+
+        })
+
+      //  Fillter by Role
+
+
+      const filterByRole = document.querySelector("#FilterByRole");
+
+      filterByRole.addEventListener("change", function () {
+        let filterPlayers = [];
+        const filterType = filterByRole.value;
+
+        if (filterType === "All") {
+          filterPlayers = playersDataBase;
+        }
+        else{
+            for (let i = 0; i < playersDataBase.length; i++) {
+          if (filterType === playersDataBase[i].role) {
+            filterPlayers.push(playersDataBase[i]);
+          }
+        }
+        }
+       
+
+        updatePlayerList(filterPlayers);
+      });
+
+
+      // function to update the UI
+
+      function updatePlayerList(players) {
+        playerList.innerHTML = "";
+        for (let i = 0; i < players.length; i++) {
+          const col = document.createElement("div");
+          col.className = `col-md-4 mb-3 mt-3`;
+
+          const card = document.createElement("div");
+          card.className = "card";
+
+          const cardHeader = document.createElement("div");
+          cardHeader.className = "card-header";
+
+          const h2 = document.createElement("h2");
+          h2.className = "card-title";
+          h2.textContent = `${players[i].name}`;
+
+          const cardBody = document.createElement("div");
+          cardBody.className = "card-body";
+
+          const country = document.createElement("p");
+          country.textContent = `${players[i].country}`;
+
+          const role = document.createElement("p");
+          role.textContent = `${players[i].role}`;
+
+          const link = document.createElement("a");
+          link.className = "btn btn-primary";
+          link.textContent = "details";
+          link.setAttribute("href", `playerdetails.html?id=${players[i].id}`);
+
+          col.appendChild(card);
+          card.appendChild(cardHeader);
+          card.appendChild(cardBody);
+          cardHeader.appendChild(h2);
+          cardBody.appendChild(country);
+          cardBody.appendChild(role);
+          cardBody.appendChild(link);
+          playerList.appendChild(col);
+        }
+      }
+
+
+      // add new Players
+
+      addPlayerBtn.addEventListener("click", function () {
+        const name = document.querySelector("#name").value;
+        const country = document.querySelector("#country").value;
+        const role = document.querySelector("#role").value;
+        const id = playersDataBase.length + 1;
+
+        if (name && country && role) {
+          const newPlayer = {
+            id: id,
+            name: name,
+            country: country,
+            role: role,
+          };
+          playersDataBase.push(newPlayer);
+          localStorage.setItem(
+            "playersDatabase",
+            JSON.stringify(playersDataBase)
+          );
+          updatePlayerList(playersDataBase);
+
+          // Clear input fields
+          document.querySelector("#name").value = "";
+          document.querySelector("#country").value = "";
+          document.querySelector("#role").value = "";
+        } else {
+          alert("Please players details");
+        }
+      });
+
+      updatePlayerList(playersDataBase);
+    </script>
+  </body>
+</html>
