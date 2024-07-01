@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Of Movies</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header class="navbar navbar-expand-lg text-secondary ">
+        <div class="container">
+         <a class="navbar-brand" href="">Movie Database</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+           </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+             <ul class="navbar-nav">
+                 <li  class="nav-item" ><a class="nav-link" href="index.html">Home</a></li>
+                 <li class="nav-item" ><a class="nav-link" href="movies.html">Movies</a></li>
+                 <li class="nav-item" ><a class="nav-link" href="report.html">Report</a></li>
+             </ul>
+         </div>
+        </div>
+     </nav>            
+ </header>
+ <main class="container">
+    <section class="p-3">
+        <h1 class="my-3">Add a New Movie</h1>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" id="title" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="genre">Genre</label>
+            <select class="form-select" name="" id="genre">
+                <option value="Action">Action</option>
+                <option value="Drama">Drama</option>
+                <option value="Comedy">Comedy</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="releaseDate">Relase Date</label>
+            <input class="form-control" type="date" name="relaseDate" id="releaseDate">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="director">Director:</label>
+            <input class="form-control" type="text" id="director">
+        </div>
+        <button class="btn btn-primary" id="addNewMovie">Add Movie</button>
+    </section>
+   <section id="movieList" class="row">
+
+   </section>
+ </main>
+
+
+ <script type="module">
+// import movieJSON from "./movie.js";
+
+
+let movieJSON = JSON.parse(localStorage.getItem('movieJSON'))
+
+
+
+
+
+
+const movieList = document.querySelector('#movieList')
+
+
+const addNewMovieBtn = document.querySelector('#addNewMovie');
+
+addNewMovieBtn.addEventListener('click',function(){
+    const title = document.querySelector('#title').value;
+    const genre = document.querySelector('#genre').value;
+    const releaseDate = document.querySelector('#releaseDate').value;
+    const director = document.querySelector("#director").value;
+    const id = movieJSON.length+1;
+
+    if(id && title && genre && releaseDate && director){
+        let newMovie = {
+        id:id,
+        title:title,
+        genre:genre,
+        releaseDate:releaseDate,
+        director:director
+    }
+
+    movieJSON.push(newMovie)
+
+    localStorage.setItem('movieJSON',JSON.stringify(movieJSON))
+
+    updateNewMovie(movieJSON)
+
+    }
+    else{
+        alert('Please fill all the inputs')
+    }
+
+    
+})
+
+function updateNewMovie(movies){
+
+for(let i=0; i<movieJSON.length; i++){
+ const col = document.createElement('div');
+ col.className = 'col-md-6 mb-3';
+
+ const card = document.createElement('card');
+ card.className = 'card';
+
+ const cardHeader = document.createElement('div');
+ cardHeader.className = 'card-header'
+
+ const cardTitle = document.createElement('div');
+ cardTitle.className  = 'card-title';
+ cardTitle.innerHTML = `<strong>Title: </strong> ${movies[i].title}`
+
+
+ const cardBody = document.createElement('div');
+ cardBody.className = 'card-body';
+
+ const genre =  document.createElement('p');
+ genre.innerHTML = `<strong>Genre: </strong> ${movies[i].genre}`
+
+ const relaseDate= document.createElement('p');
+ relaseDate.innerHTML = `<strong>release Date: </strong> ${movies[i].releaseDate}`
+
+ const director = document.createElement('p');
+ director.innerHTML = `<strong>Director: </strong> ${movies[i].director}`
+
+ const link  = document.createElement('a');
+ link.className = 'btn btn-primary';
+ link.href = `movieDetails.html?id=${movies[i].id}`
+  link.textContent = 'details'
+
+ cardHeader.appendChild(cardTitle)
+ cardBody.appendChild(genre)
+ cardBody.appendChild(relaseDate)
+ cardBody.appendChild(director)
+ cardBody.appendChild(link)
+ card.appendChild(cardHeader)
+ card.appendChild(cardBody)
+
+ col.appendChild(card)
+ movieList.appendChild(col)
+}
+
+}
+
+
+updateNewMovie(movieJSON)
+
+ </script>
+</body>
+</html>
