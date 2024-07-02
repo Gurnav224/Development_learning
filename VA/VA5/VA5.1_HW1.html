@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA5.1_HW1</title>
+</head>
+<body>
+    <h1>Todo API</h1>
+    <button id="getTodo">Get Todo</button>
+    <section id="todoList">
+
+    </section>
+    <script>
+    const getData = document.querySelector('#getTodo');
+    const todoList = document.querySelector('#todoList');
+
+    const apiUrl = 'https://jsonplaceholder.typicode.com/todos/5'
+
+    getData.addEventListener('click',function(){
+        fetch(apiUrl)
+        .then(function responseHandler(response){
+            return response.json()
+        })
+        .then(function DisplayData(data){
+            todoList.innerHTML = `
+            <h1>UserId : ${data.id} </h1>
+            <p>Title : ${data.title} </p>
+            <p>status: ${data.completed} </p>
+            `
+        })
+        .catch(function(err){
+            todoList.innerHTML = 'An error occured while fetching todo'
+        })
+    })
+    </script>
+</body>
+</html>
