@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Jokes</title>
+</head>
+<body>
+       <h1>Jokes API - Programming Joke</h1>
+       <button id="getData">Get Joke</button>
+       <p id="displayJoke"></p>
+
+       <script>
+           const getData = document.querySelector('#getData');
+           const displayJoke = document.querySelector('#displayJoke');
+           
+           const apiUrl = 'https://v2.jokeapi.dev/joke/Programming?type=single'
+
+
+         getData.addEventListener('click',function(){
+            fetch(apiUrl)
+            .then((res)=>res.json())
+            .then((data)=>{
+                console.log(data)
+                displayJoke.innerHTML = data.joke
+            })
+         })
+       </script>
+</body>
+</html>
