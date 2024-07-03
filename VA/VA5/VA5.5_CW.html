@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA5.5_CW</title>
+</head>
+<body>
+    <h1>Todo App</h1>
+
+    <section>
+        <label for="title">Title</label>
+        <br>
+        <input type="text" id="title">
+        <br>
+        <br>
+        <input type="checkbox" name="" id="status">
+        completed
+        <button id="addTodoBtn">Add Todo</button>
+        <p id="result"></p>
+    </section>
+    <section>
+        <h2>Show Todos</h2>
+        <button id="getTodoBtn">Get Todo</button>
+        <ul id="todoList"></ul>
+    </section>
+
+   
+
+
+    <script>
+
+        const addTodoBtn = document.querySelector('#addTodoBtn');
+        const getTodoBtn = document.querySelector('#getTodoBtn');
+        const todoList = document.querySelector('#todoList');
+        const result = document.querySelector('#result');
+        const status = document.querySelector('#status')
+        const title = document.querySelector('#title')
+
+        
+
+        const apiUrl = 'https://todos-student-neog.replit.app/todos';
+
+        // get all todo
+
+        getTodoBtn.addEventListener('click',function(){
+            fetch(apiUrl)
+            .then((res)=>res.json())
+            .then((data)=>{
+               todoList.innerHTML = ''
+                if(data && data.length > 0){
+                    data.reverse()
+                        data.forEach((todo)=>{
+                            const li = document.createElement('li');
+                            li.innerHTML = `
+                            <h3>${todo.title}</h3>
+                            <p>${todo.completed}</p>
+                            `
+                            todoList.appendChild(li)
+                        })
+                }
+            })
+            .catch((error)=>{
+                todoList.textContent = 'an error occured to getting all todos'
+            })
+        })
+
+
+
+        // add new todo
+        addTodoBtn.addEventListener('click',function(){
+            const newTodo = {
+                title:title.value,
+                completed:status.checked
+            }
+
+            console.log(newTodo)
+
+            fetch(apiUrl,{
+                method:'POST',
+                body:JSON.stringify(newTodo),
+                headers:{
+                    'Content-Type':'application/json'
+                }
+            })
+            .then((res)=>res.json())
+            .then((data)=>{
+                console.log(data)
+                if(data && data.title && data.completed){
+                    result.textContent = 'Todo add successfully'
+                }
+                else{
+                    result.textContent = 'error to add new todo'
+                }
+            })
+            .catch((error)=>{
+                result.textContent = 'an error occured to adding new todo'
+            })
+        })
+
+
+
+    </script>
+</body>
+</html>
