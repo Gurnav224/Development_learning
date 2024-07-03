@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA5.4_CW</title>
+</head>
+<body>
+    <h1>API Post Call</h1>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name">
+        <br>
+        <label for="message">Message</label>
+        <input type="text" id="message">
+        <br>
+        <button type="button" id="newPost">create new post</button>
+    </form>
+
+    <section id="display"></section>
+
+    <script>
+
+const createNewPost  = document.querySelector('#newPost');
+const name = document.querySelector('#name');
+const message = document.querySelector('#message');
+
+const display = document.querySelector('#display');
+
+const apiUrl = 'https://jsonplaceholder.typicode.com/posts'
+
+createNewPost.addEventListener('click',function(){
+    let newPostData = {
+        title:name.value,
+        body:message.value
+    }
+
+    console.log(newPostData)
+
+    fetch(apiUrl,{
+        method:'POST',
+        body:JSON.stringify(newPostData),
+        headers:{
+            'Content-Type':'application/json'
+        }
+    })
+   .then(function(response){
+    console.log(response)
+    return response.json()
+   })
+   .then(function(data){
+    console.log(data)
+    display.textContent = JSON.stringify(data)
+   })
+   .catch((error)=>{
+    display.textContent = 'an error occred creating new post'
+   })
+
+
+})
+    </script>
+</body>
+</html>
