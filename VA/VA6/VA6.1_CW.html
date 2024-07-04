@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA6.1_CW</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <section class="container">
+        <h1>Student List</h1>
+        <ul class="list-group" id="studentList"></ul>
+    </section>
+
+    <script>
+        const studentList = document.querySelector('#studentList')
+        const apiUrl = 'https://student-management-student-neog.replit.app/students'
+
+        function fetchData(){
+            studentList.textContent = "Loading........"
+            fetch(apiUrl)
+            .then((res)=>res.json())
+            .then((data)=>{
+                studentList.textContent = ""
+                if(data && data.length > 0){
+                    for(let i=0; i<data.length; i++){
+                        const li = document.createElement('li');
+                        li.className = 'list-group-item'
+
+                        const name = document.createElement('h2');
+                        const gender = document.createElement('p');
+                        const marks = document.createElement('p');
+                        const attendence = document.createElement('p');
+                        const grade = document.createElement('p');
+
+                        name.innerHTML = `</strong>Name: </strong>${data[i].name}`
+                        gender.innerHTML = `</strong>Gender: </strong>${data[i].gender}`
+                        marks.innerHTML = `</strong>Marks: </strong>${data[i].marks}`
+                        attendence.innerHTML = `</strong>Attendence: </strong>${data[i].attendence}`
+                        grade.innerHTML = `</strong>Grade: </strong>${data[i].grade}`
+
+                        li.appendChild(name)
+                        li.appendChild(gender)
+                        li.appendChild(marks)
+                        li.appendChild(attendence)
+                        li.appendChild(grade)
+                        
+
+                        studentList.appendChild(li)
+                    }
+                }
+            })
+            .catch((error)=>{
+                studentList.textContent = "An error occured while loading student Data"
+            })
+        }
+
+        fetchData()
+    </script>
+</body>
+</html>
