@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA6.1_HW2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <section class="container">
+        <h1 class="display-3 my-4">Employee List</h1>
+        <ul class="list-group" id="employeeList"></ul>
+    </section>
+
+
+    <script>
+        const employeeList = document.querySelector('#employeeList');
+        const apiUrl =  'https://employee-management-backend-student-neog-ca.replit.app/employees';
+
+        function fetchData(){
+            fetch(apiUrl)
+            .then((res)=>res.json())
+            .then((data)=>{
+                if(data && data.length > 0){
+                    for(let i=0; i<data.length; i++){
+                        const li = document.createElement('li');
+                        li.className = 'list-group-item'
+
+                        const name = document.createElement('h2')
+                        const age = document.createElement('p')
+                        const department = document.createElement('p')
+                        const gender = document.createElement('p')
+                        const country = document.createElement('p')
+
+                        name.innerHTML = `<strong>Name: </strong>${data[i].name}`
+                        age.innerHTML = `<strong>Age: </strong>${data[i].age}`
+                        department.innerHTML = `<strong>Department: </strong>${data[i].department}`
+                        gender.innerHTML = `<strong>Gender: </strong>${data[i].gender}`
+                        country.innerHTML = `<strong>Country: </strong>${data[i].country}`
+
+
+                        li.appendChild(name)
+                        li.appendChild(age)
+                        li.appendChild(department)
+                        li.appendChild(gender)
+                        li.appendChild(country)
+
+                        employeeList.appendChild(li)
+                    }
+                }
+            })
+            .catch((error)=>{
+                employeeList.textContent = 'an error occoured while getting employee'
+            })
+        }
+
+        fetchData()
+    </script>
+
+</body>
+</html>
