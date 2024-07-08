@@ -114,6 +114,7 @@
         const loading = document.querySelector('#loading')
         const success = document.querySelector('#success')
 
+
         addMovieBtn.addEventListener('click',function(){
             let newMovie = {
                 title:title.value,
@@ -128,11 +129,9 @@
                 posterUrl:posterUrl.value,
                 trailerUrl:trailerUrl.value
             }
-             console.log(loading)
             loading.style.display = 'block'
             success.style.display = 'none'
 
-            
             fetch(apiUrl,{
                 method:'POST',
                 body:JSON.stringify(newMovie),
