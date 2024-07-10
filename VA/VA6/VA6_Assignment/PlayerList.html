@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA6.3_HW4</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid ">
+
+        <a href="index.html" class="navbar-brand">ICC Player Management</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="PlayerList.html">Player List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="addPlayer.html">Add Player</a>
+                </li>
+            </ul>
+          </div>
+            
+        </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="my-3">Player List</h1>
+
+        <section>
+            <label class="form-label" for="filterByPlayingRole">Filter By Playing Role</label>
+            <select class="form-select" name="" id="filterByPlayingRole">
+                <option value="All-Rounder">All-Rounder</option>
+                <option value="Bowler">Bowler</option>
+                <option value="Batsman">Batsman</option>
+            </select>
+        </section>
+        <section class="mt-3">
+            <p id="loading">loading.........</p>
+            <h3 id="message"></h3>
+            <ul class="list-group" id="playerList"></ul>
+        </section>
+    </main>
+
+
+    <script>
+        const apiUrl = 'https://players-backend-student-neog-ca.replit.app/players';
+        const playerList = document.querySelector('#playerList');
+        const loading = document.querySelector('#loading');
+        const message = document.querySelector('#message');
+
+        const filterByPlayingRole = document.querySelector('#filterByPlayingRole');
+
+
+        let playersData = []
+
+        function fetchData(){
+            fetch(apiUrl)
+            .then((res)=>res.json())
+            .then((data)=>{
+                playersData = data;
+                renderList(data)
+            })
+        }
+
+        function renderList(data){
+            playerList.innerHTML = "";
+            loading.style.display = 'none'
+            message.textContent = ''
+
+            for(let i=0; i<data.length; i++){
+                const li = document.createElement('li');
+                const button  = document.createElement('button');
+                button.className = 'btn btn-danger float-end delete__button'
+                button.textContent = 'delete'
+                button.setAttribute('data-id',data[i]._id)
+                li.textContent = `${data[i].fullName}`
+                li.className = 'list-group-item'
+                li.appendChild(button)
+                playerList.appendChild(li)
+            }
+            const deleteButtons = document.querySelectorAll('.delete__button');
+
+            for(let i=0; i<deleteButtons.length; i++){
+                deleteButtons[i].addEventListener('click',function(event){
+                    const playerId = event.target.getAttribute('data-id');
+                    fetch(`${apiUrl}/${playerId}`,{
+                        method:'delete'
+                    })
+                    .then((res)=>res.json())
+                    .then((data)=>{
+                        console.log(data)
+                        if(data){
+                            message.textContent = 'player Deleted successfully'
+                        }
+                        fetchData()
+                    })
+
+             })
+            }
+        }
+
+
+        filterByPlayingRole.addEventListener('change',function(){
+            const role = filterByPlayingRole.value;
+            let filterRole = [];
+
+            if(role==='All-Rounder'){
+                filterRole = playersData
+            }
+            else{
+                for(let i=0; i<playersData.length; i++){
+                    if(role===playersData[i].playingRole){
+                        filterRole.push(playersData[i])
+                    }
+                }
+            }
+            console.log(filterRole)
+            renderList(filterRole)
+        })
+        
+
+
+        fetchData()
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
