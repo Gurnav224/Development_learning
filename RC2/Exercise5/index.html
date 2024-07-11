@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RC2_Exercise5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="container">
+        <h1 class="my-4">Travel Destinations</h1>
+    </header>
+    <main class="container">
+        <section >
+            <h2 class="my-4">Get Destinations</h2>
+            <button class="btn btn-primary my-4" id="get__destination">Get Destination</button>
+            <div class="row" id="destinationList">
+
+            </div>
+        </section>
+        <section>
+            <h1>Add Destination</h1>
+            <form action="">
+                <div class="mb-3">
+                    <label class="form-label" for="name">Name:</label>
+                    <input class="form-control" type="text" id="name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">location:</label>
+                    <input class="form-control" type="text" id="location">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">description:</label>
+                    <input class="form-control" type="text" id="description">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="rating">Rating:</label>
+                    <input class="form-control" type="text" id="rating">
+                </div>
+                <button type="submit" class="btn btn-success">Add Destination</button>
+            </form>
+            <h3 id="message"></h3>
+        </section>
+    </main>
+
+    <script>
+        const form = document.querySelector('form');
+        const name = document.querySelector('#name');
+        const locations = document.querySelector('#location');
+        const description = document.querySelector('#description');
+        const rating = document.querySelector('#rating');
+        
+        const message =document.querySelector('#message');
+
+        const getDestination = document.querySelector('#get__destination')
+
+        const destinationList  = document.querySelector('#destinationList');
+
+        const apiUrl = 'https://tripy-express-student-neog.replit.app/destinations'
+
+
+        getDestination.addEventListener('click',function(){
+            fetch(apiUrl)
+        .then((res)=>res.json())
+        .then((data)=>{
+            destinationList.innerHTML = ""
+            for(let i=0; i<data.length; i++){
+               const col = document.createElement('col-md-6');
+               col.className = 'col-md-6 mb-3';
+
+               const card = document.createElement('card');
+               card.className = 'card';
+
+
+               const cardBody = document.createElement('div');
+               cardBody.className = 'card-body'
+    
+               const name = document.createElement('h2');
+                const location = document.createElement('p')
+                const description = document.createElement('p')
+                const Rating = document.createElement('p');
+
+                name.innerHTML = `<strong>Name: </strong> ${data[i].name}`
+                location.innerHTML = `<strong>location: </strong> ${data[i].location}`
+                description.innerHTML = `<strong>Description: </strong> ${data[i].description}`
+                Rating.innerHTML = `<strong>Rating: </strong> ${data[i].rating}`
+
+
+                cardBody.appendChild(name)
+                cardBody.appendChild(location)
+                cardBody.appendChild(description)
+                cardBody.appendChild(Rating)
+
+
+                card.appendChild(cardBody)
+
+                col.appendChild(card)
+                destinationList.appendChild(col)
+            }
+        })
+
+        })
+
+     
+
+        form.addEventListener('submit',function(event){
+            event.preventDefault();
+            let newDestination = {
+                name:name.value,
+                location:locations.value,
+                description:description.value,
+                rating:rating.value
+            }
+
+
+            fetch(apiUrl,{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(newDestination)
+            })
+            .then((res)=>res.json())
+            .then((data)=>{
+                if(data){
+                    message.textContent = data.message
+                    message.style.color = 'green'
+                }
+                 
+            })
+
+            form.reset()
+        })
+    </script>
+</body>
+</html>
