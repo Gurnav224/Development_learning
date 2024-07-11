@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Laptop Database</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="navbar-collapse collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="laptops.html">Laptops</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="report.html">Report</a>
+                        </li>
+                    </ul>
+                  </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="laptopDetails">
+
+        </section>
+    </main>
+  
+
+    <footer class="bg-dark text-center py-4">
+        <p class="text-white fs-4 fw-light">&copy; 2024 Laptop Store. All right reserved.</p>
+    </footer>
+
+
+    <script>
+        const laptopDetails = document.querySelector('#laptopDetails');
+
+        const laptops = [  
+        {
+          id: 1,
+          brand: "Dell",
+          model: "Inspiron 15",
+          details: "Powerful performance in a sleek design.",
+          laptopImg:
+            "https://placehold.co/300x200/EFEFEFF/grey?text=Dell%20Inspiron%2015",
+          processor: "Intel Core i7",
+          RAM: "16GB",
+          storage: "512GB SSD",
+          price: 1200,
+        },
+        {
+          id: 2,
+          brand: "HP",
+          model: "Pavilion x360",
+          details:
+            "Versatile 2-in-1 laptop for productivity and entertainment.",
+          laptopImg:
+            "https://placehold.co/300x200/EFEFEFF/grey?text=HP%20Pavilion%20x360",
+          processor: "AMD Ryzen 5",
+          RAM: "8GB",
+          storage: "256GB SSD",
+          price: 900,
+        },
+        {
+          id: 3,
+          brand: "Lenovo",
+          model: "ThinkPad X1 Carbon",
+          details: "Ultra-lightweight and durable business laptop.",
+          laptopImg:
+            "https://placehol.co/300x200/EFEFEFF/grey?text=Lenovo%20ThinkPad%20X1%20Carbon",
+          processor: "Intel Core i5",
+          RAM: "8GB",
+          storage: "256GB SSD",
+          price: 1500,
+        },
+        {
+          id: 4,
+          brand: "Lenovo Lite",
+          model: "ThinkPad X1 Carbon",
+          details: "Ultra-lightweight and durable business laptop.",
+          laptopImg:
+            "https://placehol.co/300x200/EFEFEFF/grey?text=Lenovo%20ThinkPad%20X1%20Carbon",
+          processor: "Intel Core i5",
+          RAM: "8GB",
+          storage: "256GB SSD",
+          price: 300,
+        },
+      ];
+
+
+      function getParameterById(id){
+        const url = new URL(window.location.href);
+        return url.searchParams.get(id)
+      }
+
+      const laptopId = getParameterById('id');
+
+
+      let laptop;
+
+      for(let i=0; i<laptops.length; i++){
+        if(laptopId==laptops[i].id){
+            laptop = laptops[i]
+        }
+      }
+
+      console.log(laptop)
+
+      if(laptop){
+        laptopDetails.innerHTML = `
+        <div class="card my-5">
+        <div class="card-body">
+            <img src=${laptop.laptopImg} />
+            <h2><strong>Brand: </strong> ${laptop.brand} </h2>
+            <p><strong>Model: </strong> ${laptop.model}</p>
+            <p><strong>Details: </strong>${laptop.details} </p>
+            <p><strong>Processors:</strong>${laptop.processor} </p>
+            <p><strong>Stroage:</strong>${laptop.storage} </p>
+            <p><strong>Price: </strong>${laptop.price} </p>
+            </div>
+            </div>
+        `
+      }
+      else{
+        laptopDetails.innerHTML = '<h1> No laptop Found </h1>'
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
