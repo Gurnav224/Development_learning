@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 8</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+   
+</head>
+<body>
+    <header class="bg-light shadow">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Computer Management</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li  class="nav-item">
+                            <a class="nav-link" href="computers.html">Computer List</a>
+                        </li>
+                        <li  class="nav-item">
+                            <a class="nav-link" href="addcomputer.html">Add Computer</a>
+                        </li>
+                    </ul>
+                  </div>
+            </div>
+        </nav>
+    </header>
+
+  
+    <main class="container">
+        <h1 class="display-3 my-5 fw-bold">Computer List</h1>
+        
+        <section>
+            <label class="form-label" for="filterByCategory">Filter By Category</label>
+            <select class="form-select" name="" id="filterByCategory">
+                <option value="All">All</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Desktop">Desktop</option>
+                <option value="Tablet">Tablet</option>
+            </select>
+        </section>
+        <section>
+            <p id="loading"></p>
+            <h3 id="success"></h3>
+            <ul class="list-group" id="computerList">
+
+            </ul>
+        </section>
+    </main>
+  
+
+    <script>
+        const apiUrl = 'https://computer-backend-student-neog.replit.app/computers';
+        const loading = document.querySelector('#loading');
+        const success = document.querySelector('#success')
+        const computerList = document.querySelector('#computerList');
+
+        const filterByCategory = document.querySelector('#filterByCategory');
+
+        let computers= []
+
+        function fetchComputerCard(){
+            loading.textContent = 'loading............'
+            fetch(apiUrl)
+            .then((res)=>res.json())
+            .then((data)=>{
+                computers = data;
+                renderCardsList(computers)
+            })
+        }
+
+        fetchComputerCard();
+
+        filterByCategory.addEventListener('change',function(){
+            const category = filterByCategory.value;
+
+            let filterCategories = [];
+
+            if(category === 'All'){
+                filterCategories = computers
+            }
+            else{
+                for(let i=0; i<computers.length; i++){
+                    if(category===computers[i].category){
+                        filterCategories.push(computers[i])
+                    }
+                }
+            }
+            renderCardsList(filterCategories)
+        })
+
+        
+
+
+        function renderCardsList(data){
+            loading.textContent = ''
+            
+            computerList.innerHTML = ""
+          
+            for(let i=0; i<data.length; i++){
+                const li = document.createElement('li');
+                li.className = 'list-group-item mt-3'
+
+                li.innerHTML = `${data[i].name}-${data[i].quantity}-${data[i].manufactureDate}-${data[i].category}`
+
+                const button = document.createElement('button');
+                button.className = 'btn btn-danger delete__button float-end';
+                button.textContent = 'detete';
+                button.setAttribute('data-id',data[i]._id)
+
+                li.appendChild(button)
+
+                
+                computerList.appendChild(li)
+            }
+
+            const deleleButtons = document.querySelectorAll('.delete__button');
+            
+
+            for(let i=0; i<deleleButtons.length; i++){
+                deleleButtons[i].addEventListener('click',function(event){
+                    const productId = event.target.getAttribute('data-id');
+
+                    fetch(`${apiUrl}/${productId}`,{
+                        method:'delete'
+                    })
+                    .then((res)=>res.json())
+                    .then((data)=>{
+                        success.textContent = 'product delete successfully'
+                       success.className = 'text-success'
+                        fetchComputerCard()
+                    })
+                })
+            }
+
+        }
+
+      
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
