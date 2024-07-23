@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PP1.5</title>
+  </head>
+  <body>
+    <section>
+      <h1>Capitalize Words Program</h1>
+      <label for="textInput">Enter a sentence</label>
+      <input type="text" id="textInput" />
+      <button id="capitalBtn">Capitalize Word</button>
+      <p id="output"></p>
+    </section>
+
+    <script>
+      const textInput = document.querySelector("#textInput");
+      const capitalBtn = document.querySelector("#capitalBtn");
+      const output = document.querySelector("#output");
+
+      capitalBtn.addEventListener("click", function () {
+        let string = textInput.value;
+        let words = string.split(" ");
+
+        console.log(words)
+
+        for (let i = 0; i < words.length; i++) {
+          if (words.length < 4) {
+            words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+          } else {
+            words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1);
+          }
+        }
+
+
+        output.innerHTML = words.join(" ");
+      });
+    </script>
+  </body>
+</html>
