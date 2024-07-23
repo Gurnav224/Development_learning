@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fruit-Vegetable Classification</h1>
+    <h2>classified Array:</h2>
+    <ul id="list"></ul>
+
+    <script>
+        const array = ["apple", "drumstick", "orange", "sweet potato", "kiwi","cauliflower", "grape", "pear", "bottle gourd", "snake gourd"];
+
+        const list = document.querySelector('#list')
+
+
+        for(let i=0; i<array.length; i++){
+            const li = document.createElement('li');
+
+            if(array[i].length>6){
+                li.textContent = `${array[i]} - Vegetable`
+            }
+            else{
+                li.textContent = `${array[i]} - Fruit`
+            }
+            list.appendChild(li)
+
+        }
+    </script>
+</body>
+</html>
