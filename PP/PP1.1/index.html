@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP1.1</title>
+</head>
+<body>
+    <h1>FizzBuzzz Program Output</h1>
+    <ol id="listOfNumber"></ol>
+
+    <script>
+        const listOfNumber = document.querySelector('#listOfNumber');
+
+        let fizzBuzzArr = [];
+
+        for(let i=1; i<=20; i++){
+           fizzBuzzArr.push(i)
+        }
+
+        console.log(fizzBuzzArr)
+
+        for(let i=0; i< fizzBuzzArr.length; i++){
+            const li = document.createElement('li');
+
+            if(fizzBuzzArr[i]%3===0 && fizzBuzzArr[i]%5===0){
+                li.textContent = 'FizzBuzz'
+            }
+            else if(fizzBuzzArr[i]%3===0){
+                li.textContent = 'Fizz'
+            }
+            else if(fizzBuzzArr[i]%5===0){
+                li.textContent = 'Buzz'
+            }
+            else {
+                li.textContent = fizzBuzzArr[i]
+            }
+
+            listOfNumber.appendChild(li)
+        }
+
+
+
+    </script>
+</body>
+</html>

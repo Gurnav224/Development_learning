@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP1.2</title>
+</head>
+<body>
+    <h1>Fizz Buzz Prime Output</h1>
+
+    <ol id="listNumber">
+
+    </ol>
+
+
+    <script>
+        const listNumber = document.querySelector('#listNumber');
+
+        console.log(listNumber);
+
+        let fizzBuzzPrimearr = [];
+
+        for(let i=1; i<=30; i++){
+            fizzBuzzPrimearr.push(i)
+        }
+
+        console.log(fizzBuzzPrimearr);
+
+        function isPrime(n){
+            if(n<=1) return false
+            for(let i=2; i<=Math.sqrt(n); i++){
+                if(n%i===0){
+                    return false
+                }
+            }
+            return true
+        }
+
+
+        for(let i=0; i<fizzBuzzPrimearr.length; i++){
+            const li = document.createElement('li');
+             if(fizzBuzzPrimearr[i]%3===0 && isPrime(fizzBuzzPrimearr[i])){
+                li.textContent = 'FizzPrime'
+            }
+            else if(fizzBuzzPrimearr[i]%5===0 && isPrime(fizzBuzzPrimearr[i])){
+                li.textContent = 'BuzzPrime'
+            }
+
+             else if(fizzBuzzPrimearr[i]%3===0 && fizzBuzzPrimearr[i]%5===0){
+                li.textContent = 'FizzBuzz'
+            }
+            
+            else  if(isPrime(fizzBuzzPrimearr[i])){
+                li.textContent = 'Prime'
+            }
+            else if(fizzBuzzPrimearr[i]%3===0){
+                li.textContent = 'Fizz'
+            }
+            else if(fizzBuzzPrimearr[i]%5===0){
+                li.textContent = 'Buzz'
+            }
+           
+            else{
+                li.textContent = fizzBuzzPrimearr[i]
+            }
+
+            listNumber.appendChild(li)
+        }
+    </script>
+
+</body>
+</html>

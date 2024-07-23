@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP1.3</title>
+</head>
+<body>
+    <h1>Odd Even Square Program output</h1>
+
+    <ol id="stringList"></ol>
+
+    <script>
+        const stringList = document.querySelector('#stringList');
+
+        let stringArr = []
+
+        for(let i=1; i<=20; i++){
+            if(i%2===0){
+                stringArr.push(`Even: ${i*i}`)
+            }
+            else{
+                stringArr.push(`Odd: ${i*i}`)
+            }
+          
+        }
+
+        console.log(stringArr);
+
+
+        for(let i=0; i<stringArr.length; i++){
+            const li = document.createElement('li');
+
+            li.textContent = `${stringArr[i]}`
+
+            stringList.appendChild(li)
+        }
+
+    </script>
+</body>
+</html>
