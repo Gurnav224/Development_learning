@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP1.4</title>
+</head>
+<body>
+    
+    <section>
+        <label for="numberInput">Enter a number:</label>
+        <input type="text" id="numberInput">
+        <button >Generate Table</button>
+        <ul id="table"></ul>
+    </section>
+
+    <script>
+        const button  = document.querySelector('button');
+        const numberInput = document.querySelector('#numberInput');
+        const table = document.querySelector('#table');
+
+
+        button.addEventListener('click',function(){
+            const number = numberInput.value;
+            table.innerHTML = ""
+            for(let i=1; i<=12; i++){
+                const li = document.createElement('li');
+                li.textContent = `${number} * ${i} = ${number * i}`
+
+                table.appendChild(li)
+            }
+
+        })
+    </script>
+
+</body>
+</html>
