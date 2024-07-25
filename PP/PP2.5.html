@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP2.5</title>
+</head>
+<body>
+    <button id="btn1">Increment Count1 </button>
+    <button id="btn2">Increment Count2</button>
+
+    <p>Count1: <span id="count1">0</span></p>
+    <p>Count2: <span id="count2">0</span></p>
+
+    <p id="result"></p>
+
+    <script>
+        const button1 = document.querySelector('#btn1');
+        const button2 = document.querySelector('#btn2');
+
+        const countResult1 = document.querySelector('#count1');
+        const countResult2 = document.querySelector('#count2');
+
+        const result = document.querySelector('#result');
+
+        let count1 = 0;
+        let count2 = 0;
+
+
+
+        button1.addEventListener('click',function(){
+            count1++;
+            countResult1.textContent = count1;
+
+            calculateResult()
+          
+        })
+
+        button2.addEventListener('click',function(){
+            count2++;
+            countResult2.textContent = count2;
+
+            calculateResult()
+       
+        })
+
+
+        function calculateResult(){
+            if(count1>count2){
+            result.textContent = `count1 is more than count2`
+        }
+        else if(count2>count1){
+            result.textContent = `count2 is more than count1`
+        }
+        else{
+            result.textContent = `count1 is equal to count2`
+        }
+        }
+
+        calculateResult()
+       
+    </script>
+</body>
+</html>
