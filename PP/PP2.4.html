@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP2.4</title>
+</head>
+<body>
+    <button id="button_one">Increment One</button>
+    <button id="button_two">Increment Two</button>
+
+    <p>Count1: <span id="count1">0</span></p>
+    <p>Count1: <span id="count2">0</span></p>
+
+    <p>Total Count: <span id="totalCount"></span></p>
+
+    <script>
+        const buttonOne = document.querySelector('#button_one');
+        const buttonTwo = document.querySelector('#button_two');
+
+        const countResult1 = document.querySelector('#count1');
+        const countResult2 = document.querySelector('#count2');
+
+        let count1 = 0;
+        let count2 = 0;
+
+        const totalCount = document.querySelector('#totalCount');
+
+
+        buttonOne.addEventListener('click',function(){
+            count1++
+            countResult1.textContent = count1;
+            totalCount.textContent = count1+count2
+        })
+
+        buttonTwo.addEventListener('click',function(){
+            count2++;
+            countResult2.textContent = count2;
+            totalCount.textContent = count1+count2;
+        })
+
+    </script>
+</body>
+</html>
