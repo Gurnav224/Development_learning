@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP2.1</title>
+
+    <style>
+div#one {
+background-color: #8c2727;
+}
+
+div#two{
+    background-color: #19a72049;
+}
+    </style>
+
+    
+</head>
+<body>
+    <section>
+        <label for="colorInput">Enter a color</label>
+        <input type="text" id="colorInput" placeholder="eg=#8c2727">
+        <button id="section__one__button">change color section 1</button>
+        <button id="section__two__button">change color section 2</button>
+
+    </section>
+    <section>
+        <div id="one">section 1</div>
+        <div id="two">section 2</div>
+    </section>
+
+    <script>
+        const color = document.querySelector('#colorInput');
+        const sectionOneButton = document.querySelector('#section__one__button');
+        const sectionTwoButton = document.querySelector('#section__two__button');
+
+
+        const firstSection = document.querySelector('#one');
+        const secondSection = document.querySelector('#two');
+
+        sectionOneButton.addEventListener('click',function(){
+            const colorValue = color.value;
+            firstSection.style.backgroundColor = colorValue
+        })
+
+        sectionTwoButton.addEventListener('click',function(){
+            const colorValue = color.value;
+            secondSection.style.backgroundColor = colorValue
+        })
+
+    </script>
+</body>
+</html>
