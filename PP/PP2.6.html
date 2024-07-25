@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP2.6</title>
+</head>
+<body>
+    <button id="button__one">Decrement Count 1</button>
+    <button id="button__two">Decrement Count 2</button>
+
+
+    <p>Count1: <span id="count1">20</span></p>
+    <p>Count2: <span id="count2">20</span></p>
+
+    <p>Total Count: <span id="totalCount">40</span></p>
+
+    <script>
+        const buttonOne = document.querySelector('#button__one');
+        const buttonTwo = document.querySelector('#button__two');
+
+        const countResult1 = document.querySelector('#count1');
+        const countResult2 = document.querySelector('#count2');
+
+        const totalCount = document.querySelector('#totalCount');
+
+        let count1 = 20;
+        let count2 = 20;
+
+
+        buttonOne.addEventListener('click',function(){
+            count1--;
+            countResult1.textContent = count1;
+            totalCount.textContent = count1+count2;
+        })
+
+        buttonTwo.addEventListener('click',function(){
+            count2--;
+            countResult2.textContent = count2;
+            totalCount.textContent = count1+count2
+        })
+    </script>
+
+
+</body>
+</html>
