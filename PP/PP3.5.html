@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="container">
+    <section>
+      <h1 class="my-3 display-3">To-Do List</h1>
+      <div class="mb-3">
+        <label for="taskInput" class="form-label">Enter Task:</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Enter your task"
+          id="taskInput"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="selectDay">Select Day</label>
+        <select class="form-control" id="selectDay">
+          <option value="Today">Today</option>
+          <option value="Tomorrow">Tomorrow</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" id="add__task__button">Add Task</button>
+    </section>
+
+    <section class="row my-3">
+      <div class="col-md-6">
+        <h2>Today Task</h2>
+        <ul class="list-group" id="today__task"></ul>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Tomorrow Task</h2>
+        <ul class="list-group" id="tomorrow__task"></ul>
+      </div>
+      <div>
+        <h3>Task Summary</h3>
+        <span id="today__count"></span>
+        <span id="tommorrow__count"></span>
+        <p id="summary"></p>
+      </div>
+    </section>
+
+    <script>
+      const taskInput = document.querySelector("#taskInput");
+      const selectDay = document.querySelector("#selectDay");
+
+      const todayCountResult = document.querySelector("#today__count");
+      const tommorrowCountResult = document.querySelector("#tommorrow__count");
+
+      const summary = document.querySelector("#summary");
+
+      const addTaskButton = document.querySelector("#add__task__button");
+
+      const todayTask = document.querySelector("#today__task");
+      const tomorrowTask = document.querySelector("#tomorrow__task");
+
+      let todayTaskCount = 0;
+      let tommorrowTaskCount = 0;
+
+      addTaskButton.addEventListener("click", function () {
+        let task = taskInput.value;
+        let day = selectDay.value;
+
+        const li = document.createElement("li");
+        li.textContent = task;
+        li.className = "list-group-item";
+
+        const button = document.createElement("button");
+        button.className = "btn btn-danger float-end";
+        button.textContent = "delete";
+
+        li.appendChild(button);
+
+        if (day === "Today") {
+          todayTaskCount++;
+          todayTask.appendChild(li);
+          updateTaskSummary();
+        } else if (day == "Tomorrow") {
+          tommorrowTaskCount++;
+          tomorrowTask.appendChild(li);
+          updateTaskSummary();
+        }
+
+        button.addEventListener("click", function () {
+          li.remove();
+          if (day === "Today") {
+            todayTaskCount--;
+          } else {
+            tommorrowTaskCount--;
+          }
+          updateTaskSummary();
+        });
+      });
+
+      function updateTaskSummary() {
+        todayCountResult.textContent = `Tasks Today ${todayTaskCount} |`;
+        tommorrowCountResult.textContent = `Tasks Tommorrow ${tommorrowTaskCount}`;
+
+        if (tommorrowTaskCount > todayTaskCount) {
+          setSummary("More task Tommarrow", "green");
+        } else if (todayTaskCount > tommorrowTaskCount) {
+          setSummary("More task Today", "red");
+        } else {
+          setSummary("", "black");
+        }
+      }
+
+      function setSummary(text, color) {
+        summary.textContent = text;
+        todayCountResult.style.color = color;
+        tommorrowCountResult.style.color = color;
+        summary.style.color = color;
+      }
+    </script>
+  </body>
+</html>
