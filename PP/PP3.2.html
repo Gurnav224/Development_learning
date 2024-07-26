@@ -57,20 +57,28 @@
             const day = selectDay.value;
 
 
-
-            if(day === "Monday" || day ==="Tuesday" || day==="Wednesday" || day ==="Thursday" ||day==="Friday"){
-                const li = document.createElement('li');
+            const li = document.createElement('li');
                 li.textContent = event;
                 li.className = 'list-group-item'
+
+           const button = document.createElement('button');
+           button.className = 'btn btn-danger float-end'
+           button.textContent = 'delete'
+
+           li.appendChild(button)
+
+            if(day === "Monday" || day ==="Tuesday" || day==="Wednesday" || day ==="Thursday" ||day==="Friday"){
+               
                 weekdays.appendChild(li)
 
             }
             else if(day === "Saturday" || day==="Sunday"){
-                const li = document.createElement('li');
-                li.textContent = event;
-                li.className = 'list-group-item'
                 weekends.appendChild(li)
             }
+
+            button.addEventListener('click',function(){
+                li.remove()
+            })
         })
 
 

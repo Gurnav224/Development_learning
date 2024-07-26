@@ -55,17 +55,17 @@
             let task = taskInput.value;
             let day = selectDay.value;
 
-            if(day==="Today"){
-               const li = document.createElement('li');
+            const li = document.createElement('li');
                li.textContent = task
                li.className = 'list-group-item'
+
+            if(day==="Today"){
+             
 
                todayTask.appendChild(li)
             }
             else if(day=='Tomorrow'){
-               const li = document.createElement('li');
-               li.textContent = task;
-               li.className = 'list-group-item'
+             
                tomorrowTask.appendChild(li)
             }
            
