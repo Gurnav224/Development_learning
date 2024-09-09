@@ -1,0 +1,50 @@
+[
+    {
+      "brand": "Toyota",
+      "model": "Corolla",
+      "year": 2019,
+      "bodyStyle": "Sedan",
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "2.0L Inline-4",
+      "mileage": 30000,
+      "color": "Silver",
+      "price": 20000,
+      "condition": "Used",
+      "description": "Well-maintained Corolla with low mileage. Perfect for city commuting.",
+      "photos": ["https://example.com/photo1.jpg", "https://example.com/photo2.jpg"],
+      "inMarket": true
+    },
+    {
+      "brand": "Honda",
+      "model": "Civic",
+      "year": 2020,
+      "bodyStyle": "Hatchback",
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "1.5L Turbocharged Inline-4",
+      "mileage": 20000,
+      "color": "Black",
+      "price": 25000,
+      "condition": "Used",
+      "description": "Sporty Civic with low mileage. Great for daily driving.",
+      "photos": ["https://example.com/photo3.jpg", "https://example.com/photo4.jpg"],
+      "inMarket": true
+    },
+    {
+      "brand": "Tesla",
+      "model": "Model S",
+      "year": 2021,
+      "bodyStyle": "Sedan",
+      "fuelType": "Electric",
+      "transmission": "Automatic",
+      "engine": "Dual Electric Motors",
+      "mileage": 10000,
+      "color": "White",
+      "price": 70000,
+      "condition": "New",
+      "description": "Brand new Model S with advanced technology and zero emissions.",
+      "photos": ["https://example.com/photo5.jpg", "https://example.com/photo6.jpg"],
+      "inMarket": true
+    }
+  ]
