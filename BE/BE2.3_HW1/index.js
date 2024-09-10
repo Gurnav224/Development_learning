@@ -157,10 +157,38 @@ async function updateRestaurantById(restaurantId,dateToUpdate){
     const updatedRestaurant = await Restaurant.findByIdAndUpdate(restaurantId,dateToUpdate,{new:true});
     console.log('restaurant to update: ',updatedRestaurant)
   } catch (error) {
-    console.error('error updating to restaurant: ',error)
+    console.error('error updating to restaurant by Id: ',error)
   }
 }
 
 // updateRestaurantById("66dff00ae45db5231df02190",{rating:4.1})
 
 
+async function updateRestaurantByName(restaurantName,dateToUpdate){
+  try {
+    const updatedRestaurant = await Restaurant.findOneAndUpdate({name:restaurantName},dateToUpdate,{new:true});
+
+    console.log('restaurant updated by restaurant ',updatedRestaurant,)
+
+  } catch (error) {
+    console.error('error updating to restaurant by name: ',error)
+  }
+}
+
+// updateRestaurantByName("Somi",{name:"Som Sarovar"})
+
+
+
+async function updateRestaurantByPhone(phoneNumber,dateToUpdate){
+  try {
+    const updatedRestaurant = await Restaurant.findOneAndUpdate({phoneNumber:phoneNumber},dateToUpdate,{new:true});
+
+    console.log('restaurant updated by phone number',updatedRestaurant)
+
+  } catch (error) {
+     console.error('error updating restaurant by phone number',error)
+  }
+}
+
+
+updateRestaurantByPhone("+1288997392",{isDeliveryAvailable:true})
