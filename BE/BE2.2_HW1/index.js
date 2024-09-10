@@ -1,9 +1,9 @@
+const { ConnectionStates } = require('mongoose');
 const {initializeDatabase} = require('./config/db.connect');
  const Restaurant = require('./models/restaurant.model');
 
 
  initializeDatabase();
-
  const newRestaurant = {
   name: "Somi",
   cuisine: ["Greek"],
@@ -39,7 +39,7 @@ const newRestaurant2 = {
 
 
 
- // function to create a new restaurant ;
+ //  function to create a new restaurant ;
 
 
  async function createRestaurant(restaurant){
@@ -70,6 +70,7 @@ async function getAllRestaurant(){
 // getAllRestaurant()
 
 
+
 // get restaurant by the name;
 
 async function getRestaurantByName(name){
@@ -86,6 +87,20 @@ async function getRestaurantByName(name){
 // getRestaurantByName("New Restaurant")
 // getRestaurantByName("Cha Cha")
 
+
+
+// to read all restaurants which offers reservations
+
+async function getAllRestaurantByOffersReservations(available){
+  try {
+    const restaurants = await Restaurant.find({reservationsNeeded:available});
+    console.log("all restaurants by reservation",restaurants)
+  } catch (error) {
+    throw error
+  }
+}
+
+getAllRestaurantByOffersReservations(true)
 
 
 // read all restaurants which offers delivery
