@@ -164,3 +164,38 @@ const students = [
   })
 
   console.log(addAnnualIncome2)
+
+
+
+  console.log('\nProgram 10');
+
+  const students2 = [
+
+    { name: "Alice", score: 85 },
+  
+    { name: "Bob", score: 60 },
+  
+    { name: "Charlie", score: 92 },
+  
+  ];
+
+  const addGrade = students2.map((student)=>{
+    if(student.score >= 90 ){
+      student.grade = "A"
+    }
+    else if(student.score >= 80){
+      student.grade = "B"
+    }
+    else if(student.score >= 70){
+      student.grade = "C"
+    }
+    else if(student.score >= 60 ){
+      student.grade = "D"
+    }
+    else {
+      student.grade = "F"
+    }
+    return {name:student.name , grade:student.grade}
+  })
+
+  console.log(addGrade)
