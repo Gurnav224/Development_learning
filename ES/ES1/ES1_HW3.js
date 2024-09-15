@@ -30,11 +30,11 @@ function convertOddNumberToEven(myArray){
     let evenArr = [];
 
     for(let i=0; i<myArray.length; i++){
-        if(myArray[i]%2===1){
+        if(myArray[i]%2!==0){
             evenArr.push(myArray[i]+1)
         }
         else{
-            evenArr.push[myArray[i]]
+            evenArr.push(myArray[i])
         }
     }
 
