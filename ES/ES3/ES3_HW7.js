@@ -124,7 +124,7 @@ console.log(`\nquestion 10`)
 
 // 10. Write an arrow function `createEmail` that takes a username and domain and returns an object representing an email address, using shorthand property values.
 
-const createEmail= (username,domain)=>({username,domain})
+const createEmail= (username,domain)=>({username,domain, fullAddress:`${username}@${domain}`})
 
 console.log(createEmail("john.doe", "example.com"));
 // Output: { username: 'john.doe', domain: 'example.com', fullAddress: 'john.doe@example.com' }
