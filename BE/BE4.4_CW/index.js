@@ -1,7 +1,7 @@
 const {initializeDatabase  } = require('./config/db.connet')
 const express = require('express');
 const Movie = require('./models/movie.schema');
-
+const cors = require('cors')
 initializeDatabase();
 
 
@@ -10,6 +10,13 @@ initializeDatabase();
 
 const app = express();
 
+const corsOptions = {
+  origin:"*",
+  credentials:true,
+  optionSuccessStatus: 200,
+}
+
+app.use(cors(corsOptions))
 app.use(express.json())
 
 
@@ -52,7 +59,8 @@ async function getMovieByTitle(movieTitle){
 }
 
 app.get('/movies/:title', async (req , res) =>{
-  const {title} = req.params
+  const {title} = req.params;
+
 
   try {
     const movie = await getMovieByTitle(title);
