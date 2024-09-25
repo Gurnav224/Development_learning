@@ -30,7 +30,8 @@ const BookSchema = new mongoose.Schema(
         "Other",
         'Autobiography',
         'Business',
-        "Non-fiction"
+        "Non-fiction",
+        "Southern Gothic"
 
       ],
       default: "Other",

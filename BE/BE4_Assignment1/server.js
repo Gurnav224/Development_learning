@@ -1,10 +1,20 @@
 const express = require("express");
 const { connectDB } = require("./config/db.connect");
 const { Book } = require("./models/book.model");
+const cors = require('cors')
 
 connectDB();
 
 const app = express();
+
+const corsOption = {
+  origin:"*",
+  credential:true,
+  optionSuccessStatus:200
+}
+
+
+app.use(cors(corsOption))
 
 app.use(express.json());
 
@@ -64,7 +74,7 @@ app.get("/books", async (req, res) => {
 
 async function getBookByTitle(title) {
   try {
-    const book = await Book.find({ title: title });
+    const book = await Book.findOne({ title: title });
     return book;
   } catch (error) {
     throw error;
@@ -74,12 +84,12 @@ async function getBookByTitle(title) {
 app.get("/books/:title", async (req, res) => {
   const { title } = req.params;
   try {
-    const books = await getBookByTitle(title);
+    const book = await getBookByTitle(title);
 
-    if (books.length !== 0) {
+    if (book) {
       res.status(200).json({
         message: "get book by title successfully",
-        book: books,
+        book: book,
       });
     } else {
       res.status(404).json({ error: "Book not found" });
