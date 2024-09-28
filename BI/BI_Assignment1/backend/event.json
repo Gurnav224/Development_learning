@@ -1,0 +1,293 @@
+[
+    {
+      "title": "Entrepreneurship Bootcamp 2024",
+      "host": "Startup Academy",
+      "thumbnail": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "details": "An intensive bootcamp to help aspiring entrepreneurs launch their startups.",
+      "eventType":"Online",
+      "dressCode": "Business Casual",
+      "ageRestrictions": "18 or Above",
+      "location": "Chicago",
+      "venue": "Startup Hub",
+      "tags": ["entrepreneurship", "bootcamp", "2024"],
+      "startingTime": "2024-04-05T09:00:00.000Z",
+      "endingTime": "2024-04-07T18:00:00.000Z",
+      "price": 300,
+      "speakers": [
+        {
+          "name": "Jessica Adams",
+          "department": "Business Development",
+          "bio": "Jessica is a serial entrepreneur with over 15 years of experience in launching successful startups.",
+          "profilePic": "https://images.pexels.com/photos/2767680/pexels-photo-2767680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Mark Taylor",
+          "department": "Finance & Investment",
+          "bio": "Mark is an investment expert specializing in early-stage startups and venture capital.",
+          "profilePic": "https://images.pexels.com/photos/1753292/pexels-photo-1753292.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        }
+      ]
+    },
+    {
+      "title": "Digital Art Exhibition 2024",
+      "host": "Creative Minds Studio",
+      "thumbnail": "https://images.pexels.com/photos/69903/pexels-photo-69903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "details": "A showcase of the latest trends in digital art and creative design.",
+      "eventType":"Offline",
+      "dressCode": "Casual",
+      "ageRestrictions": "All Ages",
+      "location": "New York",
+      "venue": "Art Space",
+      "tags": ["art", "digital", "exhibition"],
+      "startingTime": "2024-11-02T10:00:00.000Z",
+      "endingTime": "2024-11-04T18:00:00.000Z",
+      "price": 50,
+      "speakers": [
+        {
+          "name": "Rachel Parker",
+          "department": "Digital Illustration",
+          "bio": "Rachel is a renowned digital artist known for her groundbreaking works in illustration.",
+          "profilePic": "https://images.pexels.com/photos/1181338/pexels-photo-1181338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Kevin Smith",
+          "department": "Graphic Design",
+          "bio": "Kevin is an award-winning graphic designer with 10 years of experience in digital media.",
+          "profilePic": "https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        }
+      ]
+    },
+    {
+      "title": "Sustainability Summit 2024",
+      "host": "Green Planet Initiative",
+      "thumbnail": "https://images.pexels.com/photos/532192/pexels-photo-532192.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "details": "A summit focused on environmental sustainability and climate change solutions.",
+      "eventType":"Both",
+      "dressCode": "Business Casual",
+      "ageRestrictions": "All Ages",
+      "location": "Vancouver",
+      "venue": "Eco Center",
+      "tags": ["sustainability", "climate", "2024"],
+      "startingTime": "2024-08-18T09:00:00.000Z",
+      "endingTime": "2024-08-20T17:00:00.000Z",
+      "price": 200,
+      "speakers": [
+        {
+          "name": "Dr. Lisa Green",
+          "department": "Environmental Science",
+          "bio": "Dr. Green is a leading researcher in climate science and sustainable development.",
+          "profilePic": "https://images.pexels.com/photos/315320/pexels-photo-315320.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Tom Anderson",
+          "department": "Renewable Energy",
+          "bio": "Tom is an expert in renewable energy solutions and green technology.",
+          "profilePic": "https://images.pexels.com/photos/230845/pexels-photo-230845.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        }
+      ]
+    },
+    {
+      "title": "Film Directors Masterclass 2024",
+      "host": "Cinema World",
+      "thumbnail": "https://images.pexels.com/photos/374093/pexels-photo-374093.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "details": "An exclusive masterclass with top film directors and producers.",
+      "eventType":"Online",
+      "dressCode": "Casual",
+      "ageRestrictions": "18 or Above",
+      "location": "Los Angeles",
+      "venue": "Hollywood Studios",
+      "tags": ["film", "directing", "masterclass"],
+      "startingTime": "2024-06-12T10:00:00.000Z",
+      "endingTime": "2024-06-14T17:00:00.000Z",
+      "price": 400,
+      "speakers": [
+        {
+          "name": "Steven Kelly",
+          "department": "Directing",
+          "bio": "Steven is an award-winning director known for his work in both feature films and independent cinema.",
+          "profilePic": "https://images.pexels.com/photos/352540/pexels-photo-352540.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Clara Rivera",
+          "department": "Screenwriting",
+          "bio": "Clara is a critically acclaimed screenwriter with multiple award-winning scripts.",
+          "profilePic": "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        }
+      ]
+    },
+    {
+      "title": "Global Health Conference 2024",
+      "host": "World Health Organization",
+      "thumbnail": "https://images.pexels.com/photos/4226124/pexels-photo-4226124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "details": "A conference addressing global health challenges and innovations in healthcare.",
+      "eventType":"Offline",
+      "dressCode": "Formal",
+      "ageRestrictions": "21 or Above",
+      "location": "Geneva",
+      "venue": "Palais des Nations",
+      "tags": ["health", "global", "conference"],
+      "startingTime": "2024-10-05T08:00:00.000Z",
+      "endingTime": "2024-10-08T17:00:00.000Z",
+      "price": 500,
+      "speakers": [
+        {
+          "name": "Dr. James Carter",
+          "department": "Public Health",
+          "bio": "Dr. Carter is an expert in global health policies and infectious diseases.",
+          "profilePic": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Dr. Maria Gomez",
+          "department": "Epidemiology",
+          "bio": "Dr. Gomez has been at the forefront of epidemiological research in emerging infectious diseases.",
+          "profilePic": "https://images.pexels.com/photos/154933/pexels-photo-154933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        }
+      ]
+    },
+    {
+        "title": "Music Festival 2024",
+        "host": "Music Lovers Inc.",
+        "thumbnail": "https://images.pexels.com/photos/3184331/pexels-photo-3184331.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "details": "A music festival for music lovers",
+        "eventType":"Both",
+        "dressCode": "Casual",
+        "ageRestrictions": "18 or Above",
+        "location": "Los Angeles",
+        "venue": "Dodger Stadium",
+        "tags": ["music", "festival", "2024"],
+        "startingTime": "2024-06-01T12:00:00.000Z",
+        "endingTime": "2024-06-03T22:00:00.000Z",
+        "price": 200,
+        "speakers": [
+          {
+            "name": "Bob Johnson",
+            "department": "Music Production",
+            "bio": "Bob is a music producer with 15 years of experience",
+            "profilePic": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          },
+          {
+            "name": "Alice Brown",
+            "department": "Singing",
+            "bio": "Alice is a singer with 10 years of experience",
+            "profilePic": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          }
+        ]
+      },
+      {
+        "title": "Tech Innovation Expo 2024",
+        "host": "Innovators Hub",
+        "thumbnail": "https://images.pexels.com/photos/3183156/pexels-photo-3183156.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "details": "An expo showcasing the latest innovations in technology and entrepreneurship.",
+        "eventType":"Online",
+        "dressCode": "Business Casual",
+        "ageRestrictions": "All Ages",
+        "location": "San Francisco",
+        "venue": "Moscone Center",
+        "tags": ["technology", "expo", "innovation", "2024"],
+        "startingTime": "2024-09-15T09:00:00.000Z",
+        "endingTime": "2024-09-17T17:00:00.000Z",
+        "price": 150,
+        "speakers": [
+          {
+            "name": "Dr. John Matthews",
+            "department": "AI Research",
+            "bio": "John is a leading AI researcher with over 20 years of experience in machine learning.",
+            "profilePic": "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          },
+          {
+            "name": "Samantha Lee",
+            "department": "Entrepreneurship",
+            "bio": "Samantha is a successful entrepreneur and business consultant with 12 years in the tech industry.",
+            "profilePic": "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          }
+        ]
+      },
+      {
+        "title": "Business Leaders Summit 2024",
+        "host": "Global Enterprises",
+        "thumbnail": "https://images.pexels.com/photos/2078266/pexels-photo-2078266.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "details": "A summit for top business leaders to discuss global economic trends.",
+        "eventType":"Offline",
+        "dressCode": "Formal",
+        "ageRestrictions": "21 or Above",
+        "location": "New York",
+        "venue": "Javits Center",
+        "tags": ["business", "leadership", "2024"],
+        "startingTime": "2024-05-10T10:00:00.000Z",
+        "endingTime": "2024-05-12T18:00:00.000Z",
+        "price": 500,
+        "speakers": [
+          {
+            "name": "Linda Carter",
+            "department": "Corporate Strategy",
+            "bio": "Linda has led corporate strategies for Fortune 500 companies for over 25 years.",
+            "profilePic": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          },
+          {
+            "name": "Richard Evans",
+            "department": "Global Markets",
+            "bio": "Richard is a financial analyst and market strategist.",
+            "profilePic": "https://images.pexels.com/photos/432722/pexels-photo-432722.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          }
+        ]
+      },
+      {
+        "title": "Creative Arts Workshop",
+        "host": "Artistic Minds Collective",
+        "thumbnail": "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "details": "A workshop for budding artists to explore various forms of creative expression.",
+        "eventType":"Online",
+        "dressCode": "Casual",
+        "ageRestrictions": "All Ages",
+        "location": "Seattle",
+        "venue": "Creative Arts Center",
+        "tags": ["arts", "workshop", "creative"],
+        "startingTime": "2024-07-22T09:00:00.000Z",
+        "endingTime": "2024-07-24T16:00:00.000Z",
+        "price": 100,
+        "speakers": [
+          {
+            "name": "Emily Foster",
+            "department": "Visual Arts",
+            "bio": "Emily is an award-winning artist known for her abstract paintings.",
+            "profilePic": "https://images.pexels.com/photos/2924041/pexels-photo-2924041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          },
+          {
+            "name": "James Thompson",
+            "department": "Photography",
+            "bio": "James has been a professional photographer for 20 years specializing in landscape and portrait photography.",
+            "profilePic": "https://images.pexels.com/photos/1015568/pexels-photo-1015568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          }
+        ]
+      },
+      {
+        "title": "Health & Wellness Retreat",
+        "host": "Wellness World",
+        "thumbnail": "https://images.pexels.com/photos/8692129/pexels-photo-8692129.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "details": "A retreat focused on mental and physical wellness with yoga, meditation, and nutrition workshops.",
+        "eventType":"Both",
+        "dressCode": "Comfortable",
+        "ageRestrictions": "All Ages",
+        "location": "Hawaii",
+        "venue": "Wellness Resort",
+        "tags": ["health", "wellness", "retreat"],
+        "startingTime": "2024-03-10T08:00:00.000Z",
+        "endingTime": "2024-03-15T18:00:00.000Z",
+        "price": 800,
+        "speakers": [
+          {
+            "name": "Sarah Lee",
+            "department": "Yoga & Meditation",
+            "bio": "Sarah is a certified yoga instructor and meditation guide with 10 years of experience.",
+            "profilePic": "https://images.pexels.com/photos/317155/pexels-photo-317155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          },
+          {
+            "name": "David Kim",
+            "department": "Nutrition",
+            "bio": "David is a nutritionist specializing in holistic and plant-based diets.",
+            "profilePic": "https://images.pexels.com/photos/428342/pexels-photo-428342.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          }
+        ]
+      }
+  ]
+  
