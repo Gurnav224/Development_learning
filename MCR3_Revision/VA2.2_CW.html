@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="">choose your gender</label>
+        <label for="male">
+            <input type="radio" name="Gender" id="male" value="male"> male
+        </label>
+        <label for="female">
+            <input type="radio" name="Gender" id="female" value="female"> female
+        </label>
+        <label for="others">
+            <input type="radio" name="Gender" id="others" value="others"> others
+        </label>
+        <p id="selectedGender"></p>
+    </div>
+
+    <div>
+        <p>choose your meal preferences</p>
+        <label for="veg">
+        <input type="radio" name="meal" id="veg" value="veg">    veg
+        </label>
+        <label for="non-veg">
+        <input type="radio" name="meal" id="non-veg" value="non-veg">    non-veg
+        </label>
+        <p id="meal_result"></p>
+    </div>
+     
+
+    <div>
+        <p>choose a size</p>
+        <label for="small">
+            <input type="radio" name="size" id="small" value="small"> small
+        </label>    
+        <label for="medium">
+            <input type="radio" name="size" id="medium" value="medium">medium
+        </label>    
+        <label for="large">
+            <input type="radio" name="size" id="large" value="large"> large
+        </label>    
+
+        <p id="size_result"></p>
+    </div>
+
+    <script>
+        const sizeOptions = document.getElementsByName('size');
+        const sizeResult = document.querySelector('#size_result');
+
+        for(let i = 0; i < sizeOptions.length; i++){
+            sizeOptions[i].addEventListener('change' , () => {
+                const selectedSizeValue = document.querySelector('input[name="size"]:checked').value;
+                sizeResult.textContent = selectedSizeValue
+            })
+        }
+
+        const mealsOption = document.getElementsByName('meal');
+        const mealResult = document.querySelector('#meal_result');
+
+        for(let i = 0; i  < mealsOption.length; i++){
+            mealsOption[i].addEventListener('change' , () => {
+                const selectedMeal = document.querySelector('input[name="meal"]:checked').value;
+                mealResult.textContent = selectedMeal;
+            })
+        }
+
+        const genderOptions = document.getElementsByName('Gender');
+        const selectedGender = document.querySelector('#selectedGender')
+
+        for(let i = 0; i < genderOptions.length; i++){
+            genderOptions[i].addEventListener('change', () => {
+                const selected = document.querySelector('input[name="Gender"]:checked').value;
+                selectedGender.textContent = selected
+            })
+        }
+
+    </script>
+</body>
+</html>

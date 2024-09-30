@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Select the checkbox</label>
+        <input type="checkbox" id="option"> Opt In
+        <p id="result"></p>
+    </div>
+
+    <div>
+        <label for="pepperoni">
+            <input type="checkbox" name="toppings" id="pepperoni" value="pepperoni">pepperoni
+        </label>
+        <label for="Olive">
+            <input type="checkbox" name="toppings" id="Olive" value="Olive">Olive
+        </label>
+        <label for="Mushrooms">
+            <input type="checkbox" name="toppings" id="Mushrooms" value="Mushrooms"> Mushrooms
+        </label>
+        <p id="output"></p>
+    </div>
+
+    <div>
+        <label>Select your Favourite Programming Langauge</label>
+        <label for="Java">
+            <input type="checkbox" name="Langauge" id="Java" value="Java">Java
+        </label>
+        <label for="Javascript">
+            <input type="checkbox" name="Langauge" id="Javascript" value="Javascript">Javascript
+        </label>
+        <label for="python">
+            <input type="checkbox" name="Langauge" id="python" value="python"> python
+        </label>
+        <p id="fav_language"></p>
+    </div>
+
+    
+<script>
+
+    const allLangauges = document.querySelectorAll('input[name="Langauge"]');
+    const showLang = document.querySelector('#fav_language')
+
+    for(let i = 0; i < allLangauges.length; i++){
+        allLangauges[i].addEventListener('change',() => {
+            let selectedLanguage = [];
+
+            for(let j = 0; j < allLangauges.length; j++) {
+                if(allLangauges[j].checked) {
+                    selectedLanguage.push(allLangauges[j].value)
+                }
+            }
+
+            showLang.textContent = `my favourite langauge , ${selectedLanguage.join(", ")}`
+        })
+    }
+
+
+    const allToppingsCheckbox = document.querySelectorAll('input[name="toppings"]');
+    const output = document.querySelector('#output')
+
+    for(let i = 0; i < allToppingsCheckbox.length; i++){
+        allToppingsCheckbox[i].addEventListener('click', () => {
+            let selectedToppings = [];
+
+            for(let j = 0; j < allToppingsCheckbox.length; j++){
+                if(allToppingsCheckbox[j].checked) {
+                    selectedToppings.push(allToppingsCheckbox[j].value)
+                }
+            }
+
+            output.textContent = selectedToppings.join(", ")
+
+        })
+    }
+  
+
+    const option = document.querySelector('#option');
+    const result = document.querySelector('#result');
+
+    option.addEventListener('change', () => {
+        console.log(option.checked)
+    })
+</script>
+</body>
+</html>

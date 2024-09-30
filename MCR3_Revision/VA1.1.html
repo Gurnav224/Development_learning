@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA1.2 Revisison</title>
+</head>
+<body>
+    
+
+    <div>
+        <input type="text" name="name" id="user">
+        <button id="user_btn">greet user</button>
+        <p id="greet_user"></p>
+    </div>
+
+    <div>
+        <input type="email" name="email" id="email">
+        <button id="validate_btn">Validate Email</button>
+        <p id="emailMsg"></p>
+    </div>
+
+    <div>
+        <input type="number" id="number">
+        <button id="square_btn">square</button>
+        <p id="result"></p>
+    </div>
+
+    <div>
+        <input type="text" id="url">
+        <button id="link_btn">show link</button>
+        <p id="link_preview"></p>
+    </div>
+
+    <div>
+        <input type="text" id="stringInput">
+        <button id="count_btn">Count words</button>
+        <p id="string_result"></p>
+    </div>
+
+    <script>
+
+        const stringInput = document.querySelector('#stringInput');
+        const countBtn = document.querySelector('#count_btn');
+        const stringResult = document.querySelector('#string_result');
+
+        console.log(countBtn)
+
+        countBtn.addEventListener('click', () => {
+            const noOfWords = stringInput.value.split(' ').length;
+            stringResult.textContent = noOfWords
+        })
+
+
+
+        const userInput = document.querySelector('#user');
+        const userBtn = document.querySelector('#user_btn');
+        const displayUser = document.querySelector('#greet_user');
+
+        userBtn.addEventListener('click',()=>{
+            displayUser.textContent = `Good Morning , ${userInput.value}`
+        });
+
+        const emailInput = document.querySelector('#email');
+        const validateBtn = document.querySelector('#validate_btn');
+        const emailMessage = document.querySelector('#emailMsg');
+
+        validateBtn.addEventListener('click', ()=>{
+            const atIndex = emailInput.value.indexOf("@");
+            const dotIndex = emailInput.value.indexOf('.');
+
+            if(atIndex > 0 && dotIndex > atIndex){
+                emailMessage.textContent = 'you have an valid email'
+            }
+            else{
+                emailMessage.textContent = 'you have not an valide email'
+            }
+        })
+
+
+        const number = document.querySelector('#number');
+        const squareBtn = document.querySelector('#square_btn');
+        const result = document.querySelector('#result');
+
+        squareBtn.addEventListener('click',() => {
+            result.textContent = number.value* number.value
+        });
+
+
+        const urlInput = document.querySelector('#url');
+        const linkBtn = document.querySelector('#link_btn');
+        const linkPreview = document.querySelector('#link_preview');
+
+        linkBtn.addEventListener('click', () => {
+
+            linkPreview.innerHTML = `<a target="_blank" href="${urlInput.value}"> redirect website</a>` 
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <p>select your favourite code editor</p>
+      <label for="vscode">
+        <input type="checkbox" name="editor" id="vscode" value="vscode" />vscode
+      </label>
+
+      <label for="pycharm">
+        <input type="checkbox" name="editor" id="pycharm" value="pycharm" />Pycharm
+      </label>
+
+      <label for="neovim">
+        <input type="checkbox" name="editor" id="neovim" value="neovim" />neovim
+      </label>
+    </div>
+
+
+    <script>
+        const allEditors = document.querySelectorAll('input[name="editor"]');
+
+        for(let i=0; i < allEditors.length; i++){
+            allEditors[i].addEventListener('change', () => {
+                let selectedEditor = [];
+                for(let j = 0; j < allEditors.length;  j++){
+                    if(allEditors[j].checked){
+                        selectedEditor.push(allEditors[j].value)
+                    }
+                }
+                console.log(selectedEditor)
+            })
+        }
+    </script>
+  </body>
+</html>
