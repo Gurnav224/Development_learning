@@ -1,0 +1,65 @@
+[
+    {
+      "name": "Tops",
+      "description": "Upper body garments including t-shirts, blouses, and shirts",
+      "icon": "shirt",
+      "subcategories": ["T-Shirts", "Blouses", "Shirts", "Sweaters", "Hoodies"],
+      "featuredProducts": ["Classic White T-Shirt", "Men's Dress Shirt", "Knit Sweater"]
+    },
+    {
+      "name": "Bottoms",
+      "description": "Lower body garments including pants, shorts, and skirts",
+      "icon": "pants",
+      "subcategories": ["Jeans", "Trousers", "Shorts", "Skirts", "Leggings"],
+      "featuredProducts": ["Slim Fit Jeans", "High-Waisted Yoga Leggings"]
+    },
+    {
+      "name": "Dresses",
+      "description": "One-piece garments for various occasions",
+      "icon": "dress",
+      "subcategories": ["Casual Dresses", "Formal Dresses", "Maxi Dresses", "Mini Dresses", "Sundresses"],
+      "featuredProducts": ["Floral Summer Dress"]
+    },
+    {
+      "name": "Outerwear",
+      "description": "Garments worn over other clothes for warmth or style",
+      "icon": "jacket",
+      "subcategories": ["Jackets", "Coats", "Blazers", "Vests", "Cardigans"],
+      "featuredProducts": ["Oversized Denim Jacket", "Men's Formal Suit"]
+    },
+    {
+      "name": "Accessories",
+      "description": "Items that complement outfits such as bags, jewelry, and hats",
+      "icon": "handbag",
+      "subcategories": ["Bags", "Jewelry", "Hats", "Scarves", "Belts"],
+      "featuredProducts": ["Wireless Noise-Cancelling Headphones", "Leather Crossbody Bag", "Straw Sun Hat", "Silk Scarf", "Leather Belt"]
+    },
+    {
+      "name": "Footwear",
+      "description": "Shoes and boots for all occasions",
+      "icon": "shoe",
+      "subcategories": ["Sneakers", "Boots", "Sandals", "Heels", "Flats"],
+      "featuredProducts": ["Leather Ankle Boots", "Women's Running Shoes"]
+    },
+    {
+      "name": "Underwear",
+      "description": "Undergarments and sleepwear",
+      "icon": "underwear",
+      "subcategories": ["Bras", "Panties", "Boxers", "Briefs", "Pajamas"],
+      "featuredProducts": ["Cotton Pajama Set"]
+    },
+    {
+      "name": "Activewear",
+      "description": "Clothing designed for sports and exercise",
+      "icon": "running",
+      "subcategories": ["Workout Tops", "Workout Bottoms", "Sports Bras", "Swimwear", "Athletic Socks"],
+      "featuredProducts": ["High-Waisted Yoga Leggings", "Men's Swim Shorts"]
+    },
+    {
+      "name": "Others",
+      "description": "Miscellaneous items that don't fit into other categories",
+      "icon": "more-horizontal",
+      "subcategories": ["Costumes", "Uniforms", "Special Occasion Wear", "Maternity Wear"],
+      "featuredProducts": []
+    }
+  ]

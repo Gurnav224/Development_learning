@@ -1,0 +1,262 @@
+[
+    {
+      "name": "Classic White T-Shirt",
+      "description": "A comfortable and versatile white t-shirt made from 100% organic cotton.",
+      "thumbnail": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200&h=200&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800",
+        "https://images.unsplash.com/photo-1622445275576-721325763afe?w=800"
+      ],
+      "price": 24.99,
+      "rating": 4.5,
+      "category": "Tops",
+      "brand": "EcoWear"
+    },
+    {
+      "name": "Slim Fit Jeans",
+      "description": "Stylish and comfortable slim fit jeans in a classic blue wash.",
+      "thumbnail": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=200&h=200&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1542272604-787c3835535d?w=800",
+        "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800"
+      ],
+      "price": 59.99,
+      "rating": 4.2,
+      "category": "Bottoms",
+      "brand": "DenimCo"
+    },
+    {
+      "name": "Floral Summer Dress",
+      "description": "A light and breezy floral print dress perfect for summer days.",
+      "thumbnail": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=200&h=200&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800",
+        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800"
+      ],
+      "price": 49.99,
+      "rating": 4.7,
+      "category": "Dresses",
+      "brand": "SummerChic"
+    },
+    {
+      "name": "Leather Ankle Boots",
+      "description": "Classic leather ankle boots with a comfortable low heel.",
+      "thumbnail": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=200&h=200&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800",
+        "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=800"
+      ],
+      "price": 89.99,
+      "rating": 4.4,
+      "category": "Footwear",
+      "brand": "UrbanStep"
+    },
+    {
+      "name": "Oversized Denim Jacket",
+      "description": "A trendy oversized denim jacket for a casual, effortless look.",
+      "thumbnail": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=200&h=200&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800",
+        "https://images.unsplash.com/photo-1527016021513-b09758b777bc?w=800"
+      ],
+      "price": 79.99,
+      "rating": 4.6,
+      "category": "Outerwear",
+      "brand": "StreetStyle"
+    },
+    {
+        "name": "Wireless Noise-Cancelling Headphones",
+        "description": "Premium over-ear headphones with active noise cancellation and 30-hour battery life.",
+        "thumbnail": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800",
+          "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800"
+        ],
+        "price": 299.99,
+        "rating": 4.8,
+        "category": "Accessories",
+        "brand": "SoundMaster"
+      },
+      {
+        "name": "High-Waisted Yoga Leggings",
+        "description": "Comfortable and stretchy high-waisted leggings perfect for yoga or any workout.",
+        "thumbnail": "https://images.unsplash.com/photo-1556816723-1ce827b9cfca?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1556816723-1ce827b9cfca?w=800",
+          "https://images.unsplash.com/photo-1515186191005-cd6c8c25d41c?w=800"
+        ],
+        "price": 54.99,
+        "rating": 4.6,
+        "category": "Activewear",
+        "brand": "FitFlex"
+      },
+      {
+        "name": "Men's Dress Shirt",
+        "description": "Classic white dress shirt made from wrinkle-resistant cotton blend fabric.",
+        "thumbnail": "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800",
+          "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=800"
+        ],
+        "price": 69.99,
+        "rating": 4.4,
+        "category": "Tops",
+        "brand": "ExecutiveStyle"
+      },
+      {
+        "name": "Satin Sleep Mask",
+        "description": "Soft and comfortable satin sleep mask for a restful night's sleep.",
+        "thumbnail": "https://images.unsplash.com/photo-1613628292607-a44c698ba82b?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1613628292607-a44c698ba82b?w=800",
+          "https://images.unsplash.com/photo-1617733063738-fe0cdf15406f?w=800"
+        ],
+        "price": 19.99,
+        "rating": 4.7,
+        "category": "Accessories",
+        "brand": "DreamWell"
+      },
+      {
+        "name": "Leather Wallet",
+        "description": "Slim leather wallet with multiple card slots and RFID blocking technology.",
+        "thumbnail": "https://images.unsplash.com/photo-1627123424574-724758594e93?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1627123424574-724758594e93?w=800",
+          "https://images.unsplash.com/photo-1606503825008-909a67e63c3d?w=800"
+        ],
+        "price": 39.99,
+        "rating": 4.5,
+        "category": "Accessories",
+        "brand": "LeatherLux"
+      },
+      {
+        "name": "Smartwatch",
+        "description": "Fitness tracker and smartwatch with heart rate monitor and GPS.",
+        "thumbnail": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800",
+          "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800"
+        ],
+        "price": 199.99,
+        "rating": 4.6,
+        "category": "Accessories",
+        "brand": "TechFit"
+      },
+      {
+        "name": "Men's Swim Shorts",
+        "description": "Quick-dry swim shorts with elastic waistband and side pockets.",
+        "thumbnail": "https://images.unsplash.com/photo-1565506742662-f763bf89194d?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1565506742662-f763bf89194d?w=800",
+          "https://images.unsplash.com/photo-1554620121-59e7f3f6e3a4?w=800"
+        ],
+        "price": 34.99,
+        "rating": 4.3,
+        "category": "Activewear",
+        "brand": "OceanWave"
+      },
+      {
+        "name": "Silk Scarf",
+        "description": "Elegant silk scarf with a vibrant floral print.",
+        "thumbnail": "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=800",
+          "https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?w=800"
+        ],
+        "price": 49.99,
+        "rating": 4.7,
+        "category": "Accessories",
+        "brand": "LuxeSilk"
+      },
+      {
+        "name": "Leather Crossbody Bag",
+        "description": "Compact leather crossbody bag with adjustable strap and multiple compartments.",
+        "thumbnail": "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=800",
+          "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800"
+        ],
+        "price": 89.99,
+        "rating": 4.5,
+        "category": "Accessories",
+        "brand": "UrbanChic"
+      },
+      {
+        "name": "Men's Formal Suit",
+        "description": "Classic two-piece suit in charcoal gray, perfect for formal occasions.",
+        "thumbnail": "https://images.unsplash.com/photo-1593030103066-0093718efeb9?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1593030103066-0093718efeb9?w=800",
+          "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800"
+        ],
+        "price": 299.99,
+        "rating": 4.8,
+        "category": "Outerwear",
+        "brand": "ExecSuits"
+      },
+      {
+        "name": "Women's Running Shoes",
+        "description": "Lightweight and supportive running shoes with responsive cushioning.",
+        "thumbnail": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800",
+          "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800"
+        ],
+        "price": 129.99,
+        "rating": 4.6,
+        "category": "Footwear",
+        "brand": "SprintFlex"
+      },
+      {
+        "name": "Cotton Pajama Set",
+        "description": "Soft and comfortable cotton pajama set with long sleeves and pants.",
+        "thumbnail": "https://images.unsplash.com/photo-1618677366787-9360ba88cee3?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1618677366787-9360ba88cee3?w=800",
+          "https://images.unsplash.com/photo-1631947430066-48c30d57b943?w=800"
+        ],
+        "price": 59.99,
+        "rating": 4.4,
+        "category": "Underwear",
+        "brand": "SleepCozy"
+      },
+      {
+        "name": "Straw Sun Hat",
+        "description": "Wide-brimmed straw sun hat for stylish sun protection.",
+        "thumbnail": "https://images.unsplash.com/photo-1572307480813-ceb0e59d8325?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1572307480813-ceb0e59d8325?w=800",
+          "https://images.unsplash.com/photo-1582791694770-cbdc9dda338f?w=800"
+        ],
+        "price": 29.99,
+        "rating": 4.3,
+        "category": "Accessories",
+        "brand": "BeachStyle"
+      },
+      {
+        "name": "Leather Belt",
+        "description": "Classic leather belt with a brushed metal buckle.",
+        "thumbnail": "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=800",
+          "https://images.unsplash.com/photo-1553704571-c32d20e6c74f?w=800"
+        ],
+        "price": 39.99,
+        "rating": 4.5,
+        "category": "Accessories",
+        "brand": "LeatherCraft"
+      },
+      {
+        "name": "Knit Sweater",
+        "description": "Warm and cozy cable-knit sweater in a soft wool blend.",
+        "thumbnail": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=200&h=200&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800",
+          "https://images.unsplash.com/photo-1599719500956-d158a26ab3ee?w=800"
+        ],
+        "price": 79.99,
+        "rating": 4.7,
+        "category": "Tops",
+        "brand": "CozyKnits"
+      }
+  ]
