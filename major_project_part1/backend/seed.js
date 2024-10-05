@@ -50,12 +50,14 @@ async function seedCategory(){
     try {
 
         for(let category of categoryJson){
+            console.log(category)
             const newCategory = new Category({
                 name:category.name,
                 description:category.description,
                 icon:category.icon,
                 subcategories:category.subcategories,
-                featuredProducts:category.featuredProducts
+                featuredProducts:category.featuredProducts,
+                categoryImgUrl:category.categoryImgUrl
             })
             const savedCategory = await newCategory.save();
             console.log('saved category',savedCategory.name)

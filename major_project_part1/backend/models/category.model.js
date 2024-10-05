@@ -12,8 +12,10 @@ const CategorySchema = new Schema({
     required:true
  },
  icon:{
+   type:String,
+ },
+ categoryImgUrl:{
     type:String,
-    required:true
  },
  subcategories:[
     {
