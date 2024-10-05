@@ -32,7 +32,7 @@ const Home = () => {
       </div>
 
       <div className="container text-center">
-      <Link to={"/products"} className="btn  mx-auto btn-primary btn-lg fs-2 text-center my-4">OUR PRODUCTS</Link>
+      <Link to={"/products"} className="btn  mx-auto btn-primary btn-lg fs-2 text-center ">OUR PRODUCTS</Link>
       </div>
 
       <div className="container my-4">
