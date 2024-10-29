@@ -7,7 +7,7 @@ const EventDetails = () => {
   const { id } = useParams();
 
   const { data, loading, error } = useFetch(
-    `http://localhost:3000/events/${id}`
+    `https://meetup-app-puce.vercel.app/events/${id}`
   );
 
   const event = data?.event;

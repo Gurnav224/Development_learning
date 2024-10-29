@@ -12,6 +12,7 @@ import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import EventDetails from './pages/EventDetails.jsx'
 import Events from './pages/Events.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path:'/events/:id',
     element:<EventDetails/>
+  },
+  {
+    path:"*",
+    element:<NotFound/>
   }
 ])
 
