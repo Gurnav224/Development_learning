@@ -1,50 +1,43 @@
-
-import {createStore} from "redux";
-
+import { createStore } from "redux";
 import todoReducer from "./todoReducer";
-import { addTodo , removeTodo } from "./actions";
+import { addTodo, removeTodo } from "./actions";
 
-const store = createStore(todoReducer);
-
+const store = createStore(todoReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__&& window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 store.subscribe(() => {
-  updateTodolist()
+  console.log("store subscribed", store.getState()), 
+  taskListDisplay();
 });
 
-
-const todoInput = document.querySelector('#todoInput');
-const addBtn = document.querySelector('#add_btn');
-const taskList = document.querySelector('#tasklist');
-
-
+const inputText = document.querySelector("#input_text");
+const addBtn = document.querySelector("#add_btn");
+const taskList = document.querySelector("#task_list");
 
 const addTodoHandler = () => {
-  const todoValue = todoInput.value ;
-  if(todoValue){
-    taskList.innerHTML = todoInput.value;
-    store.dispatch(addTodo(todoValue))
+  const todoValue = inputText.value;
+  if (todoValue) {
+    store.dispatch(addTodo(todoValue));
   }
-}
+};
 
-addBtn.addEventListener('click',addTodoHandler);
+window.removeTodoHandler = (index) => {
+  store.dispatch(removeTodo(index));
+};
 
-window.removeHandler = (index) => {
-  store.dispatch(removeTodo(index))
-}
+addBtn.addEventListener("click", addTodoHandler);
 
-const updateTodolist = () => {
-  const state = store.getState();
+const taskListDisplay = () => {
+  const tasks = store.getState();
+  taskList.innerHTML = tasks.todos
+    .map((task, index) => {
+      return `<li>${index}
+     ${task}
+     <button onClick="removeTodoHandler(${index})">Remove</button>
+    </li>`;
+    })
+    .join(" ");
+};
 
-  const todo = state.todos.map((todo , index) => `<li>
-  ${todo}
-  <button onClick="removeHandler(${index})">Remove</button>
-  </li>`).join('')
-
-  console.log(todo)
- 
-  taskList.innerHTML = todo
-
-
-}
-
-updateTodolist()
+taskListDisplay();

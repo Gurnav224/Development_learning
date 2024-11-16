@@ -1,16 +1,23 @@
-import { ADD_TODO, REMOVE_TODO } from "./actions"
+import { ADD_TODO, REMOVE_TODO } from "./actions";
 
-const initialState = {todos:[]}
+const initialState = { todos: [] };
 
-const todoReducer = (state = initialState , action) => {
- switch(action.type){
+function todoReducer(state = initialState, action) {
+  console.log(action);
+  switch (action.type) {
     case ADD_TODO:
-        return {...state,todos:[...state.todos,action.payload]}
+      return {
+        ...state,
+        todos: [...state.todos, action.payload],
+      };
     case REMOVE_TODO:
-        return {...state,todos:state.todos.filter((todo,index) => index != action.payload)}
+      return {
+        ...state,
+        todos: state.todos.filter((val, index) => index != action.payload),
+      };
     default:
-        return state
- }
+      return state;
+  }
 }
 
-export default todoReducer
+export default todoReducer;
