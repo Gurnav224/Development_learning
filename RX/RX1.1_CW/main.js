@@ -1,39 +1,34 @@
 import {createStore} from "redux";
+import cookieReducer from './cookieReducer';
 
-import cookieReducer from "./cookieReducer";
+
 
 const store = createStore(cookieReducer);
 
-store.subscribe(() =>{
-  udpateCookieCount();
+store.subscribe(() => {
+    console.log(store.getState());
+    updateCookieUI();
 })
 
+const addCookie = document.querySelector('#addCookie');
+const removeCookie = document.querySelector('#removeCookie');
+const cookieCount = document.querySelector('#cookie_count');
 
 
-const addCookie = document.querySelector('#addCookie')
-const removeCookie = document.querySelector('#removeCookie')
-const cookieCount = document.querySelector('#cookieCount');
-
-
-
-const addCookieHandler = () => {
-  store.dispatch({type:"cookies/added"})
-
+function addCookieHandler(){
+    store.dispatch({type:'cookie/add'})
 }
 
-const removeCookieHandler  = () => {
-  store.dispatch({type:"cookies/remove"})
-
+function removeCookieHandler(){
+    store.dispatch({type:'cookie/remove'})
 }
-
 
 addCookie.addEventListener('click',addCookieHandler);
-removeCookie.addEventListener('click',removeCookieHandler);
+removeCookie.addEventListener('click',removeCookieHandler)
 
-
-const udpateCookieCount = () => {
-  const state = store.getState();
-  cookieCount.textContent = state.value;
+function updateCookieUI(){
+    const state = store.getState();
+    cookieCount.textContent = state.value;
 }
 
-udpateCookieCount()
+updateCookieUI()
