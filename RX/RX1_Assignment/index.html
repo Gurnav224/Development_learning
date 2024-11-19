@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <section>
+      <h1>Add Task</h1>
+      <input type="text" id="title" >
+      <input type="text" id="description">
+      <button id="add_task_button">Add Task</button>
+    </section>
+
+    <section>
+      <h1>Remove Task</h1>
+      <input type="text" id="task_id">
+      <button id="remove_task_button">Remove Task</button>
+    </section>
+
+    <ul id="task_list">
+
+    </ul>
+
+    <section>
+      <p id="total_tasks"></p>
+    </section>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
