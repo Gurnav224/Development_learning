@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <section>
+        <h1>Add Profile</h1>
+        <input type="number" name="id" id="profileId" placeholder="ID">
+        <input type="text" name="name" id="name" placeholder="name">
+        <input type="number" name="age" id="age" placeholder="age"> 
+        <button id="add_profile">Add Profile</button>
+    </section>
+
+
+    <section>
+
+        <h1>Remove Profile</h1>
+        <input type="text" placeholder="ID" id="remove_id">
+        <button id="remove_profile_btn">Remove Profile</button>
+
+    </section>
+
+    <section>
+
+      <ul id="profile_list"></ul>
+      <p id="averageAge"></p>
+    </section>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
