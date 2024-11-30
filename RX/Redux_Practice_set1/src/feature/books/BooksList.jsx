@@ -2,6 +2,7 @@
 
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { Link } from "react-router-dom";
 
 const BooksList = ({ books, handleDeleteBook, deletingBookId, status }) => {
 
@@ -29,7 +30,7 @@ const BooksList = ({ books, handleDeleteBook, deletingBookId, status }) => {
             <p>Author: {book.author}</p>
             <p>Genre: {book.genre}</p>
             <button
-              className="btn btn-danger float-end"
+              className="btn btn-danger float-end mx-3"
               onClick={() => handleDeleteBook(book._id)}
               disabled={deletingBookId === book._id}
             >
@@ -43,6 +44,7 @@ const BooksList = ({ books, handleDeleteBook, deletingBookId, status }) => {
                 "Delete"
               )}
             </button>
+            <Link to="/add_books" state={book} className="btn btn-primary float-end">Edit</Link>
             
           </li>
         ))}

@@ -13,7 +13,7 @@ export const deleteBookAsync = createAsyncThunk('deleteBook', async (bookId , {r
         const response = await axios.delete(`${apiUrl}/books/${bookId}`);
         return response.data;
     } catch (error) {
-     return   rejectWithValue(error)
+     return   rejectWithValue(error.response?.data?.message || "An error occurred")
     }
 })
 
@@ -24,7 +24,17 @@ export const addBookAsync = createAsyncThunk('addNewBook', async (newBook , {rej
         console.log(response.data)
         return response.data
     } catch (error) {
-        return rejectWithValue(error)
+        return rejectWithValue(error.response?.data?.message || "An error occurred")
+    }
+})
+
+export const updateBookAsync = createAsyncThunk('updateBook', async ({updatedBook , bookId}, {rejectWithValue} ) => {
+    
+    try {
+        const response = await axios.put(`${apiUrl}/books/${bookId}`,updatedBook);
+        return response.data
+    } catch (error) {
+       return rejectWithValue(error.response?.data?.message || "An error occurred") 
     }
 })
 
@@ -54,10 +64,23 @@ export const bookSlice = createSlice({
         })
         builder.addCase(deleteBookAsync.fulfilled, (state , action) => {
             state.status = 'success'
-            state.books = state.books.filter((book) => book._id !== action.meta.arg)
+            state.books = state.books.filter((book) => book._id !== action.payload.book._id)
         })
         builder.addCase(deleteBookAsync.rejected, (state) => {
             state.status = 'error'
+        })
+        builder.addCase(updateBookAsync.pending, (state) => {
+            state.status = "loading"
+        })
+        builder.addCase(updateBookAsync.fulfilled, (state , action) => {
+            state.status = "success";
+            state.books = state.books.map((book) => (
+                book._id === action.payload._id ? action.payload :book
+            ))
+        })
+        builder.addCase(updateBookAsync.rejected, (state , action) => {
+            state.status = 'error';
+            state.error = action.payload
         })
     }
 })
