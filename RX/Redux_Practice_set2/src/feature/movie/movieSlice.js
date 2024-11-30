@@ -12,7 +12,7 @@ export const deleteMovieAsync = createAsyncThunk("movies/deleteMovie", async (mo
         const response = await axios.delete(`${api_url}/movies/${movieId}`);
         return response.data
     } catch (error) {
-        return rejectWithValue(error)
+        return rejectWithValue(error.response?.data?.message || "An error occurred")
     }
 });
 
@@ -22,7 +22,16 @@ export const addMovieAsync = createAsyncThunk("movies/addMovie", async (newMovie
         console.log(response.data)
         return response.data;
     } catch (error) {
-        return rejectWithValue(error)
+        return rejectWithValue(error.response?.data?.message || "An error occurred")
+    }
+})
+
+export const updateMovieAsync = createAsyncThunk("movies/updateMovie", async ({updatedMovie, movieId}, {rejectWithValue}) => {
+    try {
+        const response = await axios.put(`${api_url}/movies/${movieId}`, updatedMovie);
+        return response.data
+    } catch (error) {
+        return rejectWithValue(error.response?.data?.message || "An error occurred")
     }
 })
 

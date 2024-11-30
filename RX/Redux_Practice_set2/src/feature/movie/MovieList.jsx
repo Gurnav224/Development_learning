@@ -2,6 +2,8 @@
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
+import { Link } from "react-router-dom";
+
 const MovieList = ({ movies, handleDeleteMovie, status }) => {
   if (status === "loading") {
     return (
@@ -53,6 +55,8 @@ const MovieList = ({ movies, handleDeleteMovie, status }) => {
             >
               Delete
             </button>
+            <Link state={movie} to="/add_movie" className="btn btn-primary float-end mx-2">Edit</Link>
+
           </li>
         ))
       ) : (
