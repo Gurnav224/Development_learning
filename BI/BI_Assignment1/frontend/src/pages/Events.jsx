@@ -17,7 +17,6 @@ const Events = () => {
   let filterByEventType = events?.filter((event) => eventType === "Both" || event.eventType === eventType)
 
 
-  console.log(filterByEventType)
 
 
   let filterBySearch = search ? events.filter((event) => 
@@ -53,7 +52,7 @@ const Events = () => {
           />
         </div>
          <div className="col-md-6">
-          <label className="form-label" htmlFor="eventType">Select Event Type</label>
+          <label className="form-label" htmlFor="eventType">Filter By Event Type</label>
           <select onChange={(e) => setEventType(e.target.value)} className="form-select" name="eventType" id="eventType">
             <option defaultValue={""}>Choose event Type</option>
             <option value="Online">Online</option>
@@ -100,6 +99,7 @@ const Events = () => {
                         <p className="card-text text-secondary-emphasis mt-auto">
                           {moment(event.startingTime).format("LLLL")}
                         </p>
+                        <p className="card-text text-dark fw-bold">Tags: {event.tags.join(', ')}</p>
                       </div>
                     </div>
                   </Link>
