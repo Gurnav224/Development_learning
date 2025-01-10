@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ol id="list"></ol>
+
+    <script>
+        const list = document.querySelector('#list');
+
+        const fakeFetch = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (url === "https://example.com/api/itemlist") {
+        resolve({
+          status: 200,
+          message: "Success",
+          data: [
+            { itemName: "Bread", price: 30, quantity: 10 },
+            { itemName: "Water Bottle", price: 50, quantity: 50 },
+            { itemName: "Dairy Milk", price: 20, quantity: 30 }
+          ]
+        });
+      } else {
+        reject({
+          status: 404,
+          message: "Items list not found."
+        });
+      }
+    }, 2000);
+  });
+};
+
+// Your Code here
+
+
+fakeFetch("https://example.com/api/itemlist")
+.then((res) => {
+  console.log(res)
+   let data = res.data;
+  for(let i = 0; i < data.length; i++){
+    const li = document.createElement('li');
+    li.innerHTML = `${data[i].itemName}  - INR: ${data[i].price} - ${data[i].quantity}`;
+    list.appendChild(li)
+  }
+})
+.catch((error) => {
+ list.innerHTML = error.message
+})
+
+// Output on the DOM should be in the format, {itemName} -- INR {price} -- {quantity}:
+
+    </script>
+</body>
+</html>
