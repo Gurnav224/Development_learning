@@ -1,0 +1,24 @@
+h1 {
+ color: purple;
+}
+
+p{
+color: blue;
+}
+
+#heading {
+ color: lawngreen;
+ font-size: 2rem;
+}
+
+#para1 {
+ color: cornflowerblue;
+ font-size: 1rem;
+}
+
+.para2 {
+ color: aqua;
+ font-weight: 900;
+ font-size: 3rem;
+ font-style: italic;
+}

@@ -1,0 +1,99 @@
+:root {
+ --primary-color:purple;
+}
+
+
+body {
+    font-family: sans-serif;
+    box-sizing: border-box;
+  margin: 0;
+
+}
+#heading {
+color: green;
+font-size: 3rem;
+}
+
+#headingTwo {
+color: lightcoral;
+font-size: 2rem;
+font-style: italic;
+}
+
+#para1 {
+ color: var(--primary-color);
+}
+
+.container {
+padding-left: 1rem;
+padding-right: 1rem;
+background-color: aqua;
+max-width: 600px;
+}
+
+.container-fluid{
+  background-color: red;
+ padding-left: 1rem;
+ padding-right: 1rem;
+}
+
+.primary-link {
+ padding: 10px;
+ background-color: var(--primary-color);
+ border-radius: 4px;
+ font-size: 1.4rem;
+ color: white;
+ outline: none;
+ border: none;
+ margin-bottom: 5px;
+}
+
+.secondary-link{
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    outline: none;
+    margin-bottom: 5px;
+}
+
+.list-non-bullet {
+list-style: none;
+}
+
+.list-item {
+ border: 1px solid;
+ padding: 5px 8px;
+}
+
+.inline-list .list-item{
+display: inline;
+}
+
+.navigation {
+  background: var(--primary-color);
+  padding: 10px 15px;
+}
+
+.nav-container {
+ text-align: right;
+}
+
+.nav-container .nav-item {
+    display: inline;
+    margin: 0 10px;
+}
+
+.nav-brand {
+font-weight: bold;
+font-size: 1.5rem;
+color: white;
+}
+
+.nav-link {
+    color: darkgray;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+   }
