@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price Cards</title>
+  </head>
+
+  <style>
+
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+    }
+    .row {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1rem;
+       padding: 0.5rem 1.5rem;
+    }
+
+    .card {
+         border: 1px solid gray;
+         padding: 0.5rem 1rem;
+         max-width: 220px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 1rem;
+        }
+
+    .card_heading {
+      color: orange;
+      border-bottom: 2px solid orange;
+
+    }
+
+    .card button {
+      padding: 0.5rem 1rem;
+      background-color: orange;
+      outline: none;
+      border: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    h1 { 
+     text-transform: uppercase;
+    }
+
+
+  </style>
+
+  <body>
+    <div class="row">
+      <div class="card">
+        <h1>Basic</h1>
+        <h2 class="card_heading">$10.99/month</h2>
+        <p>Our basic plan is perfect for small team</p>
+        <p>5 Projects</p>
+        <p>10GB Stroage</p>
+        <p>Priority Support</p>
+        <p>Unlimited users</p>
+        <button>Buy now</button>
+      </div>
+
+      <div class="card">
+        <h1>Silver</h1>
+        <h2 class="card_heading">$10.99/month</h2>
+        <p>Our Silver plan is perfect for small to medium size teams.</p>
+        <p>10 Projects</p>
+        <p>15 GB Stroage</p>
+        <p>Priority Support</p>
+        <p>Unlimited Users</p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="card">
+        <h1>Premium</h1>
+        <h2 class="card_heading">$20.99/month</h2>
+        <p>Our Premium plan is perfect for big teams</p>
+        <p>30 Projects</p>
+        <p>20GB Stroage</p>
+        <p>Priority Support</p>
+        <p>Unlimited Users</p>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </body>
+</html>
