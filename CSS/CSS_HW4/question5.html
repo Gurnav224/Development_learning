@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Quantity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .cart-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .cart-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .item-details {
+            flex: 2;
+        }
+        .item-qty {
+            flex: 1;
+            text-align: right;
+        }
+        .item-name {
+            font-weight: bold;
+        }
+        .item-description {
+            font-size: 14px;
+            color: #666;
+        }
+        .cart-summary {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+
+        }
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+        .total {
+            font-weight: bold;
+        }
+        .place-order-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .cart-footer {
+            font-size: 18px;
+            
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <div class="cart-header">Review Order</div>
+        <div class="cart-item">
+            <div class="item-details">
+                <div class="item-name">Limited edition cactus print bag</div>
+                <div class="item-description">1 litre, green color</div>
+            </div>
+            <div class="item-qty">
+                <p>QTY: 1</p>
+                <p>INR 999</p>
+            </div>
+        </div>
+        <div class="cart-summary">
+            <div class="summary-line">
+                <p>Subtotal</p>
+                <p>INR 999</p>
+            </div>
+            <div class="summary-line">
+                <p>GST</p>
+                <p>INR 179</p>
+            </div>
+            <div class="summary-line total">
+                <p>Grand Total</p>
+                <p>INR 1178</p>
+            </div>
+        </div>
+        <button class="place-order-btn">PLACE ORDER</button>
+        <div class="cart-footer">Cart Secured by Razorpay</div>
+    </div>
+</body>
+</html>

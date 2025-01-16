@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>Pricing Plans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f8f8;
+        }
+        .pricing-container {
+            display: flex;
+            gap: 20px;
+            max-width: 1000px;
+            width: 100%;
+        }
+        .pricing-plan {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 33.33%;
+            text-align: center;
+        }
+        .pricing-plan h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .pricing-plan .price {
+            font-size: 20px;
+            margin: 10px 0;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .pricing-plan .features {
+            margin: 20px 0;
+            font-size: 16px;
+            color: #666;
+        }
+        .pricing-plan .features hr {
+            border: 0;
+            border-top: 1px solid #e0e0e0;
+            margin: 20px 0;
+        }
+        .pricing-plan .sign-up {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .free-tag {
+            border: 1px solid #000;
+            padding: 5px 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        @media (max-width: 900px) {
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .pricing-plan {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 33.33%;
+            width: 300px;
+            text-align: center;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-container">
+        <div class="pricing-plan">
+            <div class="free-tag">1 month Free</div>
+            <h2>Basic Plan</h2>
+            <div class="price">$9.99/mo</div>
+            <div class="features">
+                <hr>
+                <p>Ad-free music listening</p>
+                <p>Download 10k songs/device</p>
+                <p>Login from 3 devices</p>
+            </div>
+            <button class="sign-up">Sign Up</button>
+        </div>
+        <div class="pricing-plan">
+            <div class="free-tag">1 month Free</div>
+            <h2>Pro Plan</h2>
+            <div class="price">$19.99/mo</div>
+            <div class="features">
+                <hr>
+                <p>Ad-free music listening</p>
+                <p>Download 20k songs/device</p>
+                <p>Login from 5 devices</p>
+            </div>
+            <button class="sign-up">Sign Up</button>
+        </div>
+        <div class="pricing-plan">
+            <div class="free-tag">1 month Free</div>
+            <h2>Enterprise Plan</h2>
+            <div class="price">$59.99/mo</div>
+            <div class="features">
+                <hr>
+                <p>Ad-free music listening</p>
+                <p>Download 40k songs/device</p>
+                <p>Login from unlimited devices</p>
+            </div>
+            <button class="sign-up">Sign Up</button>
+        </div>
+    </div>
+</body>
+</html>

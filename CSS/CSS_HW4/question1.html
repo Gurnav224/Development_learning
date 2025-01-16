@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+     * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+    }
+
+
+    body {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+    }
+
+    .login_form {
+        border: 1px solid rgb(223, 214, 214);
+        padding: 1rem;
+        max-width: 400px;
+        width: 100%;
+        outline: 1px solid rgb(199, 192, 192);
+    }
+    .input_container {
+        margin: 1rem 0;
+    }
+    label, input , textarea , button{
+        display: block;
+        width: 100%;
+        font-size: 1.2rem;
+
+    }
+
+    input {
+        padding: 0.8rem 1rem;
+    }
+
+    label {
+      padding: 0.5rem 0;
+    }
+
+    button {
+     padding: 0.8rem 1rem;
+     background-color: black;
+     color: white;
+     font-size: 1.4rem;
+     outline: none;
+     border: none;
+    }
+   
+
+    </style>
+</head>
+<body>
+    <form class="login_form">
+        <div class="input_container">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="name">
+        </div>
+        <div class="input_container">
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="email">
+        </div>
+        <div class="input_container">
+            <label for="message">Message</label>
+            <textarea name="message" id="" cols="30" rows="10"></textarea>
+        </div>
+        <button>submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+
+.list-item-2 {
+ position: relative;
+ left: 30px;
+}
+
+.list-item-3 {
+ position: relative;
+ left: 60px;
+}
+
+.box {
+width: 100px;
+height: 100px;
+background-color: gray;
+display: inline-block;
+
+}
+
+.box2 {
+ position: relative;
+ top: 30px;
+}
+
+.box3 {
+ position: relative;
+ top: 60px;
+}
+
+
+.outer-box {
+width: 300px;
+height: 300px;
+background-color: darkolivegreen;
+position: relative;
+}
+
+
+.inner-box {
+ width: 150px;
+ height: 150px;
+ background-color: pink;
+ position: absolute;
+ right: 200px;
+ bottom: 20px;
+}
+
+
+.layout {
+width: 300px;
+height: 300px;
+border: 2px solid;
+}
+
+.menu {
+width: 20%;
+background-color:red;
+
+}
+
+.content{
+background-color: blueviolet;
+    width: 86%;
+display: inline-block;
+height: 100%;
+}
+
+.boxes {
+border: 2px solid;
+width: 370px;
+}
+.box {
+padding: 10px;
+}
