@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        header , #hero {
+        background-color: black;
+
+        }
+        
+        svg {
+            color: #fff;
+        }
+
+        header { 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        nav, .social_icons {           flex: 1;
+            width: 50%;
+        }
+        nav ul { 
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            flex: 1;
+            gap: 25px;
+        }
+        nav ul li a {
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        nav ul li a:hover{
+        background-color: #fff;
+        color: #000;
+        }
+
+
+        .social_icons {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .social_icons svg { 
+            height: 50px;
+            width: 50px;
+          
+            border-radius: 50%;
+            padding: 9px;
+        }
+
+        .social_icons svg:hover { 
+            background-color: #fff;
+            color: #000;
+        }
+
+        .social_icons button {
+            font-size: 2em;
+            padding: 10px 15px;
+            border: none;
+            outline: none;
+            font-weight: 600;
+        }
+
+        #hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            padding: 8% 4%;
+        }
+
+        #hero img { 
+            width: 200px;
+            margin: 3px 0;
+        }
+        #hero p {
+            font-size: 2em;
+        }
+
+        #getting_started {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 2rem;
+}
+
+#getting_started >  img {
+    width: 65%;
+    border-radius: 10px;
+}
+
+.content {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.headings h2 {
+    font-size: 1.5rem;
+    color: blue;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.timestamp {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.timestamp img {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.timestamp-img 
+
+.timestamp h3 {
+    font-size: 1rem;
+    color: #333;
+}
+
+.timestamp p {
+    font-size: 0.875rem;
+    color: #777;
+}
+
+
+      .row { 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    gap: 25px;
+    }
+    .row .card { 
+        max-width: 600px;
+    }
+    .row .card > img{ 
+        width: 100%;
+    }
+    .row .content {
+        width: 100%;
+    padding: 1rem 2rem;
+    }
+
+    .timestamp-img {
+    max-width: 50px;
+    }
+
+    hr {
+    margin: 2% 1%;
+    border: 2px solid gray;
+    }
+
+
+    .row .big_card { 
+    
+    max-width: 800px;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">TAG</a></li>
+                <li><a href="">AUTHOR</a></li>
+                <li><a href="">HELP</a></li>
+            </ul>
+        </nav>
+        <ul class="social_icons">
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            </li>
+            <li>
+                <button>Subscribe</button>
+            </li>
+        </ul>
+</header>
+
+    <section id="hero">
+        <img src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264799/middleLogo-3_g41y4r.jpg?_s=public-apps" alt="">
+        <p>Thoughts,stories, and ideas</p>
+    </section>
+
+    <section id="getting_started">
+        <img src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264798/ghostImage1_gsl1i7.jpg?_s=public-apps" alt="Welcome to Ghost">
+        <div class="content">
+           <div class="headings">
+            <h2>GETTING STARTED</h2>
+            <h1>Welcome To Ghost</h1>
+           </div>
+            <p>
+                Welcome, it's great to have you here. We know that first impressions are important, 
+                so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time.
+            </p>
+            <div class="timestamp">
+                <img class="timestamp-img" src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264799/smallLogo_fmjzvk.jpg?_s=public-apps" alt="Ghost Logo">
+                <div>
+                    <h3>GHOST</h3>
+                    <p>25 FEB 2020 | 1 MIN </p>
+                    <p>READ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="card">
+            <img src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264797/ghostImage2_ken5hq.jpg?_s=public-apps" alt="">
+            <div class="content">
+                <h2>GETTING STARTED
+                </h2>
+                <h1>writing post with Ghost</h1>
+                <p>Discover familiar formatting options in a functional toolbar and ability to add dyanmic content seamlessly.</p>
+                <div class="timestamp">
+                    <img class="timestamp-img" src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264799/smallLogo_fmjzvk.jpg?_s=public-apps" alt="Ghost Logo">
+                    <div>
+                        <h3>GHOST</h3>
+                        <p>25 FEB 2020 | 1 MIN </p>
+                        <p>READ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264797/ghostImage3_smh9dh.jpg?_s=public-apps" alt="">
+            <div class="content">
+                <h2>GETTING STARTED
+                </h2>
+                <h1>writing post with Ghost</h1>
+                <p>The Ghost editor post settings menu has everything you need to full optimized and distrbute your content effectively</p>
+                <div class="timestamp">
+                    <img class="timestamp-img" src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264799/smallLogo_fmjzvk.jpg?_s=public-apps" alt="Ghost Logo">
+                    <div>
+                        <h3>GHOST</h3>
+                        <p>25 FEB 2020 | 1 MIN </p>
+                        <p>READ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264797/ghostImage4_fqf7yz.jpg?_s=public-apps" alt="">
+            <div class="content">
+                <h2>GETTING STARTED
+                </h2>
+                <h1>writing post with Ghost</h1>
+                <p>Discover familiar formatting options in a functional toolbar and ability to add dyanmic content seamlessly.</p>
+                 <div class="timestamp">
+                    <img class="timestamp-img" src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264799/smallLogo_fmjzvk.jpg?_s=public-apps" alt="Ghost Logo">
+                    <div>
+                        <h3>GHOST</h3>
+                        <p>25 FEB 2020 | 1 MIN </p>
+                        <p>READ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <hr>
+    <section class="row">
+        <div class="big_card card">
+            <img src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264798/ghostImage5_mgxrty.jpg?_s=public-apps" alt="">
+            <div class="content">
+                <h2>GETTING STARTED
+                </h2>
+                <h1>writing post with Ghost</h1>
+                <p>Discover familiar formatting options in a functional toolbar and ability to add dyanmic content seamlessly.</p>
+                 <div class="timestamp">
+                    <img class="timestamp-img" src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264799/smallLogo_fmjzvk.jpg?_s=public-apps" alt="Ghost Logo">
+                    <div>
+                        <h3>GHOST</h3>
+                        <p>25 FEB 2020 | 1 MIN </p>
+                        <p>READ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="big_card card">
+            <img src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264798/ghostImage6_ezgbwj.jpg?_s=public-apps" alt="">
+            <div class="content">
+                <h2>Publishing Options
+                </h2>
+                <h1>writing post with Ghost</h1>
+                <p>Discover familiar formatting options in a functional toolbar and ability to add dyanmic content seamlessly.</p>
+                 <div class="timestamp">
+                    <img class="timestamp-img" src="https://res.cloudinary.com/dwxq0majx/image/upload/fl_preserve_transparency/v1727264799/smallLogo_fmjzvk.jpg?_s=public-apps" alt="Ghost Logo">
+                    <div>
+                        <h3>GHOST</h3>
+                        <p>25 FEB 2020 | 1 MIN </p>
+                        <p>READ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

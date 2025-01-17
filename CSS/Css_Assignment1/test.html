@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        :root {
+            --primary-color: black;
+            --secondary-color: white;
+            --accent-color: blue;
+            --text-color: #333;
+            --light-text-color: #555;
+            --muted-text-color: #777;
+            --spacing: 1rem;
+            --border-radius: 10px;
+        }
+
+        /* Reset and Utility */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing) 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing);
+        }
+
+        nav ul li a {
+            padding: 0.75rem 1.5rem;
+            color: var(--secondary-color);
+            font-size: 1.25rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .social_icons {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing);
+        }
+
+        .social_icons svg {
+            height: 2rem;
+            width: 2rem;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .social_icons svg:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .social_icons button {
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        #hero {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        #hero img {
+            width: 150px;
+            margin-bottom: var(--spacing);
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+        }
+
+        /* Getting Started Section */
+        #getting_started {
+            display: flex;
+            gap: var(--spacing);
+            background-color: #f9f9f9;
+            padding: var(--spacing);
+            border-radius: var(--border-radius);
+            margin: var(--spacing) 0;
+        }
+
+        #getting_started img {
+            width: 60%;
+            border-radius: var(--border-radius);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing);
+            width: 40%;
+        }
+
+        .headings h2 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            color: var(--text-color);
+        }
+
+        .content p {
+            color: var(--light-text-color);
+        }
+
+        .timestamp {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing);
+        }
+
+        .timestamp img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .timestamp h3 {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .timestamp p {
+            font-size: 0.875rem;
+            color: var(--muted-text-color);
+        }
+
+        /* Card Styles */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .card .content {
+            padding: var(--spacing);
+        }
+
+        hr {
+            margin: var(--spacing) 0;
+            border: 0;
+            height: 1px;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">TAG</a></li>
+                <li><a href="#">AUTHOR</a></li>
+                <li><a href="#">HELP</a></li>
+            </ul>
+        </nav>
+        <ul class="social_icons">
+            <li><svg>...</svg></li>
+            <li><svg>...</svg></li>
+            <li><svg>...</svg></li>
+            <li><button>Subscribe</button></li>
+        </ul>
+    </header>
+
+    <section id="hero">
+        <img src="..." alt="Hero Logo">
+        <p>Thoughts, stories, and ideas</p>
+    </section>
+
+    <section id="getting_started">
+        <img src="..." alt="Welcome to Ghost">
+        <div class="content">
+            <div class="headings">
+                <h2>GETTING STARTED</h2>
+                <h1>Welcome To Ghost</h1>
+            </div>
+            <p>
+                Welcome, it's great to have you here. We know that first impressions are important, 
+                so we've populated your new site with some initial getting started posts.
+            </p>
+            <div class="timestamp">
+                <img src="..." alt="Author Logo">
+                <div>
+                    <h3>GHOST</h3>
+                    <p>25 FEB 2020 | 1 MIN READ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="card_">
+            <img src="..." alt="Post Image">
+            <div class="content">
+                <h2>GETTING STARTED</h2>
+                <h1>Writing Post with Ghost</h1>
+                <p>Discover familiar formatting options in a functional toolbar.</p>
+                <div class="timestamp">
+                    <img src="..." alt="Author Logo">
+                    <div>
+                        <h3>GHOST</h3>
+                        <p>25 FEB 2020 | 1 MIN READ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Repeat cards as needed -->
+    </section>
+</body>
+</html>
