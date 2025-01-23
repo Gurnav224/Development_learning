@@ -1,0 +1,165 @@
+/* Import Lato font */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+/* Global Styles */
+body {
+  background-color: #1a1a1a;
+  color: #d1d1e0;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  color: #81a1c1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Form Elements */
+input,
+button {
+  padding: 10px 15px;
+  margin-bottom: 1rem;
+  border: 1px solid #3b4252;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input {
+  background-color: #2e3440;
+  color: #d8dee9;
+}
+
+input:focus {
+  border-color: #81a1c1;
+  outline: none;
+  box-shadow: 0 0 8px rgba(129, 161, 193, 0.5);
+}
+
+button {
+  background-color: #81a1c1;
+  color: #2e3440;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5e81ac;
+}
+
+/* Navigation */
+nav {
+  background-color: #1a1a1a;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+nav .logo {
+  font-size: 1.2rem;
+  color: #d1d1e0;
+  font-weight: bold;
+}
+
+nav .links {
+  display: flex;
+}
+
+nav a {
+  color: #d1d1e0;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #81a1c1;
+}
+
+/* Mobile Navigation */
+@media (max-width: 400px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .links {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+  }
+
+  nav a {
+    margin-left: 1rem;
+  }
+}
+
+/* Layout Adjustments for Large Screens */
+@media (min-width: 1024px) {
+  nav {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  footer {
+    right: 0;
+    left: 0;
+    text-align: center;
+  }
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 1rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: #81a1c1;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: #81a1c1;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #5e81ac;
+}
+
+/* App Container */
+.app {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: left;
+  color: #d1d1e0;
+}
