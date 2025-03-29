@@ -1,0 +1,10 @@
+2025-03-28 12:05:23 [INFO] Server started on port 8080
+2025-03-28 12:06:10 [INFO] Database connection established
+2025-03-28 12:07:45 [WARNING] High memory usage detected: 85%
+2025-03-28 12:09:32 [ERROR] Failed to fetch data from API: Timeout
+2025-03-28 12:10:15 [INFO] New user registered: user123
+2025-03-28 12:12:48 [INFO] User login successful: admin
+2025-03-28 12:14:22 [WARNING] Unauthorized access attempt detected from IP: 192.168.1.100
+2025-03-28 12:16:00 [ERROR] Server crashed due to unhandled exception
+2025-03-28 12:18:30 [INFO] Server restarted successfully 
+2025-03-28 12:20:05 [INFO] Scheduled database backup completed
