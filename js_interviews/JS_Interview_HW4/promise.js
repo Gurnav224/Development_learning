@@ -1,18 +1,5 @@
 
 
-const order =new Promise((resolve, reject) => {
-    let isValid = false;
-    if(isValid){
-        resolve('promise is resolve successfully')
-    }
-    else{
-        reject('failed to resolved ')
-    }
-})
-
-order
-.then((arg) => console.log(arg))
-.catch((error) => console.error(error))
 
 // a promise is an object that handle asynchornous operations;
 // promise have three state , pending, fullfilled, reject ;
@@ -20,3 +7,27 @@ order
 // callback take two parameter function resolve and reject
 // check the condition if it will resolve return the result
 // failed to resolve return the reject 
+
+
+
+let isGettingPlaced = new Promise((resolve, reject) => {
+        let isPlaced = false;
+     if(isPlaced){
+        resolve("Hurrah!, You are Selected ")
+     }
+     else{
+        reject('Apply more , learn more')
+     }
+})
+
+
+isGettingPlaced
+.then((res) => console.log(res))
+.catch((err) => console.error(err))
+
+
+
+fetch('https://api.escuelajs.co/api/v1/products/1')
+.then((res) => res.json())
+.then((data) => console.log(data))
+.catch((err) => console.error(err))
