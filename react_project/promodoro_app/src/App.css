@@ -1,0 +1,30 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #1e1e1e;
+  color: white;
+  transition: background-color 0.5s ease;
+}
+
+/* Custom background colors for different modes */
+.bg-pomodoro {
+  background-color: #1e1e1e;
+  color: #f87070;
+}
+
+.bg-shortbreak {
+  background-color: #1e1e1e;
+  color: #70f3f8;
+}
+
+.bg-longbreak {
+  background-color: #1e1e1e;
+  color: #d881f8;
+}

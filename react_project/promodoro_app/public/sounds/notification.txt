@@ -1,0 +1,9 @@
+This is a placeholder for the notification sound file.
+You should replace this with an actual MP3 file named 'notification.mp3'.
+
+You can find free notification sounds on websites like:
+- https://mixkit.co/free-sound-effects/notification/
+- https://freesound.org/
+- https://www.zapsplat.com/
+
+Download a sound and place it in this directory with the name 'notification.mp3'.

@@ -53,3 +53,5 @@
 6. What are critical rendering paths?
 7. How do you optimize for Time to First Byte (TTFB)?
 8. How do service workers improve web performance?
+
+
