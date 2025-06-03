@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Gallery</title>
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+        .gallery-item img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .gallery-item p {
+            margin-top: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .upload-form {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="upload-form">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Upload Image</button>
+        </form>
+    </div>
+
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <% if (files && files.length > 0) { %>
+            <% files.forEach(file => { %>
+                <div class="gallery-item">
+                    <img src="/uploads/<%= file %>" alt="<%= file %>">
+                    <p><%= file %></p>
+                    <a href="/uploads/<%= file %>" target="_blank">View Full Size</a>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>No images uploaded yet</p>
+        <% } %>
+    </div>
+</body>
+</html>
