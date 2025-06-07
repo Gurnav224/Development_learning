@@ -1,8 +1,8 @@
 
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-
-const client =  mongoose.connect('mongodb+srv://Gurnav:mongodb@cluster0.l6rke.mongodb.net/?retryWrites=true&w=majority',{dbName:'StudentDB'});
+const client =  mongoose.connect(process.env.URI,{dbName:'StudentDB'});
 
 client.then(() => {
     console.log('Connected to MongoDB');
