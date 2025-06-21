@@ -1,14 +1,40 @@
+// - Set Interval vs Set Timeout
+// - Event loop
+// - What are some ES6 Features?
+
+// setInterval will execute a function repeatedly after a certain time interval
+// setTimeout will execute a function once after a specified delay
+
+	setTimeout(() => console.log("Hi"), 1000);
+
+  setInterval(() => console.log("Hi"), 1000);
+
+
+  /*
+The event loop is the mechanism that checks the call stack and the callback queue.
+If the call stack is empty, it checks the callback queue, and if there are any pending asynchronous tasks,
+it delegates those tasks into the call stack for execution.
+this the main working of event loop
+  */
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout");
+}, 0);
+
+console.log("End");
+
+
+// es6 features 
 /*
- scope: scope in javascript is the context in which variable are defined and accesible 
- scope is three 2 types in javascript
 
- 1. global scope : variable defined in the global scope are accessible everywhere in the code
- 2. functional scope : variable dfined in the functional scope are accessible in their local scope only
-
- in recent version, javascript introduce the block scope means variable 
- defined with let  , const and curly brace {} are only accessible to their scope 
-
+let and const
+arrow function 
+template literals
+promise 
+destructuring
+default paramter
+rest/spread
 
 */
-
-// example of block scope
