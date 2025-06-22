@@ -1,0 +1,106 @@
+
+### Base_URL
+@base_url = http://127.0.0.1:5000
+
+###
+
+### / route
+GET  {{base_url}}
+Content-Type: 'application/json'
+
+
+### Greet user
+
+GET {{base_url}}/greet/Vishal
+Content-Type: 'application/json
+
+
+### Add feedback
+
+POST {{base_url}}/submit-feedback
+Content-Type: application/json
+
+
+{
+  "name": "Ankita",
+  "message": "Loved the session!",
+  "rating": 5
+}
+
+
+### Get Location
+
+GET  {{base_url}}/location/delhi
+Content-Type: 'application/json'
+
+
+### create a book review
+
+POST  {{base_url}}/book-review
+Content-Type:application/json
+
+{
+ "name":"Harry potter",
+ "rating":5
+}
+
+
+### Create form data
+
+POST  {{base_url}}/contact-form 
+Content-Type: application/json
+
+{
+"name":"user1",
+"email":"user1@gmail.com",
+"message":"got reply message from you"
+}
+
+
+### Convert Celsius to Fahrenheit
+
+GET  {{base_url}}/convert-temp?celsius=32
+Content-Type: application/json
+
+### Add Billing
+
+POST  {{base_url}}/billing
+Content-Type: application/json
+
+{
+"item_name":"cars",
+"unit_price":300,
+"quantity":2
+}
+
+### goal list
+
+POST {{base_url}}/goal
+Content-Type: application/json
+
+{
+"goals":["goal1","goal2"]
+}
+
+### emergency list
+
+POST  {{base_url}}/emergency
+Content-Type: application/json
+
+{
+"name":"rahul",
+"location":"India",
+"issue":"code have bug"
+}
+
+
+### get event details
+
+GET  {{base_url}}/event?event_name=attend python meetup&date={{$datetime rfc1123}}
+Content-Type: application/json
+
+
+
+### delte item by item_name
+POST {{base_url}}/delete-item?item_name=fruit
+Content-Type: application/json
