@@ -32,6 +32,9 @@ async function findByScore(collection,score){
 }
 //11. Write a MongoDB query to find the restaurants that do not prepare any cuisine of 'American' and their grade score more than 70 and latitude less than -65.754168.
 
+async function printRestaurants(){
+    
+}
 
 export async function executeRestaurantDBCrudOperations(){
     const uri = process.env.DB_URI;

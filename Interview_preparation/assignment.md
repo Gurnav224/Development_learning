@@ -1,1 +1,0 @@
-Build a basic WhatsApp like chat app with WebSocket support. It should allow users to send, update, and delete messages (basicCRUD). Keep it simple and functional.
