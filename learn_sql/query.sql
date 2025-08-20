@@ -1,3 +1,4 @@
+-- Active: 1754471094290@@127.0.0.1@3306
 
 CREATE TABLE developer_contributions (
 contributor_id INT PRIMARY KEY,
