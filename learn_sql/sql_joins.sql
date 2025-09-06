@@ -248,3 +248,106 @@ FROM
     INNER JOIN developers as d ON d.id = t.assignee_id
 WHERE
     assignee_id IS NOT NULL;
+
+-- 2 List Open P0 tickets with project and assignee (sort by project name, then title).
+/*
+step 1: list the all tickets with status open and priority P0
+SELECT * FROM tickets WHERE status == 'Open' AND priority = 'P0'
+query: 
+
+step 2: extract the name like ticket title, project name and assign name add alias
+query: SELECT t.title as ticket_title, p.name as project_name , d.name as assign_name FROM tickets as t INNER JOIN projects as p ON p.id = t.project_id INNER JOIN developers as d ON d.id = t.assignee_id WHERE t.status = 'Open' AND t.priority = 'P0'
+
+step3: sort them by project name, ticket title 
+
+
+*/
+
+SELECT
+    t.title as ticket_title,
+    p.name as project_name,
+    d.name as developer_name
+FROM
+    tickets as t
+    INNER JOIN projects as p ON p.id = t.project_id
+    INNER JOIN developers as d ON d.id = t.assignee_id
+WHERE
+    t.status = 'Open'
+    AND t.priority = 'P0'
+ORDER BY p.name ASC, t.title ASC
+
+-- List tickets where the assignee’s role is Backend (show ticket title, project, assignee).
+/*
+
+step1: get all tickets
+query: SELECT * FROM tickets
+
+step2: add projects
+query: SELECT * FROM tickets INNER JOIN projects ON projects.id = tickets.project_id
+
+step3: add developers
+query: SELECT * FROM tickets INNER JOIN projects ON projects.id = tickets.project_id INNER JOIN developers ON developers.id = tickets.assignee_id
+
+step4: filter by backend role
+query: SELECT tickets.title as title, projects.name as project, developers.name as assignee FROM tickets INNER JOIN projects ON projects.id = tickets.project_id INNER JOIN developers ON developers.id = tickets.assignee_id
+WHERE developers.role = 'Backend'
+step5: add alias 
+*/
+
+SELECT t.title as title, p.name as project, d.name as assignee
+FROM
+    tickets as t
+    INNER JOIN projects as p ON p.id = t.project_id
+    INNER JOIN developers as d ON d.id = t.assignee_id
+WHERE
+    d.role = 'Backend'
+
+-- 4. List tickets in project “JunoJar” that are In Progress with assignee name.
+/*
+ step 1: list all the tickets
+ query:
+SELECT * FROM tickets
+
+ step 2: add the project 
+ query: 
+
+ step 3: add the developers 
+ step 4: filter out the tickets by project "JunoJar" And Status in Progress
+*/
+
+
+SELECT 
+    t.title AS ticket_title,
+    d.name AS assignee
+FROM tickets t
+INNER JOIN projects p 
+    ON t.project_id = p.id
+INNER JOIN developers d 
+    ON t.assignee_id = d.id
+WHERE p.name = 'JunoJar'
+  AND t.status = 'In Progress';
+
+
+--   5. For project “Scout”, list all tickets with assignee name and status Open or In Progress.
+
+
+SELECT 
+t.title as ticket_title, d.name as assignee , p.name as project_name 
+FROM tickets as t 
+INNER JOIN developers as d ON t.assignee_id = d.id 
+INNER JOIN projects as p ON t.project_id = p.id
+WHERE (t.status = 'Open' OR t.status = 'In Progress') AND p.name = 'Scout'
+
+
+-- List ticket id, project name, assignee name (only assigned), ordered by project name then ticket id.
+
+SELECT
+    t.id as ticket_id,
+    p.name as project_name ,
+    d.name as assignee_name
+ FROM tickets as t
+INNER JOIN projects as p ON t.project_id = p.id
+INNER JOIN developers as d ON d.id = t.assignee_id
+ORDER BY p.name, t.id
+
+-- Show all tickets with project name and assignee name (unassigned rows should show NULL for assignee).
